@@ -1,283 +1,935 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Draco Arcane Volume I - The Foundations of Magic">
+<meta charset="UTF-8">
 
-  <title>Volume I | Draco Arcane</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Volume I | Beginner Card Magic | Draco Arcane</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description"
+content="Volume I of Draco Arcane teaches 10 essential beginner card magic effects with structured lessons and professional guidance.">
+
+<meta name="theme-color"
+content="#0b0b0b">
+
+<link rel="stylesheet"
+href="style.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
 </head>
 
-<body class="volume-page">
+<body>
 
-  <!-- Background Magic Particles -->
-  <canvas id="magicCanvas"></canvas>
+<!--=====================================
+LOADER
+======================================-->
 
-  <!-- Navigation -->
-  <header class="academy-header">
-    <a href="index.html" class="academy-logo">
-      <span>DRACO</span>
-      <small>ARCANE</small>
-    </a>
+<div id="loader">
 
-    <a href="volumes.html" class="back-link">
-      ← Volumes
-    </a>
-  </header>
+<div class="loader-logo">
 
+<div class="dr-logo">
 
-  <!-- Main Content -->
-  <main class="volume-container">
+DR
 
-    <!-- Hero -->
-    <section class="volume-hero">
+</div>
 
-      <div class="magic-symbol">✦</div>
+<h1>
 
-      <p class="eyebrow">THE ARCANE ACADEMY</p>
+DRACO ARCANE
 
-      <h1>VOLUME I</h1>
+</h1>
 
-      <div class="gold-line"></div>
+<p>
 
-      <h2>THE FOUNDATIONS OF MAGIC</h2>
+The Art of Modern Card Magic
 
-      <p class="volume-intro">
-        Your journey begins here.
-        Master the essential principles, techniques and secrets
-        that form the foundation of a true magician.
-      </p>
+</p>
 
-      <div class="course-status">
-        <span class="status-dot"></span>
-        Volume I • Beginner to Intermediate
-      </div>
+<span>
 
-    </section>
+Loading...
 
+</span>
 
-    <!-- Course Introduction -->
-    <section class="course-intro-card">
+</div>
 
-      <h3>WELCOME TO VOLUME I</h3>
+</div>
 
-      <p>
-        This is your first step into the Arcane Academy.
-        Complete each lesson in sequence and build your skills
-        one secret at a time.
-      </p>
+<!--=====================================
+HEADER
+======================================-->
 
-      <button
-        class="gold-button"
-        onclick="scrollToLessons()">
-        Begin Your Journey ↓
-      </button>
+<header>
 
-    </section>
+<nav class="navbar">
 
+<a href="index.html"
+class="brand">
 
-    <!-- Lessons -->
-    <section class="lessons-section" id="lessons">
+<div class="logo-circle">
 
-      <div class="section-heading">
-        <p class="eyebrow">THE ARCANE CURRICULUM</p>
-        <h2>YOUR LESSONS</h2>
-        <p>
-          Follow the lessons in order to unlock your path
-          through Volume I.
-        </p>
-      </div>
+DR
 
+</div>
 
-      <!-- Lesson 1 -->
-      <article class="lesson-card available">
+<div class="brand-text">
 
-        <div class="lesson-number">01</div>
+<h2>
 
-        <div class="lesson-info">
-          <span class="lesson-label">LESSON ONE</span>
-          <h3>The Magician's Mind</h3>
-          <p>
-            Learn the mindset behind powerful magic
-            and discover how professionals approach
-            every performance.
-          </p>
-        </div>
+DRACO ARCANE
 
-        <button
-          class="lesson-button"
-          onclick="openLesson('lesson1')">
-          Watch Lesson
-        </button>
+</h2>
 
-      </article>
+<small>
 
+The Art of Modern Card Magic
 
-      <!-- Lesson 2 -->
-      <article class="lesson-card available">
+</small>
 
-        <div class="lesson-number">02</div>
+</div>
 
-        <div class="lesson-info">
-          <span class="lesson-label">LESSON TWO</span>
-          <h3>The Art of Misdirection</h3>
-          <p>
-            Explore attention, timing and the psychology
-            that makes impossible moments possible.
-          </p>
-        </div>
+</a>
 
-        <button
-          class="lesson-button"
-          onclick="openLesson('lesson2')">
-          Watch Lesson
-        </button>
+<ul class="nav-links">
 
-      </article>
+<li>
 
+<a href="index.html">
 
-      <!-- Lesson 3 -->
-      <article class="lesson-card available">
+Home
 
-        <div class="lesson-number">03</div>
+</a>
 
-        <div class="lesson-info">
-          <span class="lesson-label">LESSON THREE</span>
-          <h3>Control & Precision</h3>
-          <p>
-            Develop the discipline and control required
-            to perform techniques with confidence.
-          </p>
-        </div>
+</li>
 
-        <button
-          class="lesson-button"
-          onclick="openLesson('lesson3')">
-          Watch Lesson
-        </button>
+<li>
 
-      </article>
+<a href="volumes.html">
 
+Volumes
 
-      <!-- Lesson 4 -->
-      <article class="lesson-card locked">
+</a>
 
-        <div class="lesson-number">04</div>
+</li>
 
-        <div class="lesson-info">
-          <span class="lesson-label">LESSON FOUR</span>
-          <h3>The First Secret</h3>
-          <p>
-            A deeper secret awaits beyond the first
-            three foundations.
-          </p>
-        </div>
+<li>
 
-        <div class="lock-icon">🔒</div>
+<a href="index.html#academy">
 
-      </article>
+Academy
 
+</a>
 
-      <!-- Lesson 5 -->
-      <article class="lesson-card locked">
+</li>
 
-        <div class="lesson-number">05</div>
+<li>
 
-        <div class="lesson-info">
-          <span class="lesson-label">LESSON FIVE</span>
-          <h3>Mastery Begins</h3>
-          <p>
-            Continue your journey and prepare for
-            the advanced mysteries of Volume II.
-          </p>
-        </div>
+<a href="index.html#founder">
 
-        <div class="lock-icon">🔒</div>
+Founder
 
-      </article>
+</a>
 
-    </section>
+</li>
 
+<li>
 
-    <!-- Purchase Section -->
-    <section class="purchase-section">
+<a href="index.html#contact">
 
-      <div class="magic-symbol">✦</div>
+Contact
 
-      <p class="eyebrow">ENTER THE ACADEMY</p>
+</a>
 
-      <h2>UNLOCK VOLUME I</h2>
+</li>
 
-      <p>
-        Gain access to the complete Volume I curriculum
-        and begin your journey through the Arcane Academy.
-      </p>
+</ul>
 
-      <div class="price">
-        ₹999
-      </div>
+<a href="#enroll"
+class="gold-btn">
 
-      <button
-        class="gold-button purchase-button"
-        onclick="buyVolume()">
-        BUY NOW
-      </button>
+Enroll Now
 
-      <small class="secure-note">
-        Secure enrollment • Instant access
-      </small>
+</a>
 
-    </section>
+</nav>
 
-  </main>
+</header>
 
+<!--=====================================
+COURSE HERO
+======================================-->
 
-  <!-- Lesson Video Modal -->
-  <div
-    class="lesson-modal"
-    id="lessonModal">
+<section class="course-hero">
 
-    <div class="modal-content">
+<div class="container">
 
-      <button
-        class="modal-close"
-        onclick="closeLesson()">
-        ×
-      </button>
+<div class="hero-logo">
 
-      <div class="video-placeholder">
+<div class="hero-dr">
 
-        <div class="play-icon">▶</div>
+DR
 
-        <h2 id="modalLessonTitle">
-          Lesson
-        </h2>
+</div>
 
-        <p>
-          Your lesson video will appear here.
-        </p>
+</div>
 
-        <p class="video-note">
-          Replace this area with your actual
-          video player when your course videos are ready.
-        </p>
+<p class="academy-label">
 
-      </div>
+DRACO ARCANE • VOLUME I
 
-    </div>
+</p>
 
-  </div>
+<h1 class="section-title">
 
+Beginner Card Magic
 
-  <script src="script.js"></script>
+</h1>
+
+<p class="hero-description">
+
+10 Effects Every Beginner Must Master
+
+</p>
+
+<div class="course-card">
+
+<h2>
+
+₹499
+
+</h2>
+
+<p>
+
+Build a solid foundation in modern card magic through
+structured lessons, practical techniques, presentation,
+and performance-focused training.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Duration</strong><br>
+
+4–6 Hours
+
+</p>
+
+<br>
+
+<p>
+
+<strong>Difficulty</strong><br>
+
+★☆☆☆☆ – ★★★☆☆
+
+</p>
+
+<br>
+
+<a href="#enroll"
+class="gold-btn">
+
+Unlock Volume I
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+COURSE OVERVIEW
+======================================-->
+
+<section>
+
+<div class="container">
+
+<p class="section-tag">
+
+COURSE OVERVIEW
+
+</p>
+
+<h2 class="section-title">
+
+Master the Fundamentals
+
+</h2>
+
+<p class="section-description">
+
+Volume I is designed for aspiring magicians who want to
+build a strong foundation in modern card magic. You'll
+learn essential principles, powerful beginner-friendly
+effects, and the performance skills needed to entertain
+friends, family, and live audiences with confidence.
+
+</p>
+
+<!--=====================================
+SKILLS
+======================================-->
+
+<div class="skills">
+
+<div class="skill">
+
+Card Handling
+
+</div>
+
+<div class="skill">
+
+Confidence
+
+</div>
+
+<div class="skill">
+
+Presentation
+
+</div>
+
+<div class="skill">
+
+Storytelling
+
+</div>
+
+<div class="skill">
+
+Audience Management
+
+</div>
+
+<div class="skill">
+
+Routine Building
+
+</div>
+
+<div class="skill">
+
+Performance
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+CURRICULUM
+======================================-->
+
+<section>
+
+<div class="container">
+
+<p class="section-tag">
+
+CURRICULUM
+
+</p>
+
+<h2 class="section-title">
+
+What You'll Learn
+
+</h2>
+
+<p class="section-description">
+
+Each lesson focuses on a practical performance effect
+while introducing an important card magic principle.
+By the end of the course, you'll be able to combine
+everything into a complete performance routine.
+
+</p>
+
+<div class="curriculum">
+
+<!--=====================================
+LESSON 1
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 1 — The Impossible Discovery
+
+</h3>
+
+<p>
+
+A spectator freely selects a card and, under seemingly
+impossible conditions, you locate it with confidence
+using a simple yet powerful principle.
+
+</p>
+
+<strong>
+
+Technique:
+Key Card Principle
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 2
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 2 — The Perfect Prediction
+
+</h3>
+
+<p>
+
+Perform a clean prediction effect where the outcome
+appears impossible, relying on timing, presentation,
+and a classic beginner method.
+
+</p>
+
+<strong>
+
+Technique:
+Cut Deeper Principle
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 3
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 3 — Four Aces Mystery
+
+</h3>
+
+<p>
+
+Produce the four aces in a visual and entertaining
+sequence that builds confidence in handling a deck
+while creating a memorable performance.
+
+</p>
+
+<strong>
+
+Technique:
+Four Aces Production
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 4
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 4 — Color Surprise
+
+</h3>
+
+<p>
+
+Introduce your audience to a stunning color-changing
+card effect that creates surprise and strong reactions.
+
+</p>
+
+<strong>
+
+Technique:
+Chicago Opener
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 5
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 5 — Ambitious Card
+
+</h3>
+
+<p>
+
+Learn one of the most famous card routines ever created
+as a selected card repeatedly rises to the top despite
+being placed in the middle of the deck.
+
+</p>
+
+<strong>
+
+Technique:
+Ambitious Card Routine
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 6
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 6 — Three Card Monte
+
+</h3>
+
+<p>
+
+Master one of the most recognizable demonstrations in
+card magic. Learn how to create mystery, control
+attention, and entertain your audience with a classic
+routine.
+
+</p>
+
+<strong>
+
+Technique:
+Three Card Monte
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 7
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 7 — Slap A Card
+
+</h3>
+
+<p>
+
+A fast-paced interactive effect where a spectator's
+selected card is revealed in an unexpected and highly
+visual way that generates laughter and surprise.
+
+</p>
+
+<strong>
+
+Technique:
+Slap A Card
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 8
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 8 — Prediction Mystery
+
+</h3>
+
+<p>
+
+Create the illusion that every decision was predicted
+before the performance began, using a clever principle
+and strong presentation.
+
+</p>
+
+<strong>
+
+Technique:
+Ace Indicator
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 9
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 9 — Double Lift Applications
+
+</h3>
+
+<p>
+
+Learn one of the most valuable techniques in card magic
+and discover how it can strengthen multiple routines
+through natural handling and convincing displays.
+
+</p>
+
+<strong>
+
+Technique:
+Double Lift
+
+</strong>
+
+</div>
+
+<!--=====================================
+LESSON 10
+======================================-->
+
+<div class="lesson">
+
+<h3>
+
+Effect 10 — Complete Performance
+
+</h3>
+
+<p>
+
+Bring together everything you've learned throughout
+Volume I by combining the techniques and effects into
+one smooth, entertaining, and professional performance
+routine.
+
+</p>
+
+<strong>
+
+Final Performance Routine
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--=====================================
+DRACO'S FINAL LESSON
+======================================-->
+
+<section>
+
+<div class="container">
+
+<p class="section-tag">
+
+FINAL LESSON
+
+</p>
+
+<h2 class="section-title">
+
+Draco's Final Lesson
+
+</h2>
+
+<div class="course-card">
+
+<p style="font-size:1.15rem; line-height:2;">
+
+A magician isn't remembered for difficult moves.
+
+<br><br>
+
+A magician is remembered for making people smile,
+laugh, and wonder.
+
+<br><br>
+
+The strongest performances are built on confidence,
+natural presentation, and consistent practice—not on
+how complicated the method is.
+
+<br><br>
+
+As you continue your journey through Draco Arcane,
+focus on creating unforgettable moments for your
+audience. Every performance is an opportunity to leave
+someone with a memory they'll never forget.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+THE THREE RULES
+======================================-->
+
+<section class="promise">
+
+<div class="container">
+
+<p class="section-tag">
+
+THE DRACO PRINCIPLES
+
+</p>
+
+<h2>
+
+Three Rules Every Magician Should Follow
+
+</h2>
+
+<div class="skills">
+
+<div class="skill">
+
+<h3>
+
+⚡ Be Natural
+
+</h3>
+
+<p>
+
+Perform with relaxed movements and confidence.
+Natural actions are far more convincing than
+perfectly executed techniques.
+
+</p>
+
+</div>
+
+<div class="skill">
+
+<h3>
+
+⚡ Be Confident
+
+</h3>
+
+<p>
+
+Believe in every effect you perform. Confidence
+helps your audience believe in the impossible.
+
+</p>
+
+</div>
+
+<div class="skill">
+
+<h3>
+
+⚡ Be Memorable
+
+</h3>
+
+<p>
+
+People may forget the method, but they'll always
+remember how your performance made them feel.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!--=====================================
+ENROLL
+======================================-->
+
+<section id="enroll">
+
+<div class="container">
+
+<div class="enroll-box">
+
+<p class="section-tag">
+
+START YOUR JOURNEY
+
+</p>
+
+<h2>
+
+Unlock Volume I
+
+</h2>
+
+<p class="section-description">
+
+Begin your journey into modern card magic with
+structured lessons, practical techniques, and
+professional guidance from Draco Arcane.
+
+</p>
+
+<div style="margin:35px 0;">
+
+<h2 style="font-size:3rem; color:#FFD700;">
+
+₹499
+
+</h2>
+
+<p>
+
+One-Time Purchase
+
+</p>
+
+</div>
+
+<a href="#"
+class="gold-btn">
+
+Unlock Volume I
+
+</a>
+
+<br><br>
+
+<p style="font-size:.95rem; color:#A0A0A0;">
+
+Secure payment integration will be available in
+Draco Arcane Version 3.0.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+FOOTER
+======================================-->
+
+<footer id="contact">
+
+<div class="container">
+
+<div class="footer-logo">
+
+DR
+
+</div>
+
+<h2>
+
+DRACO ARCANE
+
+</h2>
+
+<p>
+
+The Art of Modern Card Magic
+
+</p>
+
+<div class="footer-founder">
+
+<strong>
+
+Founder
+
+</strong>
+
+<p>
+
+Akash Suresh
+
+</p>
+
+<span>
+
+Magician Draco
+
+</span>
+
+</div>
+
+<p class="copyright">
+
+© 2026 Draco Arcane.
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
