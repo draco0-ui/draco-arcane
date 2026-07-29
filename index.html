@@ -1,289 +1,613 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Draco Arcane — Premium Magic Tutorials for the Next Generation of Magicians."
-  >
+    <title>Draco Arcane | The Art of Modern Card Magic</title>
 
-  <title>Draco Arcane | Master the Impossible</title>
+    <meta name="description"
+          content="Draco Arcane is a premium online academy dedicated to modern card magic. Learn professional techniques through structured courses.">
 
-  <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0b0b0b">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
 </head>
 
 <body>
 
-  <!-- MAGIC PARTICLES -->
-  <canvas id="magicCanvas"></canvas>
+<!-- ===================================== -->
+<!-- LOADING SCREEN -->
+<!-- ===================================== -->
 
+<div id="loader">
 
-  <!-- HEADER -->
-  <header class="site-header">
+    <div class="loader-logo">
 
-    <a href="index.html" class="logo">
-      <span>DRACO</span>
-      <small>ARCANE</small>
-    </a>
+        <div class="dr-logo">
 
-    <button
-      class="menu-toggle"
-      id="menuToggle"
-      aria-label="Open navigation menu"
-      type="button"
-    >
-      ☰
-    </button>
+            DR
 
-    <nav class="main-nav" id="mainNav">
+        </div>
 
-      <a href="index.html">
-        Home
-      </a>
+        <h1>DRACO ARCANE</h1>
 
-      <a href="volumes.html">
-        Volumes
-      </a>
+        <p>The Art of Modern Card Magic</p>
 
-      <a href="#academy">
-        Academy
-      </a>
+        <span>Loading...</span>
+
+    </div>
+
+</div>
+
+<!-- ===================================== -->
+<!-- HEADER -->
+<!-- ===================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="logo-circle">
+
+                DR
+
+            </div>
+
+            <div class="brand-text">
+
+                <h2>DRACO ARCANE</h2>
+
+                <small>The Art of Modern Card Magic</small>
+
+            </div>
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="volumes.html">Volumes</a></li>
+
+            <li><a href="#academy">Academy</a></li>
+
+            <li><a href="#founder">Founder</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+        <a href="volumes.html"
+           class="gold-btn">
+
+            Explore Volumes
+
+        </a>
 
     </nav>
 
-  </header>
+</header>
 
+<!-- ===================================== -->
+<!-- HERO SECTION -->
+<!-- ===================================== -->
 
-  <!-- HERO SECTION -->
-  <main>
+<section class="hero">
 
-    <section class="hero">
+    <div class="hero-content">
 
-      <div class="hero-content">
+        <div class="hero-logo">
 
-        <div class="hero-symbol">
-          ✦
+            <div class="hero-dr">
+
+                DR
+
+            </div>
+
         </div>
 
-        <p class="eyebrow">
-          THE ARCANE ACADEMY
+        <p class="academy-label">
+
+            THE ARCANE ACADEMY
+
         </p>
 
         <h1>
-          DRACO<br>
-          ARCANE
+
+            MASTER THE IMPOSSIBLE
+
         </h1>
 
-        <div class="gold-line"></div>
-
-        <h2>
-          MASTER THE IMPOSSIBLE.
-        </h2>
-
         <p class="hero-description">
-          Premium magic tutorials for the next generation of magicians.
+
+            Learn the art of modern card magic through
+            structured lessons, practical techniques,
+            and professional guidance.
+
         </p>
 
+        <div class="hero-buttons">
 
-        <!-- MAIN BUTTON -->
-        <a
-          href="volumes.html"
-          class="primary-button"
-        >
-          Explore Volumes
-          <span>→</span>
-        </a>
+            <a href="volumes.html"
+               class="gold-btn">
 
+                Explore Volumes
 
-        <!-- SECONDARY BUTTON -->
-        <a
-          href="#academy"
-          class="secondary-button"
-        >
-          Discover the Academy
-        </a>
+            </a>
 
+            <a href="#academy"
+               class="outline-btn">
 
-        <div class="scroll-indicator">
-          <span>SCROLL TO ENTER</span>
-          <strong>↓</strong>
+                Learn More
+
+            </a>
+
         </div>
 
-      </div>
+    </div>
 
-    </section>
+</section>
 
+<!-- ===================================== -->
+<!-- ABOUT SECTION -->
+<!-- ===================================== -->
 
-    <!-- ACADEMY SECTION -->
-    <section
-      class="academy-section"
-      id="academy"
-    >
+<section id="academy" class="about">
 
-      <div class="section-content">
+    <div class="container">
 
-        <p class="eyebrow">
-          ENTER THE ARCANE
+        <p class="section-tag">
+            THE ACADEMY
         </p>
 
+        <h2 class="section-title">
+            Welcome to Draco Arcane
+        </h2>
+
+        <p class="section-description">
+
+            Draco Arcane is a premium online academy
+            dedicated to the art of modern card magic.
+
+            Our structured curriculum helps aspiring
+            magicians develop technical skill,
+            confidence, presentation, and performance.
+
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>Our Mission</h3>
+
+                <p>
+
+                    To make professional-quality card
+                    magic education accessible through
+                    clear lessons, practical techniques,
+                    and performance-focused training.
+
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>Our Vision</h3>
+
+                <p>
+
+                    Build one of India's finest online
+                    academies where students master
+                    modern card magic with confidence
+                    and creativity.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- WHY CHOOSE DRACO ARCANE -->
+<!-- ===================================== -->
+
+<section class="features">
+
+    <div class="container">
+
+        <p class="section-tag">
+            WHY CHOOSE US
+        </p>
+
+        <h2 class="section-title">
+
+            Learn Like a Professional
+
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <h3>Structured Learning</h3>
+
+                <p>
+
+                    Follow a step-by-step curriculum
+                    designed to build your skills from
+                    beginner to advanced.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Practical Effects</h3>
+
+                <p>
+
+                    Learn routines that you can perform
+                    immediately for friends, family,
+                    and live audiences.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Performance Focus</h3>
+
+                <p>
+
+                    Beyond tricks, develop confidence,
+                    presentation, audience management,
+                    and storytelling.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- FEATURED VOLUMES -->
+<!-- ===================================== -->
+
+<section class="volumes-preview">
+
+    <div class="container">
+
+        <p class="section-tag">
+
+            COURSES
+
+        </p>
+
+        <h2 class="section-title">
+
+            Explore the Academy
+
+        </h2>
+
+        <div class="volume-grid">
+
+            <!-- Volume I -->
+
+            <div class="volume-card featured">
+
+                <div class="volume-logo">
+
+                    DR
+
+                </div>
+
+                <h3>
+
+                    Volume I
+
+                </h3>
+
+                <h4>
+
+                    Beginner Card Magic
+
+                </h4>
+
+                <span class="price">
+
+                    ₹499
+
+                </span>
+
+                <p>
+
+                    Learn 10 powerful beginner card
+                    effects with structured lessons,
+                    practical techniques, and
+                    professional presentation.
+
+                </p>
+
+                <a href="volume1.html"
+                   class="gold-btn">
+
+                    Unlock Volume I
+
+                </a>
+
+            </div>
+
+            <!-- Volume II -->
+
+            <div class="volume-card">
+
+                <div class="volume-logo">
+
+                    DR
+
+                </div>
+
+                <h3>
+
+                    Volume II
+
+                </h3>
+
+                <h4>
+
+                    Intermediate Card Magic
+
+                </h4>
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+                <p>
+
+                    Take your card magic to the next
+                    level with stronger routines,
+                    advanced techniques, and
+                    performance skills.
+
+                </p>
+
+                <a href="volume2.html"
+                   class="outline-btn">
+
+                    Learn More
+
+                </a>
+
+            </div>
+
+            <!-- Volume III -->
+
+            <div class="volume-card">
+
+                <div class="volume-logo">
+
+                    DR
+
+                </div>
+
+                <h3>
+
+                    Volume III
+
+                </h3>
+
+                <h4>
+
+                    Advanced Card Magic
+
+                </h4>
+
+                <span class="coming">
+
+                    Coming Soon
+
+                </span>
+
+                <p>
+
+                    Master advanced sleight of hand,
+                    professional routines, performance
+                    psychology, and powerful card magic.
+
+                </p>
+
+                <a href="volume3.html"
+                   class="outline-btn">
+
+                    Coming Soon
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- FOUNDER -->
+<!-- ===================================== -->
+
+<section id="founder" class="founder">
+
+    <div class="container">
+
+        <p class="section-tag">
+
+            FOUNDER
+
+        </p>
+
+        <h2 class="section-title">
+
+            Meet the Founder
+
+        </h2>
+
+        <div class="founder-card">
+
+            <div class="founder-logo">
+
+                DR
+
+            </div>
+
+            <h3>
+
+                Akash Suresh
+
+            </h3>
+
+            <h4>
+
+                Magician Draco
+
+            </h4>
+
+            <p>
+
+                Draco Arcane was created with one goal:
+                to help aspiring magicians master the art
+                of modern card magic through structured,
+                practical and performance-focused lessons.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===================================== -->
+<!-- DRACO PROMISE -->
+<!-- ===================================== -->
+
+<section class="promise">
+
+    <div class="container">
+
         <h2>
-          THE ACADEMY
+
+            The Draco Promise
+
         </h2>
 
         <p>
-          Welcome to Draco Arcane, a premium learning experience
-          designed for those who want to master the art, psychology,
-          technique and secrets behind extraordinary magic.
+
+            Every great magician starts with a single card.
+
+            At Draco Arcane, we believe that confidence,
+            presentation and practice create unforgettable
+            performances.
+
+            Our mission is to help every student become
+            a magician who inspires wonder.
+
         </p>
 
-        <div class="academy-grid">
+    </div>
 
-          <div class="academy-card">
+</section>
 
-            <div class="card-symbol">
-              ✦
-            </div>
+<!-- ===================================== -->
+<!-- FOOTER -->
+<!-- ===================================== -->
 
-            <h3>
-              Master the Foundations
-            </h3>
+<footer id="contact">
 
-            <p>
-              Build the essential skills every serious magician needs.
-            </p>
+    <div class="container">
 
-          </div>
+        <div class="footer-logo">
 
-
-          <div class="academy-card">
-
-            <div class="card-symbol">
-              ✦
-            </div>
-
-            <h3>
-              Learn the Techniques
-            </h3>
-
-            <p>
-              Explore step-by-step techniques designed for progressive learning.
-            </p>
-
-          </div>
-
-
-          <div class="academy-card">
-
-            <div class="card-symbol">
-              ✦
-            </div>
-
-            <h3>
-              Understand Psychology
-            </h3>
-
-            <p>
-              Discover how perception, attention and psychology shape deception.
-            </p>
-
-          </div>
+            DR
 
         </div>
 
+        <h2>
 
-        <!-- GO TO VOLUMES AGAIN -->
-        <a
-          href="volumes.html"
-          class="primary-button"
-        >
-          Enter the Arcane Library
-          <span>→</span>
-        </a>
+            DRACO ARCANE
 
-      </div>
+        </h2>
 
-    </section>
+        <p>
 
-  </main>
+            The Art of Modern Card Magic
 
+        </p>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
+        <div class="footer-founder">
 
-    <div class="logo">
-      <span>DRACO</span>
-      <small>ARCANE</small>
+            <strong>Founder</strong>
+
+            <p>
+
+                Akash Suresh
+
+            </p>
+
+            <span>
+
+                Magician Draco
+
+            </span>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 Draco Arcane.
+            All Rights Reserved.
+
+        </p>
+
     </div>
 
-    <p>
-      © 2026 Draco Arcane. All rights reserved.
-    </p>
+</footer>
 
-  </footer>
-
-
-  <!-- JAVASCRIPT -->
-  <script src="script.js"></script>
-
-  <!-- MOBILE MENU -->
-  <script>
-
-    const menuToggle =
-      document.getElementById("menuToggle");
-
-    const mainNav =
-      document.getElementById("mainNav");
-
-
-    if (menuToggle && mainNav) {
-
-      menuToggle.addEventListener(
-        "click",
-        function () {
-
-          mainNav.classList.toggle("active");
-
-        }
-      );
-
-
-      const navLinks =
-        mainNav.querySelectorAll("a");
-
-
-      navLinks.forEach(
-        function (link) {
-
-          link.addEventListener(
-            "click",
-            function () {
-
-              mainNav.classList.remove("active");
-
-            }
-          );
-
-        }
-      );
-
-    }
-
-  </script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
