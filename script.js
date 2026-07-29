@@ -1,73 +1,186 @@
-// ==========================================
-// DRACO ARCANE - script.js v2.1
-// ==========================================
+/*==================================================
+DRACO ARCANE
+SCRIPT.JS V3.0
+==================================================*/
 
-// Loading Screen
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
+
+    /*=========================
+      LOADER
+    =========================*/
+
     const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-        loader.style.opacity = "0";
-        loader.style.pointerEvents = "none";
+    window.addEventListener("load", () => {
 
         setTimeout(() => {
-            loader.style.display = "none";
-        }, 600);
-    }, 800);
-});
 
-// Sticky Header
-const header = document.querySelector("header");
+            loader.style.opacity = "0";
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 60) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
+            loader.style.visibility = "hidden";
 
-// Scroll Reveal
-const reveals = document.querySelectorAll(
-    ".about-card, .feature-card, .volume-card, .founder-card, .lesson, .course-card"
-);
+        }, 800);
 
-function revealOnScroll() {
-    reveals.forEach((item) => {
-        const top = item.getBoundingClientRect().top;
+    });
 
-        if (top < window.innerHeight - 80) {
-            item.classList.add("show");
+    /*=========================
+      STICKY HEADER
+    =========================*/
+
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("scrolled");
+
+        } else {
+
+            header.classList.remove("scrolled");
+
         }
+
     });
-}
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+    /*=========================
+      MOBILE MENU
+    =========================*/
 
-// Active Navigation
-const links = document.querySelectorAll(".nav-links a");
+    const menuToggle = document.getElementById("menuToggle");
 
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            if (navLinks.classList.contains("active")) {
+
+                menuToggle.innerHTML = "✕";
+
+            } else {
+
+                menuToggle.innerHTML = "☰";
+
+            }
+
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+                menuToggle.innerHTML = "☰";
+
+            });
+
+        });
+
+    }
+
+    /*=========================
+      SCROLL REVEAL
+    =========================*/
+
+    const revealElements = document.querySelectorAll(
+
+        ".about-card, .feature-card, .volume-card, .founder-card, .promise"
+
+    );
+
+    const revealOnScroll = () => {
+
+        revealElements.forEach(el => {
+
+            const top = el.getBoundingClientRect().top;
+
+            const visible = window.innerHeight - 120;
+
+            if (top < visible) {
+
+                el.classList.add("reveal", "show");
+
+            }
+
+        });
+
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+
+    revealOnScroll();
+
+    /*=========================
+      BACK TO TOP
+    =========================*/
+
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 400) {
+
+            backTop.classList.add("show");
+
+        } else {
+
+            backTop.classList.remove("show");
+
+        }
+
     });
+
+    if (backTop) {
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+    /*=========================
+      ACTIVE NAVIGATION
+    =========================*/
+
+    const currentPage = location.pathname.split("/").pop();
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (href === currentPage) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+    /*=========================
+      PREMIUM CONSOLE MESSAGE
+    =========================*/
+
+    console.log(
+        "%c🐉 DRACO ARCANE",
+        "color:#D4AF37;font-size:22px;font-weight:bold;"
+    );
+
+    console.log(
+        "%cThe Art of Modern Magic",
+        "color:#FFD700;font-size:14px;"
+    );
+
 });
-
-// Smooth Button Animation
-document.querySelectorAll(".gold-btn, .outline-btn").forEach(btn => {
-
-    btn.addEventListener("mouseenter", () => {
-        btn.style.transform = "translateY(-3px)";
-    });
-
-    btn.addEventListener("mouseleave", () => {
-        btn.style.transform = "translateY(0)";
-    });
-
-});
-
-// Console Branding
-console.log("%cDRACO ARCANE", "color:#D4AF37;font-size:22px;font-weight:bold;");
-console.log("%cThe Art of Modern Card Magic", "color:white;font-size:14px;");
