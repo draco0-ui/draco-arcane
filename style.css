@@ -2174,3 +2174,24 @@ bottom:18px;
 END OF DRACO ARCANE CSS
 VERSION 2.1
 =========================*/
+
+.about-card,
+.feature-card,
+.volume-card,
+.founder-card,
+.lesson,
+.course-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.about-card.show,
+.feature-card.show,
+.volume-card.show,
+.founder-card.show,
+.lesson.show,
+.course-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
