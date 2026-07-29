@@ -2650,3 +2650,96 @@ footer small {
   }
 
 }
+
+/* =========================================
+   HOMEPAGE HEADER FIX
+========================================= */
+
+.site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 6%;
+    background:rgba(8,8,8,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(212,175,55,.18);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    flex-direction:column;
+    text-decoration:none;
+    color:#d4af37;
+    line-height:1;
+}
+
+.logo span{
+    font-family:"Cinzel",serif;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:4px;
+}
+
+.logo small{
+    margin-top:4px;
+    font-size:9px;
+    letter-spacing:6px;
+    color:#d4af37;
+}
+
+.main-nav{
+    display:flex;
+    gap:35px;
+}
+
+.main-nav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-family:"Montserrat",sans-serif;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.main-nav a:hover{
+    color:#d4af37;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:#d4af37;
+    font-size:30px;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .main-nav{
+        display:none;
+        position:absolute;
+        top:80px;
+        right:20px;
+        width:220px;
+        background:#111;
+        border:1px solid rgba(212,175,55,.25);
+        border-radius:12px;
+        padding:20px;
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .main-nav.active{
+        display:flex;
+    }
+}
