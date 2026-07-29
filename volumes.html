@@ -1,359 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <title>Volumes | Draco Arcane</title>
+  <meta
+    name="description"
+    content="Explore Draco Arcane premium magic academy volumes."
+  >
 
-    <link rel="stylesheet" href="style.css">
+  <title>Volumes | Draco Arcane</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
-<body>
+<body class="volumes-page">
 
-    <canvas id="magicCanvas"></canvas>
+  <!-- Background Magic Particles -->
+  <div class="magic-background" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <!-- NAVIGATION -->
+  <!-- Navigation -->
+  <header class="volumes-header">
 
-    <header class="navbar">
+    <a href="index.html" class="volumes-logo">
+      <span>DRACO</span>
+      <small>ARCANE</small>
+    </a>
 
-        <a href="index.html"
-           class="nav-logo"
-           style="text-decoration:none;">
+    <a href="index.html" class="back-home">
+      ← Back to Academy
+    </a>
 
-            <span>DRACO</span>
-            <small>ARCANE</small>
-
-        </a>
-
-        <nav class="nav-links">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="volumes.html">
-                Volumes
-            </a>
-
-        </nav>
-
-        <button class="menu-button"
-                id="menuButton">
-
-            ☰
-
-        </button>
-
-    </header>
+  </header>
 
 
-    <!-- MOBILE MENU -->
+  <!-- Main Content -->
+  <main>
 
-    <div class="mobile-menu"
-         id="mobileMenu">
+    <!-- Page Hero -->
+    <section class="volumes-hero">
 
-        <a href="index.html">
-            Home
-        </a>
+      <div class="arcane-symbol">✦</div>
 
-        <a href="volumes.html">
-            Volumes
-        </a>
+      <p class="eyebrow">
+        THE ARCANE ACADEMY
+      </p>
+
+      <h1>
+        MASTER THE<br>
+        IMPOSSIBLE
+      </h1>
+
+      <div class="gold-line"></div>
+
+      <p class="volumes-intro">
+        Enter the Draco Arcane curriculum.
+        Choose your path and begin your journey
+        into the impossible.
+      </p>
+
+    </section>
+
+
+    <!-- Volume Cards -->
+    <section class="volume-section">
+
+      <div class="volume-grid">
+
+
+        <!-- VOLUME 1 -->
+        <article class="volume-card">
+
+          <div class="volume-number">
+            01
+          </div>
+
+          <div class="volume-content">
+
+            <p class="volume-label">
+              FOUNDATION
+            </p>
+
+            <h2>
+              Volume I
+            </h2>
+
+            <h3>
+              The Awakening
+            </h3>
+
+            <p class="volume-description">
+              Discover the foundations of modern magic.
+              Learn the essential principles, techniques,
+              psychology and secrets that every magician
+              must master.
+            </p>
+
+            <ul class="volume-features">
+              <li>✦ Essential Magic Foundations</li>
+              <li>✦ Beginner to Intermediate Techniques</li>
+              <li>✦ Psychology of Deception</li>
+              <li>✦ Step-by-Step Training</li>
+            </ul>
+
+            <div class="volume-footer">
+
+              <span class="volume-status">
+                BEGIN YOUR JOURNEY
+              </span>
+
+              <button
+                class="buy-button"
+                onclick="selectVolume('Volume I - The Awakening')"
+              >
+                Explore Volume
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- VOLUME 2 -->
+        <article class="volume-card featured-volume">
+
+          <div class="featured-badge">
+            MOST POPULAR
+          </div>
+
+          <div class="volume-number">
+            02
+          </div>
+
+          <div class="volume-content">
+
+            <p class="volume-label">
+              ADVANCED
+            </p>
+
+            <h2>
+              Volume II
+            </h2>
+
+            <h3>
+              The Art of Illusion
+            </h3>
+
+            <p class="volume-description">
+              Go beyond the basics and enter the world
+              of advanced performance. Develop stronger
+              technique, presentation and the ability to
+              create impossible experiences.
+            </p>
+
+            <ul class="volume-features">
+              <li>✦ Advanced Sleight of Hand</li>
+              <li>✦ Professional Performance Skills</li>
+              <li>✦ Advanced Misdirection</li>
+              <li>✦ Creating Impossible Moments</li>
+            </ul>
+
+            <div class="volume-footer">
+
+              <span class="volume-status">
+                ADVANCE YOUR CRAFT
+              </span>
+
+              <button
+                class="buy-button"
+                onclick="selectVolume('Volume II - The Art of Illusion')"
+              >
+                Explore Volume
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- VOLUME 3 -->
+        <article class="volume-card">
+
+          <div class="volume-number">
+            03
+          </div>
+
+          <div class="volume-content">
+
+            <p class="volume-label">
+              MASTERY
+            </p>
+
+            <h2>
+              Volume III
+            </h2>
+
+            <h3>
+              The Arcane Master
+            </h3>
+
+            <p class="volume-description">
+              The final stage of the Draco Arcane journey.
+              Refine your unique style, create original
+              magic and step into the world of professional
+              performance.
+            </p>
+
+            <ul class="volume-features">
+              <li>✦ Master-Level Techniques</li>
+              <li>✦ Original Magic Creation</li>
+              <li>✦ Professional Performance</li>
+              <li>✦ The Arcane Mastery System</li>
+            </ul>
+
+            <div class="volume-footer">
+
+              <span class="volume-status">
+                MASTER THE IMPOSSIBLE
+              </span>
+
+              <button
+                class="buy-button"
+                onclick="selectVolume('Volume III - The Arcane Master')"
+              >
+                Explore Volume
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- Bottom CTA -->
+    <section class="volumes-cta">
+
+      <div class="arcane-symbol small-symbol">
+        ✦
+      </div>
+
+      <h2>
+        Your Journey Begins Here
+      </h2>
+
+      <p>
+        Choose your volume. Enter the academy.
+        Master the impossible.
+      </p>
+
+      <a
+        href="index.html"
+        class="return-button"
+      >
+        ← Return to Academy
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- Volume Selection Popup -->
+  <div
+    id="volumeModal"
+    class="volume-modal"
+    aria-hidden="true"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="modal-close"
+        onclick="closeVolumeModal()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <div class="arcane-symbol">
+        ✦
+      </div>
+
+      <p class="eyebrow">
+        DRACO ARCANE
+      </p>
+
+      <h2 id="selectedVolume">
+        Volume Selected
+      </h2>
+
+      <p>
+        Your selected academy volume is ready.
+        The secure enrollment and payment system
+        will be connected here.
+      </p>
+
+      <button
+        class="modal-action"
+        onclick="closeVolumeModal()"
+      >
+        Continue
+      </button>
 
     </div>
 
+  </div>
 
-    <!-- MAIN -->
 
-    <main class="volumes-page">
+  <!-- JavaScript -->
+  <script>
 
-        <section class="volumes-hero">
+    function selectVolume(volumeName) {
 
-            <div class="magic-symbol">
-                ✦
-            </div>
+      const modal =
+        document.getElementById("volumeModal");
 
-            <p class="eyebrow">
-                THE ARCANE LIBRARY
-            </p>
+      const selectedVolume =
+        document.getElementById("selectedVolume");
 
-            <h1>
-                Choose Your Path
-            </h1>
+      selectedVolume.textContent =
+        volumeName;
 
-            <div class="gold-line"></div>
+      modal.classList.add("active");
 
-            <p>
-                Three volumes.
-                One journey.
-                A lifetime of impossible magic.
-            </p>
+      modal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
 
-        </section>
+    }
 
 
-        <!-- COURSE CARDS -->
-
-        <section class="course-library">
-
-
-            <!-- VOLUME I -->
-
-            <article class="course-card">
-
-                <div class="course-number">
-                    I
-                </div>
-
-                <div class="course-info">
-
-                    <span class="volume-label">
-                        VOLUME I
-                    </span>
-
-                    <h2>
-                        The Awakening
-                    </h2>
-
-                    <p>
-                        Enter the world of magic and discover
-                        the foundations that transform ordinary
-                        moments into extraordinary experiences.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            ✦ Foundations of Magic
-                        </li>
-
-                        <li>
-                            ✦ Essential Techniques
-                        </li>
-
-                        <li>
-                            ✦ Psychology of Wonder
-                        </li>
-
-                        <li>
-                            ✦ Performance Fundamentals
-                        </li>
-
-                    </ul>
-
-                    <div class="course-footer">
-
-                        <div>
-                            <small>
-                                BEGIN YOUR JOURNEY
-                            </small>
-
-                            <strong>
-                                Volume I
-                            </strong>
-                        </div>
-
-                        <a href="#"
-                           class="primary-button">
-
-                            Explore
-                            <span>→</span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- VOLUME II -->
-
-            <article class="course-card featured-course">
-
-                <div class="featured-badge">
-                    MOST POPULAR
-                </div>
-
-                <div class="course-number">
-                    II
-                </div>
-
-                <div class="course-info">
-
-                    <span class="volume-label">
-                        VOLUME II
-                    </span>
-
-                    <h2>
-                        The Art
-                    </h2>
-
-                    <p>
-                        Move beyond technique. Learn how to
-                        combine psychology, presentation and
-                        performance to create unforgettable
-                        moments.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            ✦ Advanced Techniques
-                        </li>
-
-                        <li>
-                            ✦ Psychological Principles
-                        </li>
-
-                        <li>
-                            ✦ Audience Control
-                        </li>
-
-                        <li>
-                            ✦ Professional Performance
-                        </li>
-
-                    </ul>
-
-                    <div class="course-footer">
-
-                        <div>
-                            <small>
-                                MASTER THE ART
-                            </small>
-
-                            <strong>
-                                Volume II
-                            </strong>
-                        </div>
-
-                        <a href="#"
-                           class="primary-button">
-
-                            Explore
-                            <span>→</span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- VOLUME III -->
-
-            <article class="course-card">
-
-                <div class="course-number">
-                    III
-                </div>
-
-                <div class="course-info">
-
-                    <span class="volume-label">
-                        VOLUME III
-                    </span>
-
-                    <h2>
-                        The Master
-                    </h2>
-
-                    <p>
-                        The final ascent. Explore advanced
-                        performance concepts and develop your
-                        own signature style of impossible magic.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            ✦ Master-Level Performance
-                        </li>
-
-                        <li>
-                            ✦ Advanced Psychology
-                        </li>
-
-                        <li>
-                            ✦ Creating Your Own Magic
-                        </li>
-
-                        <li>
-                            ✦ The Master's Mindset
-                        </li>
-
-                    </ul>
-
-                    <div class="course-footer">
-
-                        <div>
-                            <small>
-                                ENTER THE INNER CIRCLE
-                            </small>
-
-                            <strong>
-                                Volume III
-                            </strong>
-                        </div>
-
-                        <a href="#"
-                           class="primary-button">
-
-                            Explore
-                            <span>→</span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-logo">
-            DRACO ARCANE
-        </div>
-
-        <p>
-            Master the Impossible.
-        </p>
-
-        <div class="footer-line"></div>
-
-        <small>
-            © 2026 Draco Arcane. All Rights Reserved.
-        </small>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+    function closeVolumeModal()
