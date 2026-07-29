@@ -1,1 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta name="description" content="Draco Arcane Volume I - The Foundations of Magic">
+
+  <title>Volume I | Draco Arcane</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="volume-page">
+
+  <!-- Background Magic Particles -->
+  <canvas id="magicCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="academy-header">
+    <a href="index.html" class="academy-logo">
+      <span>DRACO</span>
+      <small>ARCANE</small>
+    </a>
+
+    <a href="volumes.html" class="back-link">
+      ← Volumes
+    </a>
+  </header>
+
+
+  <!-- Main Content -->
+  <main class="volume-container">
+
+    <!-- Hero -->
+    <section class="volume-hero">
+
+      <div class="magic-symbol">✦</div>
+
+      <p class="eyebrow">THE ARCANE ACADEMY</p>
+
+      <h1>VOLUME I</h1>
+
+      <div class="gold-line"></div>
+
+      <h2>THE FOUNDATIONS OF MAGIC</h2>
+
+      <p class="volume-intro">
+        Your journey begins here.
+        Master the essential principles, techniques and secrets
+        that form the foundation of a true magician.
+      </p>
+
+      <div class="course-status">
+        <span class="status-dot"></span>
+        Volume I • Beginner to Intermediate
+      </div>
+
+    </section>
+
+
+    <!-- Course Introduction -->
+    <section class="course-intro-card">
+
+      <h3>WELCOME TO VOLUME I</h3>
+
+      <p>
+        This is your first step into the Arcane Academy.
+        Complete each lesson in sequence and build your skills
+        one secret at a time.
+      </p>
+
+      <button
+        class="gold-button"
+        onclick="scrollToLessons()">
+        Begin Your Journey ↓
+      </button>
+
+    </section>
+
+
+    <!-- Lessons -->
+    <section class="lessons-section" id="lessons">
+
+      <div class="section-heading">
+        <p class="eyebrow">THE ARCANE CURRICULUM</p>
+        <h2>YOUR LESSONS</h2>
+        <p>
+          Follow the lessons in order to unlock your path
+          through Volume I.
+        </p>
+      </div>
+
+
+      <!-- Lesson 1 -->
+      <article class="lesson-card available">
+
+        <div class="lesson-number">01</div>
+
+        <div class="lesson-info">
+          <span class="lesson-label">LESSON ONE</span>
+          <h3>The Magician's Mind</h3>
+          <p>
+            Learn the mindset behind powerful magic
+            and discover how professionals approach
+            every performance.
+          </p>
+        </div>
+
+        <button
+          class="lesson-button"
+          onclick="openLesson('lesson1')">
+          Watch Lesson
+        </button>
+
+      </article>
+
+
+      <!-- Lesson 2 -->
+      <article class="lesson-card available">
+
+        <div class="lesson-number">02</div>
+
+        <div class="lesson-info">
+          <span class="lesson-label">LESSON TWO</span>
+          <h3>The Art of Misdirection</h3>
+          <p>
+            Explore attention, timing and the psychology
+            that makes impossible moments possible.
+          </p>
+        </div>
+
+        <button
+          class="lesson-button"
+          onclick="openLesson('lesson2')">
+          Watch Lesson
+        </button>
+
+      </article>
+
+
+      <!-- Lesson 3 -->
+      <article class="lesson-card available">
+
+        <div class="lesson-number">03</div>
+
+        <div class="lesson-info">
+          <span class="lesson-label">LESSON THREE</span>
+          <h3>Control & Precision</h3>
+          <p>
+            Develop the discipline and control required
+            to perform techniques with confidence.
+          </p>
+        </div>
+
+        <button
+          class="lesson-button"
+          onclick="openLesson('lesson3')">
+          Watch Lesson
+        </button>
+
+      </article>
+
+
+      <!-- Lesson 4 -->
+      <article class="lesson-card locked">
+
+        <div class="lesson-number">04</div>
+
+        <div class="lesson-info">
+          <span class="lesson-label">LESSON FOUR</span>
+          <h3>The First Secret</h3>
+          <p>
+            A deeper secret awaits beyond the first
+            three foundations.
+          </p>
+        </div>
+
+        <div class="lock-icon">🔒</div>
+
+      </article>
+
+
+      <!-- Lesson 5 -->
+      <article class="lesson-card locked">
+
+        <div class="lesson-number">05</div>
+
+        <div class="lesson-info">
+          <span class="lesson-label">LESSON FIVE</span>
+          <h3>Mastery Begins</h3>
+          <p>
+            Continue your journey and prepare for
+            the advanced mysteries of Volume II.
+          </p>
+        </div>
+
+        <div class="lock-icon">🔒</div>
+
+      </article>
+
+    </section>
+
+
+    <!-- Purchase Section -->
+    <section class="purchase-section">
+
+      <div class="magic-symbol">✦</div>
+
+      <p class="eyebrow">ENTER THE ACADEMY</p>
+
+      <h2>UNLOCK VOLUME I</h2>
+
+      <p>
+        Gain access to the complete Volume I curriculum
+        and begin your journey through the Arcane Academy.
+      </p>
+
+      <div class="price">
+        ₹999
+      </div>
+
+      <button
+        class="gold-button purchase-button"
+        onclick="buyVolume()">
+        BUY NOW
+      </button>
+
+      <small class="secure-note">
+        Secure enrollment • Instant access
+      </small>
+
+    </section>
+
+  </main>
+
+
+  <!-- Lesson Video Modal -->
+  <div
+    class="lesson-modal"
+    id="lessonModal">
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeLesson()">
+        ×
+      </button>
+
+      <div class="video-placeholder">
+
+        <div class="play-icon">▶</div>
+
+        <h2 id="modalLessonTitle">
+          Lesson
+        </h2>
+
+        <p>
+          Your lesson video will appear here.
+        </p>
+
+        <p class="video-note">
+          Replace this area with your actual
+          video player when your course videos are ready.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
