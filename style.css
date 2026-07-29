@@ -1200,3 +1200,951 @@ footer small {
     }
 
 }
+
+/* =========================================================
+   DRACO ARCANE
+   VOLUMES PAGE
+   ========================================================= */
+
+
+/* ---------- VOLUMES PAGE BASE ---------- */
+
+.volumes-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(218, 177, 47, 0.08),
+      transparent 35%
+    ),
+    #080909;
+  color: #f5f1e8;
+  overflow-x: hidden;
+}
+
+
+/* ---------- MAGIC BACKGROUND ---------- */
+
+.magic-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.magic-background span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #dcb52f;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px #dcb52f,
+    0 0 18px rgba(220, 181, 47, 0.7);
+  animation: magicFloat 8s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.magic-background span:nth-child(1) {
+  left: 8%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.magic-background span:nth-child(2) {
+  left: 20%;
+  top: 65%;
+  animation-delay: 1s;
+}
+
+.magic-background span:nth-child(3) {
+  left: 35%;
+  top: 35%;
+  animation-delay: 2s;
+}
+
+.magic-background span:nth-child(4) {
+  left: 50%;
+  top: 75%;
+  animation-delay: 3s;
+}
+
+.magic-background span:nth-child(5) {
+  left: 65%;
+  top: 25%;
+  animation-delay: 1.5s;
+}
+
+.magic-background span:nth-child(6) {
+  left: 78%;
+  top: 60%;
+  animation-delay: 4s;
+}
+
+.magic-background span:nth-child(7) {
+  left: 90%;
+  top: 30%;
+  animation-delay: 2.5s;
+}
+
+.magic-background span:nth-child(8) {
+  left: 45%;
+  top: 15%;
+  animation-delay: 5s;
+}
+
+@keyframes magicFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateY(-35px) scale(1.6);
+    opacity: 1;
+  }
+
+}
+
+
+/* ---------- HEADER ---------- */
+
+.volumes-header {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 25px 6%;
+
+  border-bottom:
+    1px solid
+    rgba(220, 181, 47, 0.18);
+
+  background:
+    rgba(8, 9, 9, 0.85);
+
+  backdrop-filter: blur(12px);
+}
+
+.volumes-logo {
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+
+  color: #e2bc3b;
+
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+}
+
+.volumes-logo span {
+  font-size: 20px;
+}
+
+.volumes-logo small {
+  margin-top: 3px;
+
+  font-size: 9px;
+  letter-spacing: 7px;
+}
+
+.back-home {
+  color: #dcb52f;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.back-home:hover {
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+
+/* ---------- HERO ---------- */
+
+.volumes-hero {
+  position: relative;
+  z-index: 2;
+
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding:
+    100px 25px
+    70px;
+
+  text-align: center;
+}
+
+.arcane-symbol {
+  color: #e1b936;
+
+  font-size: 50px;
+
+  text-shadow:
+    0 0 15px
+    rgba(225, 185, 54, 0.7);
+
+  animation:
+    symbolGlow 3s infinite ease-in-out;
+}
+
+@keyframes symbolGlow {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+
+}
+
+.eyebrow {
+  margin-top: 25px;
+
+  color: #d8b338;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 6px;
+}
+
+.volumes-hero h1 {
+  margin:
+    25px
+    0;
+
+  color: #f5df87;
+
+  font-family: "Cinzel", serif;
+
+  font-size:
+    clamp(
+      42px,
+      8vw,
+      85px
+    );
+
+  line-height: 1.05;
+
+  letter-spacing: 4px;
+
+  text-shadow:
+    0 0 25px
+    rgba(224, 186, 58, 0.18);
+}
+
+.gold-line {
+  width: 150px;
+  height: 2px;
+
+  margin: 30px auto;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #dcb52f,
+      transparent
+    );
+
+  box-shadow:
+    0 0 10px
+    rgba(220, 181, 47, 0.5);
+}
+
+.volumes-intro {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  color: #aaa9a4;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* ---------- VOLUME SECTION ---------- */
+
+.volume-section {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding:
+    20px 25px
+    100px;
+}
+
+.volume-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap: 25px;
+}
+
+
+/* ---------- VOLUME CARD ---------- */
+
+.volume-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 650px;
+
+  padding: 40px 30px;
+
+  border:
+    1px solid
+    rgba(220, 181, 47, 0.25);
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.4);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.volume-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #dcb52f,
+      transparent
+    );
+
+  opacity: 0.6;
+}
+
+.volume-card:hover {
+  transform:
+    translateY(-10px);
+
+  border-color:
+    rgba(220, 181, 47, 0.7);
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.6),
+
+    0 0 30px
+    rgba(220, 181, 47, 0.08);
+}
+
+
+/* ---------- FEATURED CARD ---------- */
+
+.featured-volume {
+  border-color:
+    rgba(220, 181, 47, 0.6);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(220, 181, 47, 0.08),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  transform:
+    translateY(-12px);
+}
+
+.featured-volume:hover {
+  transform:
+    translateY(-20px);
+}
+
+.featured-badge {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  padding:
+    7px
+    12px;
+
+  color: #0a0a09;
+
+  background: #dcb52f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* ---------- CARD CONTENT ---------- */
+
+.volume-number {
+  color:
+    rgba(220, 181, 47, 0.2);
+
+  font-family: "Cinzel", serif;
+
+  font-size: 75px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.volume-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+}
+
+.volume-label {
+  margin-top: 25px;
+
+  color: #dcb52f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+.volume-card h2 {
+  margin:
+    10px
+    0
+    5px;
+
+  color: #f3d979;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 34px;
+}
+
+.volume-card h3 {
+  margin:
+    0
+    0
+    25px;
+
+  color: #ffffff;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.volume-description {
+  color: #aaa9a4;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.volume-features {
+  padding: 0;
+
+  margin:
+    25px
+    0;
+
+  list-style: none;
+}
+
+.volume-features li {
+  padding:
+    9px
+    0;
+
+  color: #d1d0ca;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+}
+
+
+/* ---------- CARD FOOTER ---------- */
+
+.volume-footer {
+  margin-top: auto;
+
+  padding-top: 25px;
+}
+
+.volume-status {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.buy-button {
+  width: 100%;
+
+  padding:
+    16px
+    20px;
+
+  border:
+    1px solid
+    #dcb52f;
+
+  border-radius: 2px;
+
+  color: #0a0a09;
+
+  background: #dcb52f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    0.3s ease;
+}
+
+.buy-button span {
+  margin-left: 8px;
+
+  font-size: 18px;
+}
+
+.buy-button:hover {
+  color: #ffffff;
+
+  background:
+    transparent;
+
+  box-shadow:
+    0 0 20px
+    rgba(220, 181, 47, 0.2);
+}
+
+
+/* ---------- BOTTOM CTA ---------- */
+
+.volumes-cta {
+  position: relative;
+  z-index: 2;
+
+  padding:
+    100px
+    25px;
+
+  text-align: center;
+
+  border-top:
+    1px solid
+    rgba(220, 181, 47, 0.15);
+}
+
+.small-symbol {
+  font-size: 30px;
+}
+
+.volumes-cta h2 {
+  margin:
+    20px
+    0
+    15px;
+
+  color: #f3d979;
+
+  font-family: "Cinzel", serif;
+
+  font-size: 32px;
+}
+
+.volumes-cta p {
+  color: #aaa9a4;
+
+  font-family: "Montserrat", sans-serif;
+
+  line-height: 1.7;
+}
+
+.return-button {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding:
+    15px
+    28px;
+
+  color: #dcb52f;
+
+  border:
+    1px solid
+    rgba(220, 181, 47, 0.6);
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    0.3s ease;
+}
+
+.return-button:hover {
+  color: #0a0a09;
+
+  background: #dcb52f;
+}
+
+
+/* ---------- MODAL ---------- */
+
+.volume-modal {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px;
+
+  background:
+    rgba(0, 0, 0, 0.85);
+
+  backdrop-filter:
+    blur(10px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    0.3s ease;
+
+  z-index: 100;
+}
+
+.volume-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  position: relative;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding:
+    55px
+    35px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151512,
+      #090909
+    );
+
+  border:
+    1px solid
+    rgba(220, 181, 47, 0.6);
+
+  box-shadow:
+    0 30px 100px
+    rgba(0, 0, 0, 0.8),
+
+    0 0 40px
+    rgba(220, 181, 47, 0.08);
+
+  transform:
+    translateY(20px)
+    scale(0.95);
+
+  transition:
+    0.3s ease;
+}
+
+.volume-modal.active
+.modal-box {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  border: none;
+
+  color: #aaa;
+
+  background: transparent;
+
+  font-size: 30px;
+
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #dcb52f;
+}
+
+.modal-box h2 {
+  margin:
+    15px
+    0;
+
+  color: #f3d979;
+
+  font-family: "Cinzel", serif;
+}
+
+.modal-box p {
+  color: #aaa9a4;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.modal-action {
+  margin-top: 20px;
+
+  padding:
+    14px
+    30px;
+
+  border: none;
+
+  color: #0a0a09;
+
+  background: #dcb52f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE DESIGN
+   ========================================================= */
+
+@media
+(max-width: 900px) {
+
+  .volume-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .volume-card {
+    min-height: auto;
+  }
+
+  .featured-volume {
+    transform: none;
+  }
+
+  .featured-volume:hover {
+    transform:
+      translateY(-10px);
+  }
+
+}
+
+
+@media
+(max-width: 600px) {
+
+  .volumes-header {
+    padding:
+      20px;
+  }
+
+  .back-home {
+    font-size: 11px;
+  }
+
+  .volumes-hero {
+    padding:
+      70px
+      20px
+      50px;
+  }
+
+  .volumes-hero h1 {
+    font-size:
+      43px;
+
+    letter-spacing:
+      2px;
+  }
+
+  .volumes-intro {
+    font-size:
+      14px;
+  }
+
+  .volume-section {
+    padding:
+      10px
+      18px
+      70px;
+  }
+
+  .volume-card {
+    padding:
+      30px
+      22px;
+  }
+
+  .volume-number {
+    font-size:
+      60px;
+  }
+
+  .volume-card h2 {
+    font-size:
+      30px;
+  }
+
+  .volumes-cta {
+    padding:
+      70px
+      20px;
+  }
+
+  .volumes-cta h2 {
+    font-size:
+      26px;
+  }
+
+  .modal-box {
+    padding:
+      45px
+      25px;
+  }
+
+}
+
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    scroll-behavior:
+      auto !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+}
