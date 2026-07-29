@@ -1,374 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+<meta charset="UTF-8">
 
-  <title>Volumes | Draco Arcane</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>Volumes | Draco Arcane</title>
 
-  <style>
-    /* ================================
-       VOLUMES PAGE
-    ================================= */
+<meta name="description"
+content="Explore the premium learning volumes of Draco Arcane. Master modern card magic from beginner to advanced.">
 
-    .volumes-page {
-      min-height: 100vh;
-      padding: 120px 20px 80px;
-      background: #080808;
-      color: #ffffff;
-    }
+<meta name="theme-color"
+content="#0b0b0b">
 
-    .volumes-header {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 60px;
-    }
+<link rel="stylesheet"
+href="style.css">
 
-    .volumes-header .eyebrow {
-      color: #dcb437;
-      font-size: 13px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-    .volumes-header h1 {
-      color: #f4d46a;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 8vw, 80px);
-      margin: 0 0 20px;
-      letter-spacing: 3px;
-    }
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-    .volumes-header p {
-      color: #aaaaaa;
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 0 auto;
-      max-width: 600px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
 
-    /* VOLUME GRID */
-
-    .volumes-grid {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    /* VOLUME CARD */
-
-    .volume-card {
-      display: block;
-      text-decoration: none;
-      color: #ffffff;
-      background: linear-gradient(
-        145deg,
-        #171713,
-        #0b0b0b
-      );
-      border: 1px solid rgba(220, 180, 55, 0.45);
-      border-radius: 18px;
-      padding: 40px 25px;
-      text-align: center;
-      transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-    }
-
-    .volume-card:hover {
-      transform: translateY(-8px);
-      border-color: #e2bd3e;
-      box-shadow:
-        0 15px 40px rgba(220, 180, 55, 0.15);
-    }
-
-    .volume-symbol {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #e5bf43;
-      font-size: 30px;
-    }
-
-    .volume-card h2 {
-      color: #f2d36b;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-      margin: 0 0 15px;
-    }
-
-    .volume-card p {
-      color: #999999;
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 0 25px;
-    }
-
-    .volume-link {
-      display: inline-block;
-      color: #e5bf43;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* BACK BUTTON */
-
-    .back-home {
-      display: block;
-      width: fit-content;
-      margin: 60px auto 0;
-      padding: 15px 35px;
-      border: 1px solid #dcb437;
-      border-radius: 50px;
-      color: #e5bf43;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .back-home:hover {
-      background: #dcb437;
-      color: #080808;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 800px) {
-
-      .volumes-page {
-        padding: 100px 18px 60px;
-      }
-
-      .volumes-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .volume-card {
-        padding: 35px 22px;
-      }
-
-      .volumes-header {
-        margin-bottom: 40px;
-      }
-
-      .volumes-header h1 {
-        font-size: 48px;
-      }
-
-      .volumes-header p {
-        font-size: 16px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <main class="volumes-page">
+<!--=====================================
+LOADER
+======================================-->
 
-    <!-- HEADER -->
+<div id="loader">
 
-    <header class="volumes-header">
+<div class="loader-logo">
 
-      <div class="eyebrow">
-        The Arcane Library
-      </div>
+<div class="dr-logo">
 
-      <h1>Volumes</h1>
+DR
 
-      <p>
-        Enter the forbidden library and begin your journey
-        through the ancient arts of Draco Arcane.
-      </p>
+</div>
 
-    </header>
+<h1>
 
+DRACO ARCANE
 
-    <!-- VOLUMES -->
+</h1>
 
-    <section class="volumes-grid">
+<p>
 
+The Art of Modern Card Magic
 
-      <!-- VOLUME I -->
+</p>
 
-      <a
-        href="volume1.html"
-        class="volume-card"
-      >
+<span>
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+Loading...
 
-        <h2>Volume I</h2>
+</span>
 
-        <p>
-          Begin your journey into the foundations
-          of the Arcane Arts.
-        </p>
+</div>
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+</div>
 
-      </a>
+<!--=====================================
+HEADER
+======================================-->
 
+<header>
 
-      <!-- VOLUME II -->
+<nav class="navbar">
 
-      <a
-        href="volume2.html"
-        class="volume-card"
-      >
+<a href="index.html"
+class="brand">
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+<div class="logo-circle">
 
-        <h2>Volume II</h2>
+DR
 
-        <p>
-          Continue deeper into the mysteries
-          hidden within the Arcane Library.
-        </p>
+</div>
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+<div class="brand-text">
 
-      </a>
+<h2>
 
+DRACO ARCANE
 
-      <!-- VOLUME III -->
+</h2>
 
-      <a
-        href="volume3.html"
-        class="volume-card"
-      >
+<small>
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+The Art of Modern Card Magic
 
-        <h2>Volume III</h2>
+</small>
 
-        <p>
-          Discover advanced secrets and techniques
-          reserved for true practitioners.
-        </p>
+</div>
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+</a>
 
-      </a>
+<ul class="nav-links">
 
+<li>
 
-      <!-- VOLUME IV -->
+<a href="index.html">
 
-      <a
-        href="volume4.html"
-        class="volume-card"
-      >
+Home
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+</a>
 
-        <h2>Volume IV</h2>
+</li>
 
-        <p>
-          Unlock the deeper mysteries of
-          the Draco Arcane tradition.
-        </p>
+<li>
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+<a href="volumes.html">
 
-      </a>
+Volumes
 
+</a>
 
-      <!-- VOLUME V -->
+</li>
 
-      <a
-        href="volume5.html"
-        class="volume-card"
-      >
+<li>
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+<a href="index.html#academy">
 
-        <h2>Volume V</h2>
+Academy
 
-        <p>
-          Journey beyond the known and
-          explore the impossible.
-        </p>
+</a>
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+</li>
 
-      </a>
+<li>
 
+<a href="index.html#founder">
 
-      <!-- VOLUME VI -->
+Founder
 
-      <a
-        href="volume6.html"
-        class="volume-card"
-      >
+</a>
 
-        <div class="volume-symbol">
-          ✦
-        </div>
+</li>
 
-        <h2>Volume VI</h2>
+<li>
 
-        <p>
-          The final gateway to the highest
-          levels of the Arcane Arts.
-        </p>
+<a href="index.html#contact">
 
-        <span class="volume-link">
-          Enter Volume →
-        </span>
+Contact
 
-      </a>
+</a>
 
+</li>
 
-    </section>
+</ul>
 
+<a href="volume1.html"
+class="gold-btn">
 
-    <!-- BACK TO HOME -->
+Unlock Volume I
 
-    <a
-      href="index.html"
-      class="back-home"
-    >
-      ← Return to Academy
+</a>
+
+</nav>
+
+</header>
+
+<!--=====================================
+HERO
+======================================-->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-logo">
+
+<div class="hero-dr">
+
+DR
+
+</div>
+
+</div>
+
+<p class="academy-label">
+
+DRACO ARCANE VOLUMES
+
+</p>
+
+<h1>
+
+Choose Your Journey
+
+</h1>
+
+<p class="hero-description">
+
+Every magician begins with a single card.
+
+Each Draco Arcane volume is carefully designed to help you grow from beginner to confident performer through structured lessons, practical techniques, and real-world performance experience.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#
+
+<!--=====================================
+VOLUME I
+======================================-->
+
+<div class="volume-card featured">
+
+    <div class="volume-logo">
+
+        DR
+
+    </div>
+
+    <h3>
+
+        Volume I
+
+    </h3>
+
+    <h4>
+
+        Beginner Card Magic
+
+    </h4>
+
+    <span class="price">
+
+        ₹499
+
+    </span>
+
+    <p>
+
+        Master 10 essential beginner card effects through
+        structured lessons, practical techniques, audience
+        management, storytelling, and professional
+        presentation.
+
+    </p>
+
+    <a href="volume1.html"
+       class="gold-btn">
+
+        Unlock Volume I
+
     </a>
 
-  </main>
+</div>
+
+<!--=====================================
+VOLUME II
+======================================-->
+
+<div class="volume-card">
+
+    <div class="volume-logo">
+
+        DR
+
+    </div>
+
+    <h3>
+
+        Volume II
+
+    </h3>
+
+    <h4>
+
+        Intermediate Card Magic
+
+    </h4>
+
+    <span class="coming">
+
+        Coming Soon
+
+    </span>
+
+    <p>
+
+        Expand your knowledge with stronger routines,
+        advanced principles, performance psychology,
+        misdirection, and powerful intermediate card
+        magic techniques.
+
+    </p>
+
+    <a href="volume2.html"
+       class="outline-btn">
+
+        Learn More
+
+    </a>
+
+</div>
+
+<!--=====================================
+VOLUME III
+======================================-->
+
+<div class="volume-card">
+
+    <div class="volume-logo">
+
+        DR
+
+    </div>
+
+    <h3>
+
+        Volume III
+
+    </h3>
+
+    <h4>
+
+        Advanced Card Magic
+
+    </h4>
+
+    <span class="coming">
+
+        Coming Soon
+
+    </span>
+
+    <p>
+
+        Discover professional sleight of hand,
+        advanced routines, performance theory,
+        audience control, and expert-level card
+        magic built for serious performers.
+
+    </p>
+
+    <a href="volume3.html"
+       class="outline-btn">
+
+        Coming Soon
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--=====================================
+ACADEMY MESSAGE
+======================================-->
+
+<section class="promise">
+
+    <div class="container">
+
+        <h2>
+
+            Every Volume Builds Your Journey
+
+        </h2>
+
+        <p>
+
+            Draco Arcane is designed as a complete learning
+            path. Begin with strong fundamentals in Volume I,
+            develop confidence and advanced techniques in
+            Volume II, and ultimately master professional
+            performance skills in Volume III.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!--=====================================
+FOOTER
+======================================-->
+
+<footer id="contact">
+
+    <div class="container">
+
+        <div class="footer-logo">
+
+            DR
+
+        </div>
+
+        <h2>
+
+            DRACO ARCANE
+
+        </h2>
+
+        <p>
+
+            The Art of Modern Card Magic
+
+        </p>
+
+        <div class="footer-founder">
+
+            <strong>
+
+                Founder
+
+            </strong>
+
+            <p>
+
+                Akash Suresh
+
+            </p>
+
+            <span>
+
+                Magician Draco
+
+            </span>
+
+        </div>
+
+        <p class="copyright">
+
+            © 2026 Draco Arcane.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
