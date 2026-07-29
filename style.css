@@ -765,3 +765,67 @@ color:#111;
 
 }
 
+/* Mobile Menu */
+
+@media (max-width:900px){
+
+.nav.active{
+
+display:flex;
+
+position:absolute;
+
+top:85px;
+
+left:5%;
+
+width:90%;
+
+background:#111;
+
+border:1px solid rgba(212,175,55,.2);
+
+border-radius:18px;
+
+padding:25px;
+
+flex-direction:column;
+
+gap:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+}
+
+}
+
+/* Reveal Animation */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.reveal.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Header Scroll */
+
+.header.scrolled{
+
+background:rgba(9,9,9,.95);
+
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+}
+
