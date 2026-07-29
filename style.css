@@ -118,9 +118,9 @@ gap:16px;
 
 .logo img{
 
-width:58px;
+width:80px;
 
-height:58px;
+height:80px;
 
 object-fit:contain;
 
@@ -826,6 +826,60 @@ transform:translateY(0);
 background:rgba(9,9,9,.95);
 
 box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+}
+
+/* ==========================
+   GOLD SPARKLE EFFECT
+========================== */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+
+    background-image:
+        radial-gradient(circle,#FFD700 1.5px,transparent 2px),
+        radial-gradient(circle,#D4AF37 1px,transparent 2px),
+        radial-gradient(circle,#FFD76A 1.5px,transparent 2px);
+
+    background-size:
+        220px 220px,
+        320px 320px,
+        420px 420px;
+
+    opacity:.18;
+
+    animation:sparkleMove 35s linear infinite;
+}
+
+@keyframes sparkleMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-200px);
+    }
+}
+
+.btn-primary:hover,
+.card-button:hover{
+
+box-shadow:
+0 0 15px rgba(255,215,90,.6),
+0 0 35px rgba(212,175,55,.45);
+
+}
+
+.logo img:hover{
+
+filter:
+drop-shadow(0 0 10px rgba(255,215,90,.8))
+drop-shadow(0 0 25px rgba(212,175,55,.5));
+
+transition:.4s;
 
 }
 
