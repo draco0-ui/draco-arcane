@@ -918,3 +918,30 @@ body::before{
     color:#ffffff;
 }
 
+.footer-contact{
+    margin-top:40px;
+}
+
+.footer-contact h3{
+    color:#FFD700;
+    margin-bottom:15px;
+    font-family:'Cinzel',serif;
+}
+
+.footer-contact p{
+    color:#ccc;
+    margin:10px 0;
+    font-size:16px;
+}
+
+.footer-contact a{
+    color:#FFD700;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-contact a:hover{
+    color:#fff;
+    text-shadow:0 0 12px #FFD700;
+}
+
