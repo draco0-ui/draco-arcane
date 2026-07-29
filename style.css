@@ -1,12 +1,10 @@
 /*==================================================
 DRACO ARCANE
-style.css v2.1
-Part 1/10
+STYLE.CSS V3.0
+PART 1
 ==================================================*/
 
-/*=========================
-GOOGLE FONTS RESET
-=========================*/
+/* RESET */
 
 *{
 margin:0;
@@ -14,44 +12,42 @@ padding:0;
 box-sizing:border-box;
 }
 
+:root{
+
+--bg:#090909;
+--card:#141414;
+--gold:#D4AF37;
+--gold-light:#FFD700;
+--white:#F5F5F5;
+--muted:#A5A5A5;
+--border:rgba(212,175,55,.18);
+
+}
+
 html{
 scroll-behavior:smooth;
 }
 
 body{
+
 font-family:'Poppins',sans-serif;
-background:#0b0b0b;
-color:#F5F5F5;
-line-height:1.8;
+background:var(--bg);
+color:var(--white);
 overflow-x:hidden;
-}
-
-/*=========================
-COLORS
-=========================*/
-
-:root{
-
---bg:#0b0b0b;
---card:#151515;
---gold:#D4AF37;
---gold-light:#FFD700;
---text:#F5F5F5;
---muted:#A0A0A0;
+line-height:1.8;
 
 }
 
-/*=========================
-HEADINGS
-=========================*/
+/* CONTAINER */
 
-h1,h2,h3,h4{
+.container{
 
-font-family:'Cinzel',serif;
-font-weight:700;
-letter-spacing:1px;
+width:min(92%,1280px);
+margin:auto;
 
 }
+
+/* LINKS */
 
 a{
 
@@ -62,15 +58,18 @@ color:inherit;
 
 img{
 
-max-width:100%;
 display:block;
+max-width:100%;
 
 }
 
-.container{
+/* HEADINGS */
 
-width:min(92%,1200px);
-margin:auto;
+h1,h2,h3,h4{
+
+font-family:'Cinzel',serif;
+font-weight:700;
+letter-spacing:1px;
 
 }
 
@@ -82,67 +81,43 @@ LOADER
 
 position:fixed;
 inset:0;
-background:#0b0b0b;
+background:#090909;
 display:flex;
-align-items:center;
 justify-content:center;
-z-index:9999;
-transition:opacity .6s ease;
+align-items:center;
+z-index:99999;
+transition:.5s;
 
 }
 
-.loader-logo{
+.loader-content{
 
 text-align:center;
 
 }
 
-.dr-logo{
+.loader-logo{
 
-width:120px;
-height:120px;
+width:140px;
 margin:auto;
-border:2px solid var(--gold);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:48px;
-font-family:'Cinzel',serif;
-font-weight:700;
-color:var(--gold);
-box-shadow:0 0 25px rgba(212,175,55,.35);
+margin-bottom:25px;
+
+animation:floatLogo 5s ease-in-out infinite;
 
 }
 
-.loader-logo h1{
+.loader-content h1{
 
-margin-top:30px;
 font-size:2rem;
+margin-bottom:8px;
 
 }
 
-.loader-logo p{
+.loader-content p{
 
 color:var(--gold);
-margin-top:10px;
 
 }
-
-.loader-logo span{
-
-display:block;
-margin-top:40px;
-color:var(--muted);
-letter-spacing:5px;
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 2/10
-==================================================*/
 
 /*=========================
 HEADER
@@ -154,30 +129,33 @@ position:fixed;
 top:0;
 left:0;
 width:100%;
-z-index:1000;
-padding:18px 0;
-transition:.35s ease;
+z-index:999;
+transition:.35s;
 
 }
 
 header.scrolled{
 
-background:rgba(11,11,11,.92);
-backdrop-filter:blur(16px);
-box-shadow:0 10px 30px rgba(0,0,0,.45);
+background:rgba(9,9,9,.92);
+backdrop-filter:blur(18px);
+box-shadow:0 8px 30px rgba(0,0,0,.45);
 
 }
 
 .navbar{
 
-width:min(92%,1200px);
+width:min(94%,1280px);
 margin:auto;
+
 display:flex;
-align-items:center;
 justify-content:space-between;
-gap:20px;
+align-items:center;
+
+padding:18px 0;
 
 }
+
+/* BRAND */
 
 .brand{
 
@@ -187,255 +165,233 @@ gap:15px;
 
 }
 
-.logo-circle{
+.nav-logo{
 
-width:56px;
-height:56px;
-border:2px solid var(--gold);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-family:'Cinzel',serif;
-font-size:22px;
-font-weight:700;
-color:var(--gold);
-box-shadow:0 0 20px rgba(212,175,55,.25);
+width:62px;
+height:62px;
+object-fit:contain;
 
 }
 
 .brand-text h2{
 
 font-size:1.15rem;
-color:#fff;
 line-height:1;
 
 }
 
-.brand-text small{
+.brand-text span{
 
 display:block;
-margin-top:4px;
+margin-top:6px;
+font-size:.82rem;
 color:var(--muted);
-font-size:.8rem;
 
 }
 
-/*=========================
-NAVIGATION
-=========================*/
+/* NAVIGATION */
 
 .nav-links{
 
 display:flex;
 list-style:none;
-align-items:center;
-gap:34px;
+gap:35px;
 
 }
 
 .nav-links a{
 
-color:#f5f5f5;
-font-size:.95rem;
+position:relative;
 font-weight:500;
-transition:.3s ease;
+transition:.3s;
 
 }
 
-.nav-links a:hover,
-.nav-links a.active{
+.nav-links a:hover{
 
 color:var(--gold);
 
 }
 
-/*=========================
-BUTTONS
-=========================*/
+.nav-links a::after{
 
-.gold-btn,
-.outline-btn{
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-7px;
+
+width:0;
+height:2px;
+
+background:var(--gold);
+
+transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+/* BUTTON */
+
+.gold-btn{
 
 display:inline-flex;
 align-items:center;
 justify-content:center;
-padding:14px 30px;
+
+padding:14px 32px;
+
 border-radius:999px;
-font-weight:600;
-transition:.3s ease;
-cursor:pointer;
 
-}
+background:
 
-.gold-btn{
+linear-gradient(
+135deg,
+#FFD700,
+#D4AF37
+);
 
-background:linear-gradient(135deg,#FFD700,#D4AF37);
 color:#111;
-box-shadow:0 10px 30px rgba(212,175,55,.30);
+
+font-weight:600;
+
+transition:.35s;
+
+box-shadow:
+
+0 12px 30px rgba(212,175,55,.25);
 
 }
 
 .gold-btn:hover{
 
-transform:translateY(-3px);
-box-shadow:0 15px 40px rgba(212,175,55,.45);
+transform:translateY(-4px);
+
+box-shadow:
+
+0 16px 40px rgba(212,175,55,.45);
 
 }
 
-.outline-btn{
+/* MOBILE MENU */
 
-border:2px solid var(--gold);
+.menu-toggle{
+
+display:none;
+
+background:none;
+border:none;
+
+font-size:32px;
+
 color:var(--gold);
-background:transparent;
 
-}
-
-.outline-btn:hover{
-
-background:var(--gold);
-color:#111;
-transform:translateY(-3px);
-
-}
-
-/*=========================
-MOBILE
-=========================*/
-
-@media(max-width:900px){
-
-.navbar{
-
-flex-direction:column;
-gap:18px;
-
-}
-
-.nav-links{
-
-flex-wrap:wrap;
-justify-content:center;
-gap:18px;
-
-}
-
-.brand{
-
-flex-direction:column;
-text-align:center;
-
-}
+cursor:pointer;
 
 }
 
 /*==================================================
 DRACO ARCANE
-style.css v2.1
-Part 3/10
+STYLE.CSS V3.0
+PART 2 — HERO
 ==================================================*/
 
-/*=========================
-HERO SECTION
-=========================*/
+/* HERO */
 
-.hero,
-.course-hero{
+.hero{
+
+position:relative;
 
 min-height:100vh;
+
 display:flex;
+
 align-items:center;
+
 justify-content:center;
+
 text-align:center;
-padding:140px 20px 100px;
-position:relative;
+
+padding:160px 20px 100px;
+
 overflow:hidden;
 
 background:
 radial-gradient(circle at top,
-rgba(212,175,55,.12),
+rgba(212,175,55,.10),
 transparent 45%),
+
 linear-gradient(
 180deg,
-#111,
-#0b0b0b 60%,
-#080808
+#111111 0%,
+#090909 55%,
+#050505 100%
 );
 
 }
 
-.hero::before,
-.course-hero::before{
+/* DARK OVERLAY */
 
-content:"";
+.hero-overlay{
+
 position:absolute;
 inset:0;
 
 background:
+
 linear-gradient(
-to bottom,
+
+180deg,
+
 rgba(0,0,0,.15),
-rgba(0,0,0,.75)
+
+rgba(0,0,0,.70)
+
 );
 
-pointer-events:none;
+z-index:1;
 
 }
 
-.hero-content,
-.course-hero .container{
+/* HERO CONTENT */
+
+.hero-container{
 
 position:relative;
+
 z-index:2;
+
 max-width:900px;
 
 }
 
-/*=========================
-HERO LOGO
-=========================*/
+/* HERO LOGO */
 
 .hero-logo{
 
-margin-bottom:30px;
+width:220px;
+
+margin:0 auto 35px;
+
+animation:floatLogo 6s ease-in-out infinite;
+
+filter:
+
+drop-shadow(0 0 20px rgba(212,175,55,.30))
+
+drop-shadow(0 0 50px rgba(212,175,55,.15));
 
 }
 
-.hero-dr{
+/* SMALL LABEL */
 
-width:150px;
-height:150px;
-
-margin:auto;
-
-border:3px solid var(--gold);
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-family:'Cinzel',serif;
-
-font-size:58px;
-
-font-weight:700;
-
-color:var(--gold);
-
-box-shadow:
-
-0 0 20px rgba(212,175,55,.25),
-0 0 60px rgba(212,175,55,.12);
-
-}
-
-/*=========================
-HERO TEXT
-=========================*/
-
-.academy-label{
+.hero-tag{
 
 color:var(--gold);
 
@@ -443,22 +399,25 @@ letter-spacing:6px;
 
 font-size:.9rem;
 
-margin-bottom:20px;
+margin-bottom:18px;
 
 text-transform:uppercase;
 
 }
 
-.hero h1,
-.course-hero h1{
+/* TITLE */
 
-font-size:clamp(2.8rem,7vw,5.5rem);
+.hero h1{
 
-line-height:1.15;
+font-size:clamp(3rem,7vw,5.8rem);
 
-margin-bottom:25px;
+line-height:1.1;
+
+margin-bottom:28px;
 
 }
+
+/* DESCRIPTION */
 
 .hero-description{
 
@@ -466,15 +425,67 @@ max-width:760px;
 
 margin:auto;
 
-font-size:1.15rem;
+font-size:1.12rem;
 
 color:var(--muted);
 
+line-height:1.9;
+
 }
+
+/* SPECIALITIES */
+
+.magic-list{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.magic-list span{
+
+padding:12px 22px;
+
+border-radius:999px;
+
+background:
+
+rgba(212,175,55,.08);
+
+border:
+
+1px solid rgba(212,175,55,.18);
+
+color:var(--gold-light);
+
+font-size:.95rem;
+
+transition:.35s;
+
+}
+
+.magic-list span:hover{
+
+background:var(--gold);
+
+color:#111;
+
+transform:translateY(-4px);
+
+}
+
+/* HERO BUTTONS */
 
 .hero-buttons{
 
-margin-top:45px;
+margin-top:50px;
 
 display:flex;
 
@@ -486,91 +497,83 @@ flex-wrap:wrap;
 
 }
 
-/*=========================
-SECTION TITLES
-=========================*/
+.outline-btn{
 
-section{
+display:inline-flex;
 
-padding:100px 0;
-
-}
-
-.section-tag{
-
-text-align:center;
-
-color:var(--gold);
-
-letter-spacing:5px;
-
-font-size:.85rem;
-
-margin-bottom:15px;
-
-text-transform:uppercase;
-
-}
-
-.section-title{
-
-text-align:center;
-
-font-size:clamp(2rem,5vw,3.2rem);
-
-margin-bottom:25px;
-
-}
-
-.section-description{
-
-max-width:760px;
-
-margin:0 auto;
-
-text-align:center;
-
-color:var(--muted);
-
-font-size:1.05rem;
-
-line-height:1.9;
-
-}
-
-/*=========================
-MOBILE
-=========================*/
-
-@media(max-width:768px){
-
-.hero,
-.course-hero{
-
-padding-top:180px;
-
-}
-
-.hero-dr{
-
-width:120px;
-height:120px;
-font-size:46px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
+justify-content:center;
 
 align-items:center;
 
+padding:14px 32px;
+
+border-radius:999px;
+
+border:2px solid var(--gold);
+
+color:var(--gold);
+
+font-weight:600;
+
+transition:.35s;
+
 }
 
-.hero-buttons a{
+.outline-btn:hover{
 
-width:100%;
-max-width:300px;
+background:var(--gold);
+
+color:#111;
+
+transform:translateY(-4px);
+
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes floatLogo{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+/* FADE IN */
+
+.hero h1,
+.hero-tag,
+.hero-description,
+.magic-list,
+.hero-buttons{
+
+animation:fadeUp .9s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
 
 }
 
@@ -578,51 +581,66 @@ max-width:300px;
 
 /*==================================================
 DRACO ARCANE
-style.css v2.1
-Part 4/10
+STYLE.CSS V3.0
+PART 3 — SECTIONS & PREMIUM CARDS
 ==================================================*/
 
 /*=========================
-GRIDS
+SECTION SPACING
+=========================*/
+
+section{
+    padding:120px 0;
+}
+
+.section-tag{
+    text-align:center;
+    color:var(--gold);
+    letter-spacing:5px;
+    text-transform:uppercase;
+    font-size:.85rem;
+    margin-bottom:15px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:clamp(2.2rem,5vw,3.6rem);
+    margin-bottom:25px;
+}
+
+.section-description{
+    max-width:820px;
+    margin:0 auto;
+    text-align:center;
+    color:var(--muted);
+    font-size:1.05rem;
+    line-height:1.9;
+}
+
+/*=========================
+PREMIUM GRIDS
 =========================*/
 
 .about-grid,
 .feature-grid,
-.volume-grid,
-.curriculum{
+.volume-grid{
 
-display:grid;
-gap:30px;
-margin-top:60px;
+    display:grid;
+    gap:30px;
+    margin-top:60px;
 
 }
 
 .about-grid{
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 }
 
 .feature-grid{
-
-grid-template-columns:
-repeat(auto-fit,minmax(260px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 }
 
 .volume-grid{
-
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-}
-
-.curriculum{
-
-grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
-
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
 }
 
 /*=========================
@@ -632,44 +650,81 @@ PREMIUM CARDS
 .about-card,
 .feature-card,
 .volume-card,
-.founder-card,
-.course-card,
-.lesson,
-.enroll-box{
+.founder-card{
 
-background:rgba(21,21,21,.92);
+    position:relative;
+    overflow:hidden;
 
-border:1px solid
-rgba(212,175,55,.18);
+    background:rgba(20,20,20,.92);
 
-border-radius:24px;
+    border:1px solid rgba(212,175,55,.18);
 
-padding:35px;
+    border-radius:24px;
 
-transition:.35s ease;
+    padding:35px;
 
-backdrop-filter:blur(12px);
+    backdrop-filter:blur(16px);
 
-box-shadow:
+    transition:.35s;
 
-0 12px 30px rgba(0,0,0,.35);
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.35);
 
 }
 
+/* GOLD SHINE */
+
+.about-card::before,
+.feature-card::before,
+.volume-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120%;
+    left:-120%;
+
+    width:250%;
+    height:250%;
+
+    background:
+
+    linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,215,0,.06),
+        transparent
+    );
+
+    transition:1s;
+
+    transform:rotate(25deg);
+
+}
+
+.about-card:hover::before,
+.feature-card:hover::before,
+.volume-card:hover::before{
+
+    top:100%;
+    left:100%;
+
+}
+
+/* CARD HOVER */
+
 .about-card:hover,
 .feature-card:hover,
-.volume-card:hover,
-.lesson:hover,
-.course-card:hover,
-.enroll-box:hover{
+.volume-card:hover{
 
-transform:translateY(-10px);
+    transform:translateY(-10px);
 
-border-color:var(--gold);
+    border-color:var(--gold);
 
-box-shadow:
+    box-shadow:
 
-0 18px 40px rgba(212,175,55,.20);
+    0 18px 45px rgba(212,175,55,.22);
 
 }
 
@@ -679,124 +734,129 @@ CARD TEXT
 
 .about-card h3,
 .feature-card h3,
-.volume-card h3,
-.lesson h3,
-.course-card h2{
+.volume-card h3{
 
-margin-bottom:18px;
+    color:var(--gold);
 
-color:var(--gold);
+    margin-bottom:18px;
 
 }
 
 .about-card p,
 .feature-card p,
-.volume-card p,
-.lesson p{
+.volume-card p{
 
-color:var(--muted);
+    color:var(--muted);
 
-line-height:1.8;
-
-}
-
-.lesson strong{
-
-display:block;
-
-margin-top:20px;
-
-color:var(--gold-light);
-
-font-weight:600;
+    line-height:1.9;
 
 }
 
 /*=========================
-VOLUME CARD
+VOLUME NUMBER
 =========================*/
 
-.volume-logo{
+.volume-number{
 
-width:80px;
-height:80px;
+    width:90px;
+    height:90px;
 
-margin:0 auto 25px;
+    margin:0 auto 25px;
 
-border:2px solid var(--gold);
+    border-radius:50%;
 
-border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    border:2px solid var(--gold);
 
-font-family:'Cinzel',serif;
+    color:var(--gold);
 
-font-size:28px;
+    font-family:'Cinzel',serif;
 
-font-weight:700;
+    font-size:34px;
 
-color:var(--gold);
+    font-weight:700;
 
-}
+    box-shadow:
 
-.volume-card{
-
-text-align:center;
+    0 0 25px rgba(212,175,55,.25);
 
 }
 
-.volume-card h4{
-
-margin-bottom:18px;
-
-color:#fff;
-
-}
+/*=========================
+PRICE
+=========================*/
 
 .price{
 
-display:block;
+    display:block;
 
-font-size:2rem;
+    margin:20px 0;
 
-font-weight:700;
+    font-size:2rem;
 
-color:var(--gold-light);
+    font-weight:700;
 
-margin:20px 0;
+    color:var(--gold-light);
 
 }
 
 .coming{
 
-display:block;
+    display:block;
 
-font-size:1.1rem;
+    margin:20px 0;
 
-font-weight:600;
+    color:var(--gold);
 
-color:var(--gold);
-
-margin:20px 0;
+    font-weight:600;
 
 }
 
+/*=========================
+FEATURED CARD
+=========================*/
+
 .featured{
 
-border:2px solid var(--gold);
+    border:2px solid var(--gold);
 
-box-shadow:
+    box-shadow:
 
-0 0 35px rgba(212,175,55,.25);
+    0 0 40px rgba(212,175,55,.22);
+
+}
+
+/*=========================
+VOLUME LIST
+=========================*/
+
+.volume-list{
+
+    list-style:none;
+
+    margin:25px 0;
+
+    text-align:left;
+
+}
+
+.volume-list li{
+
+    padding:10px 0;
+
+    color:var(--muted);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
 
 }
 
 /*==================================================
 DRACO ARCANE
-style.css v2.1
-Part 5/10
+STYLE.CSS V3.0
+PART 4 — FOUNDER • PROMISE • FOOTER • RESPONSIVE
 ==================================================*/
 
 /*=========================
@@ -811,115 +871,49 @@ text-align:center;
 
 .founder-card{
 
-max-width:700px;
-
+max-width:760px;
 margin:60px auto 0;
-
-text-align:center;
 
 }
 
 .founder-logo{
 
-width:110px;
-height:110px;
+width:140px;
+height:140px;
 
 margin:0 auto 30px;
 
-border:2px solid var(--gold);
+object-fit:contain;
 
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-family:'Cinzel',serif;
-
-font-size:42px;
-
-font-weight:700;
-
-color:var(--gold);
-
-box-shadow:
-0 0 30px rgba(212,175,55,.25);
+filter:
+drop-shadow(0 0 20px rgba(212,175,55,.35));
 
 }
 
 .founder-card h3{
 
-font-size:2rem;
-
-margin-bottom:10px;
-
+font-size:2.2rem;
 color:var(--gold);
+
+margin-bottom:8px;
 
 }
 
 .founder-card h4{
 
 font-size:1.1rem;
+font-weight:500;
 
 margin-bottom:25px;
 
 color:#fff;
-
-font-weight:500;
 
 }
 
 .founder-card p{
 
 color:var(--muted);
-
 line-height:1.9;
-
-}
-
-/*=========================
-SKILLS
-=========================*/
-
-.skills{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:18px;
-
-margin-top:40px;
-
-}
-
-.skill{
-
-background:rgba(212,175,55,.08);
-
-border:1px solid rgba(212,175,55,.25);
-
-padding:14px 24px;
-
-border-radius:999px;
-
-color:var(--gold-light);
-
-font-weight:600;
-
-transition:.3s ease;
-
-}
-
-.skill:hover{
-
-background:var(--gold);
-
-color:#111;
-
-transform:translateY(-3px);
 
 }
 
@@ -943,9 +937,9 @@ transparent
 
 .promise h2{
 
-margin-bottom:25px;
+font-size:clamp(2rem,5vw,3rem);
 
-font-size:2.5rem;
+margin-bottom:25px;
 
 }
 
@@ -955,40 +949,11 @@ max-width:850px;
 
 margin:auto;
 
-color:var(--muted);
+font-size:1.05rem;
 
 line-height:2;
 
-font-size:1.05rem;
-
-}
-
-/*=========================
-DIVIDER
-=========================*/
-
-section::after{
-
-content:"";
-
-display:block;
-
-width:90px;
-
-height:2px;
-
-margin:70px auto 0;
-
-background:
-
-linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-);
-
-opacity:.6;
+color:var(--muted);
 
 }
 
@@ -998,826 +963,488 @@ FOOTER
 
 footer{
 
-padding:80px 20px;
+padding:90px 20px 50px;
+
+background:#070707;
+
+border-top:1px solid rgba(212,175,55,.15);
 
 text-align:center;
 
-background:#080808;
+}
 
-border-top:1px solid rgba(212,175,55,.15);
+.footer-top{
+
+max-width:750px;
+
+margin:auto;
 
 }
 
 .footer-logo{
 
-width:90px;
-height:90px;
+width:120px;
 
-margin:0 auto 25px;
+margin:auto auto 25px;
 
-border:2px solid var(--gold);
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-family:'Cinzel',serif;
-
-font-size:34px;
-
-font-weight:700;
-
-color:var(--gold);
+filter:
+drop-shadow(0 0 18px rgba(212,175,55,.30));
 
 }
 
 footer h2{
 
-margin-bottom:10px;
+font-size:2rem;
+
+margin-bottom:12px;
 
 }
 
-.footer-founder{
-
-margin:35px 0;
-
-}
-
-.footer-founder strong{
+.footer-tagline{
 
 color:var(--gold);
 
-display:block;
+letter-spacing:3px;
 
-margin-bottom:10px;
+margin-bottom:20px;
+
+text-transform:uppercase;
 
 }
 
-footer p,
-footer span{
+.footer-description{
+
+color:var(--muted);
+
+max-width:650px;
+
+margin:0 auto 40px;
+
+line-height:1.9;
+
+}
+
+.footer-links{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:28px;
+
+margin-bottom:35px;
+
+}
+
+.footer-links a{
+
+transition:.3s;
 
 color:var(--muted);
 
 }
 
-.copyright{
-
-margin-top:40px;
-
-font-size:.9rem;
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 6/10
-==================================================*/
-
-/*=========================
-SCROLL REVEAL
-=========================*/
-
-.reveal{
-
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-
-}
-
-.reveal.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-/*=========================
-BACK TO TOP BUTTON
-=========================*/
-
-.back-top{
-
-position:fixed;
-right:25px;
-bottom:25px;
-
-width:55px;
-height:55px;
-
-border:none;
-border-radius:50%;
-
-background:linear-gradient(135deg,#FFD700,#D4AF37);
-
-color:#111;
-
-font-size:24px;
-font-weight:700;
-
-cursor:pointer;
-
-opacity:0;
-visibility:hidden;
-
-transition:.3s ease;
-
-box-shadow:0 10px 30px rgba(212,175,55,.35);
-
-z-index:999;
-
-}
-
-.back-top.show{
-
-opacity:1;
-visibility:visible;
-
-}
-
-.back-top:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 15px 40px rgba(212,175,55,.5);
-
-}
-
-/*=========================
-SMOOTH HOVER
-=========================*/
-
-.gold-btn,
-.outline-btn,
-.about-card,
-.feature-card,
-.volume-card,
-.lesson,
-.course-card,
-.founder-card,
-.skill{
-
-transition:all .3s ease;
-
-}
-
-/*=========================
-GOLD GLOW
-=========================*/
-
-.hero-dr,
-.logo-circle,
-.volume-logo,
-.footer-logo,
-.founder-logo{
-
-transition:.35s ease;
-
-}
-
-.hero-dr:hover,
-.logo-circle:hover,
-.volume-logo:hover,
-.footer-logo:hover,
-.founder-logo:hover{
-
-box-shadow:
-
-0 0 20px rgba(255,215,0,.4),
-0 0 45px rgba(212,175,55,.35),
-0 0 70px rgba(212,175,55,.2);
-
-}
-
-/*=========================
-TEXT SELECTION
-=========================*/
-
-::selection{
-
-background:#D4AF37;
-color:#111;
-
-}
-
-/*=========================
-SCROLLBAR
-=========================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#111;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#D4AF37;
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#FFD700;
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 6/10
-==================================================*/
-
-/*=========================
-SCROLL REVEAL
-=========================*/
-
-.reveal{
-
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-
-}
-
-.reveal.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-/*=========================
-BACK TO TOP BUTTON
-=========================*/
-
-.back-top{
-
-position:fixed;
-right:25px;
-bottom:25px;
-
-width:55px;
-height:55px;
-
-border:none;
-border-radius:50%;
-
-background:linear-gradient(135deg,#FFD700,#D4AF37);
-
-color:#111;
-
-font-size:24px;
-font-weight:700;
-
-cursor:pointer;
-
-opacity:0;
-visibility:hidden;
-
-transition:.3s ease;
-
-box-shadow:0 10px 30px rgba(212,175,55,.35);
-
-z-index:999;
-
-}
-
-.back-top.show{
-
-opacity:1;
-visibility:visible;
-
-}
-
-.back-top:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 15px 40px rgba(212,175,55,.5);
-
-}
-
-/*=========================
-SMOOTH HOVER
-=========================*/
-
-.gold-btn,
-.outline-btn,
-.about-card,
-.feature-card,
-.volume-card,
-.lesson,
-.course-card,
-.founder-card,
-.skill{
-
-transition:all .3s ease;
-
-}
-
-/*=========================
-GOLD GLOW
-=========================*/
-
-.hero-dr,
-.logo-circle,
-.volume-logo,
-.footer-logo,
-.founder-logo{
-
-transition:.35s ease;
-
-}
-
-.hero-dr:hover,
-.logo-circle:hover,
-.volume-logo:hover,
-.footer-logo:hover,
-.founder-logo:hover{
-
-box-shadow:
-
-0 0 20px rgba(255,215,0,.4),
-0 0 45px rgba(212,175,55,.35),
-0 0 70px rgba(212,175,55,.2);
-
-}
-
-/*=========================
-TEXT SELECTION
-=========================*/
-
-::selection{
-
-background:#D4AF37;
-color:#111;
-
-}
-
-/*=========================
-SCROLLBAR
-=========================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#111;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#D4AF37;
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#FFD700;
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 7/10
-==================================================*/
-
-/*=========================
-ENROLL SECTION
-=========================*/
-
-.enroll-box{
-
-max-width:800px;
-margin:auto;
-text-align:center;
-
-}
-
-.enroll-box h2{
-
-font-size:clamp(2rem,5vw,3rem);
-margin-bottom:20px;
-
-}
-
-.enroll-box .gold-btn{
-
-margin-top:15px;
-
-}
-
-/*=========================
-COURSE DETAILS
-=========================*/
-
-.course-card{
-
-max-width:700px;
-margin:40px auto 0;
-text-align:center;
-
-}
-
-.course-card strong{
+.footer-links a:hover{
 
 color:var(--gold);
 
 }
 
-.course-card h2{
+.footer-specialties{
 
-font-size:3rem;
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:14px;
+
+margin-bottom:40px;
+
+}
+
+.footer-specialties span{
+
+padding:10px 20px;
+
+border-radius:999px;
+
+background:rgba(212,175,55,.08);
+
+border:1px solid rgba(212,175,55,.15);
 
 color:var(--gold-light);
 
-}
-
-/*=========================
-LESSON CARDS
-=========================*/
-
-.lesson{
-
-position:relative;
-overflow:hidden;
+font-size:.9rem;
 
 }
 
-.lesson::before{
+.footer-founder{
 
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:4px;
-height:100%;
-
-background:linear-gradient(
-
-180deg,
-
-var(--gold-light),
-
-var(--gold)
-
-);
+margin-bottom:35px;
 
 }
 
-.lesson h3{
+.footer-founder h3{
 
-padding-left:15px;
+color:var(--gold);
 
-}
-
-.lesson p{
-
-padding-left:15px;
+margin-bottom:10px;
 
 }
 
-.lesson strong{
+.footer-founder p{
 
-padding-left:15px;
+font-size:1.1rem;
+
+}
+
+.footer-founder span{
+
+color:var(--muted);
+
+}
+
+.footer-bottom{
+
+padding-top:25px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+font-size:.9rem;
+
+color:var(--muted);
 
 }
 
 /*=========================
-FEATURE ICON EFFECT
+BACK TO TOP
 =========================*/
 
-.about-card,
-.feature-card,
-.volume-card{
+.back-top{
 
-position:relative;
-overflow:hidden;
+position:fixed;
 
-}
+right:25px;
 
-.about-card::after,
-.feature-card::after,
-.volume-card::after{
+bottom:25px;
 
-content:"";
+width:55px;
 
-position:absolute;
+height:55px;
 
-top:-100%;
-left:-100%;
+border:none;
 
-width:220%;
-height:220%;
+border-radius:50%;
 
-background:
+background:linear-gradient(135deg,#FFD700,#D4AF37);
 
-linear-gradient(
+color:#111;
 
-45deg,
+font-size:24px;
 
-transparent,
+cursor:pointer;
 
-rgba(255,215,0,.05),
+display:none;
 
-transparent
+box-shadow:0 10px 30px rgba(212,175,55,.30);
 
-);
-
-transform:rotate(25deg);
-
-transition:1s ease;
+z-index:999;
 
 }
 
-.about-card:hover::after,
-.feature-card:hover::after,
-.volume-card:hover::after{
+.back-top.show{
 
-top:100%;
-left:100%;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
 
 /*=========================
-SECTION SPACING
+RESPONSIVE
 =========================*/
 
-.about,
-.features,
-.volumes-preview,
-.founder,
-.promise{
-
-padding-top:120px;
-padding-bottom:120px;
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 8/10
-==================================================*/
-
-/*=========================
-TABLET RESPONSIVE
-=========================*/
-
-@media (max-width:992px){
-
-.container{
-
-width:94%;
-
-}
-
-.about-grid,
-.feature-grid,
-.volume-grid,
-.curriculum{
-
-grid-template-columns:1fr;
-
-}
-
-.section-title{
-
-font-size:2.4rem;
-
-}
-
-.hero h1,
-.course-hero h1{
-
-font-size:3rem;
-
-}
-
-}
-
-/*=========================
-MOBILE RESPONSIVE
-=========================*/
-
-@media (max-width:768px){
-
-header{
-
-padding:15px 0;
-
-}
+@media(max-width:900px){
 
 .navbar{
 
-flex-direction:column;
-gap:20px;
+flex-wrap:wrap;
+
+justify-content:space-between;
+
+}
+
+.menu-toggle{
+
+display:block;
 
 }
 
 .nav-links{
 
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+display:none;
+
+flex-direction:column;
+
+width:100%;
+
+padding-top:20px;
+
+gap:18px;
+
+text-align:center;
 
 }
 
-.logo-circle{
+.nav-links.active{
 
-width:50px;
-height:50px;
-font-size:20px;
+display:flex;
 
 }
 
-.hero,
-.course-hero{
+.gold-btn{
 
-padding:170px 20px 90px;
-
-}
-
-.hero-dr{
-
-width:110px;
-height:110px;
-font-size:42px;
+display:none;
 
 }
 
-.hero-description{
+.hero{
 
-font-size:1rem;
+padding-top:150px;
+
+}
+
+.hero-logo{
+
+width:170px;
+
+}
+
+.hero h1{
+
+font-size:2.8rem;
 
 }
 
 .section-title{
 
-font-size:2rem;
+font-size:2.2rem;
+
+}
+
+.footer-links{
+
+gap:18px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+
+padding:140px 20px 80px;
+
+}
+
+.hero-logo{
+
+width:140px;
+
+}
+
+.magic-list{
+
+gap:10px;
+
+}
+
+.magic-list span{
+
+font-size:.85rem;
+
+padding:10px 16px;
 
 }
 
 .about-card,
 .feature-card,
 .volume-card,
-.lesson,
-.course-card,
-.enroll-box,
 .founder-card{
 
 padding:28px;
 
 }
 
-}
+.footer-logo{
 
-/*=========================
-SMALL PHONES
-=========================*/
-
-@media (max-width:480px){
-
-.hero h1,
-.course-hero h1{
-
-font-size:2.3rem;
+width:95px;
 
 }
-
-.section-title{
-
-font-size:1.8rem;
-
-}
-
-.gold-btn,
-.outline-btn{
-
-width:100%;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-}
-
-.hero-buttons a{
-
-width:100%;
-
-}
-
-.footer-logo,
-.founder-logo,
-.hero-dr{
-
-transform:scale(.9);
-
-}
-
-}
-
-/*=========================
-IMAGE SAFETY
-=========================*/
-
-img{
-
-height:auto;
-border-radius:16px;
-
-}
-
-iframe{
-
-max-width:100%;
 
 }
 
 /*==================================================
 DRACO ARCANE
-style.css v2.1
-Part 9/10
+STYLE.CSS V3.0
+PART 5 — FINAL EFFECTS
 ==================================================*/
 
 /*=========================
-PREMIUM GOLD TEXT EFFECT
+SCROLL REVEAL
 =========================*/
 
-.gold-text{
+.reveal{
+
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+
+}
+
+.reveal.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/*=========================
+PREMIUM GOLD GLOW
+=========================*/
+
+.nav-logo,
+.hero-logo,
+.footer-logo,
+.founder-logo{
+
+transition:.4s ease;
+
+}
+
+.nav-logo:hover,
+.hero-logo:hover,
+.footer-logo:hover,
+.founder-logo:hover{
+
+filter:
+drop-shadow(0 0 15px rgba(255,215,0,.5))
+drop-shadow(0 0 35px rgba(212,175,55,.4))
+drop-shadow(0 0 60px rgba(212,175,55,.25));
+
+transform:scale(1.05);
+
+}
+
+/*=========================
+BUTTON EFFECTS
+=========================*/
+
+.gold-btn,
+.outline-btn{
+
+transition:all .35s ease;
+
+}
+
+.gold-btn:hover,
+.outline-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/*=========================
+SECTION DIVIDER
+=========================*/
+
+section::after{
+
+content:"";
+
+display:block;
+
+width:120px;
+height:2px;
+
+margin:80px auto 0;
 
 background:
-
 linear-gradient(
 90deg,
-#D4AF37,
+transparent,
+var(--gold),
+transparent
+);
+
+opacity:.5;
+
+}
+
+/*=========================
+SCROLLBAR
+=========================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
 #FFD700,
 #D4AF37
 );
 
-background-size:200% auto;
-
--webkit-background-clip:text;
-
-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-animation:goldMove 4s linear infinite;
+border-radius:20px;
 
 }
 
-@keyframes goldMove{
+::-webkit-scrollbar-thumb:hover{
 
-0%{
-
-background-position:0% center;
-
-}
-
-100%{
-
-background-position:200% center;
-
-}
+background:#FFD700;
 
 }
 
 /*=========================
-PAGE LOAD ANIMATION
+TEXT SELECTION
+=========================*/
+
+::selection{
+
+background:var(--gold);
+
+color:#111;
+
+}
+
+/*=========================
+SMOOTH PAGE LOAD
 =========================*/
 
 body{
 
-animation:pageEnter .8s ease;
+animation:pageFade .8s ease;
 
 }
 
-@keyframes pageEnter{
+@keyframes pageFade{
 
 from{
 
@@ -1832,130 +1459,6 @@ opacity:1;
 }
 
 }
-
-/*=========================
-FLOATING EFFECT
-=========================*/
-
-.hero-dr{
-
-animation:
-
-floatLogo 5s ease-in-out infinite;
-
-}
-
-@keyframes floatLogo{
-
-0%,
-100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-}
-
-/*=========================
-PREMIUM CARD SHADOW
-=========================*/
-
-.volume-card.featured{
-
-animation:
-
-premiumGlow 3s ease-in-out infinite;
-
-}
-
-@keyframes premiumGlow{
-
-0%,
-100%{
-
-box-shadow:
-
-0 0 25px rgba(212,175,55,.2);
-
-}
-
-50%{
-
-box-shadow:
-
-0 0 50px rgba(212,175,55,.4);
-
-}
-
-}
-
-/*=========================
-LINK UNDERLINE EFFECT
-=========================*/
-
-.nav-links a{
-
-position:relative;
-
-}
-
-.nav-links a::after{
-
-content:"";
-
-position:absolute;
-
-bottom:-8px;
-left:0;
-
-width:0;
-height:2px;
-
-background:var(--gold);
-
-transition:.3s ease;
-
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after{
-
-width:100%;
-
-}
-
-/*=========================
-DISABLE ANIMATION FOR USERS
-=========================*/
-
-@media(prefers-reduced-motion:reduce){
-
-*,
-*::before,
-*::after{
-
-animation-duration:.01ms!important;
-
-transition-duration:.01ms!important;
-
-scroll-behavior:auto!important;
-
-}
-
-}
-
-/*==================================================
-DRACO ARCANE
-style.css v2.1
-Part 10/10 FINAL
-==================================================*/
-
 
 /*=========================
 UTILITY CLASSES
@@ -1973,225 +1476,31 @@ color:var(--gold);
 
 }
 
-.muted{
-
-color:var(--muted);
-
-}
-
 .hidden{
 
 display:none;
 
 }
 
-
 /*=========================
-PREMIUM DIVIDERS
+REDUCED MOTION
 =========================*/
 
-.gold-divider{
+@media (prefers-reduced-motion:reduce){
 
-width:120px;
-height:2px;
+*,
+*::before,
+*::after{
 
-margin:40px auto;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-transparent,
-
-var(--gold),
-
-transparent
-
-);
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
 
 }
 
+}
 
 /*=========================
-EMPTY / COMING SOON PAGE
+END OF DRACO ARCANE
+VERSION 3.0
 =========================*/
-
-.coming-soon{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-padding:120px 20px;
-
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(212,175,55,.12),
-
-transparent 40%
-
-);
-
-}
-
-
-.lock-icon{
-
-width:120px;
-height:120px;
-
-margin:0 auto 35px;
-
-border:2px solid var(--gold);
-
-border-radius:50%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:50px;
-
-color:var(--gold);
-
-box-shadow:
-
-0 0 40px rgba(212,175,55,.25);
-
-}
-
-
-/*=========================
-CURSOR FRIENDLY BUTTONS
-=========================*/
-
-button{
-
-font-family:'Poppins',sans-serif;
-
-}
-
-
-/*=========================
-FORM READY
-=========================*/
-
-input,
-textarea,
-select{
-
-background:#151515;
-
-border:1px solid rgba(212,175,55,.25);
-
-color:white;
-
-padding:15px;
-
-border-radius:12px;
-
-width:100%;
-
-outline:none;
-
-}
-
-input:focus,
-textarea:focus,
-select:focus{
-
-border-color:var(--gold);
-
-}
-
-
-/*=========================
-FINAL RESPONSIVE FIX
-=========================*/
-
-@media(max-width:600px){
-
-body{
-
-font-size:15px;
-
-}
-
-section{
-
-padding:80px 0;
-
-}
-
-.container{
-
-width:92%;
-
-}
-
-.brand-text h2{
-
-font-size:1rem;
-
-}
-
-.brand-text small{
-
-font-size:.7rem;
-
-}
-
-.back-top{
-
-width:48px;
-
-height:48px;
-
-right:18px;
-
-bottom:18px;
-
-}
-
-}
-
-
-/*=========================
-END OF DRACO ARCANE CSS
-VERSION 2.1
-=========================*/
-
-.about-card,
-.feature-card,
-.volume-card,
-.founder-card,
-.lesson,
-.course-card{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
-}
-
-.about-card.show,
-.feature-card.show,
-.volume-card.show,
-.founder-card.show,
-.lesson.show,
-.course-card.show{
-    opacity:1;
-    transform:translateY(0);
-}
