@@ -8,362 +8,367 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <meta
-    name="description"
-    content="Explore Draco Arcane premium magic academy volumes."
-  >
-
   <title>Volumes | Draco Arcane</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* ================================
+       VOLUMES PAGE
+    ================================= */
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
+    .volumes-page {
+      min-height: 100vh;
+      padding: 120px 20px 80px;
+      background: #080808;
+      color: #ffffff;
+    }
+
+    .volumes-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .volumes-header .eyebrow {
+      color: #dcb437;
+      font-size: 13px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .volumes-header h1 {
+      color: #f4d46a;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 8vw, 80px);
+      margin: 0 0 20px;
+      letter-spacing: 3px;
+    }
+
+    .volumes-header p {
+      color: #aaaaaa;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    /* VOLUME GRID */
+
+    .volumes-grid {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    /* VOLUME CARD */
+
+    .volume-card {
+      display: block;
+      text-decoration: none;
+      color: #ffffff;
+      background: linear-gradient(
+        145deg,
+        #171713,
+        #0b0b0b
+      );
+      border: 1px solid rgba(220, 180, 55, 0.45);
+      border-radius: 18px;
+      padding: 40px 25px;
+      text-align: center;
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .volume-card:hover {
+      transform: translateY(-8px);
+      border-color: #e2bd3e;
+      box-shadow:
+        0 15px 40px rgba(220, 180, 55, 0.15);
+    }
+
+    .volume-symbol {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5bf43;
+      font-size: 30px;
+    }
+
+    .volume-card h2 {
+      color: #f2d36b;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      margin: 0 0 15px;
+    }
+
+    .volume-card p {
+      color: #999999;
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 25px;
+    }
+
+    .volume-link {
+      display: inline-block;
+      color: #e5bf43;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* BACK BUTTON */
+
+    .back-home {
+      display: block;
+      width: fit-content;
+      margin: 60px auto 0;
+      padding: 15px 35px;
+      border: 1px solid #dcb437;
+      border-radius: 50px;
+      color: #e5bf43;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: #dcb437;
+      color: #080808;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .volumes-page {
+        padding: 100px 18px 60px;
+      }
+
+      .volumes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .volume-card {
+        padding: 35px 22px;
+      }
+
+      .volumes-header {
+        margin-bottom: 40px;
+      }
+
+      .volumes-header h1 {
+        font-size: 48px;
+      }
+
+      .volumes-header p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
-<body class="volumes-page">
+<body>
 
-  <!-- Background Magic Particles -->
-  <div class="magic-background" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+  <main class="volumes-page">
 
-  <!-- Navigation -->
-  <header class="volumes-header">
+    <!-- HEADER -->
 
-    <a href="index.html" class="volumes-logo">
-      <span>DRACO</span>
-      <small>ARCANE</small>
-    </a>
+    <header class="volumes-header">
 
-    <a href="index.html" class="back-home">
-      ← Back to Academy
-    </a>
-
-  </header>
-
-
-  <!-- Main Content -->
-  <main>
-
-    <!-- Page Hero -->
-    <section class="volumes-hero">
-
-      <div class="arcane-symbol">✦</div>
-
-      <p class="eyebrow">
-        THE ARCANE ACADEMY
-      </p>
-
-      <h1>
-        MASTER THE<br>
-        IMPOSSIBLE
-      </h1>
-
-      <div class="gold-line"></div>
-
-      <p class="volumes-intro">
-        Enter the Draco Arcane curriculum.
-        Choose your path and begin your journey
-        into the impossible.
-      </p>
-
-    </section>
-
-
-    <!-- Volume Cards -->
-    <section class="volume-section">
-
-      <div class="volume-grid">
-
-
-        <!-- VOLUME 1 -->
-        <article class="volume-card">
-
-          <div class="volume-number">
-            01
-          </div>
-
-          <div class="volume-content">
-
-            <p class="volume-label">
-              FOUNDATION
-            </p>
-
-            <h2>
-              Volume I
-            </h2>
-
-            <h3>
-              The Awakening
-            </h3>
-
-            <p class="volume-description">
-              Discover the foundations of modern magic.
-              Learn the essential principles, techniques,
-              psychology and secrets that every magician
-              must master.
-            </p>
-
-            <ul class="volume-features">
-              <li>✦ Essential Magic Foundations</li>
-              <li>✦ Beginner to Intermediate Techniques</li>
-              <li>✦ Psychology of Deception</li>
-              <li>✦ Step-by-Step Training</li>
-            </ul>
-
-            <div class="volume-footer">
-
-              <span class="volume-status">
-                BEGIN YOUR JOURNEY
-              </span>
-
-              <button
-                class="buy-button"
-                onclick="selectVolume('Volume I - The Awakening')"
-              >
-                Explore Volume
-                <span>→</span>
-              </button>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- VOLUME 2 -->
-        <article class="volume-card featured-volume">
-
-          <div class="featured-badge">
-            MOST POPULAR
-          </div>
-
-          <div class="volume-number">
-            02
-          </div>
-
-          <div class="volume-content">
-
-            <p class="volume-label">
-              ADVANCED
-            </p>
-
-            <h2>
-              Volume II
-            </h2>
-
-            <h3>
-              The Art of Illusion
-            </h3>
-
-            <p class="volume-description">
-              Go beyond the basics and enter the world
-              of advanced performance. Develop stronger
-              technique, presentation and the ability to
-              create impossible experiences.
-            </p>
-
-            <ul class="volume-features">
-              <li>✦ Advanced Sleight of Hand</li>
-              <li>✦ Professional Performance Skills</li>
-              <li>✦ Advanced Misdirection</li>
-              <li>✦ Creating Impossible Moments</li>
-            </ul>
-
-            <div class="volume-footer">
-
-              <span class="volume-status">
-                ADVANCE YOUR CRAFT
-              </span>
-
-              <button
-                class="buy-button"
-                onclick="selectVolume('Volume II - The Art of Illusion')"
-              >
-                Explore Volume
-                <span>→</span>
-              </button>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
-        <!-- VOLUME 3 -->
-        <article class="volume-card">
-
-          <div class="volume-number">
-            03
-          </div>
-
-          <div class="volume-content">
-
-            <p class="volume-label">
-              MASTERY
-            </p>
-
-            <h2>
-              Volume III
-            </h2>
-
-            <h3>
-              The Arcane Master
-            </h3>
-
-            <p class="volume-description">
-              The final stage of the Draco Arcane journey.
-              Refine your unique style, create original
-              magic and step into the world of professional
-              performance.
-            </p>
-
-            <ul class="volume-features">
-              <li>✦ Master-Level Techniques</li>
-              <li>✦ Original Magic Creation</li>
-              <li>✦ Professional Performance</li>
-              <li>✦ The Arcane Mastery System</li>
-            </ul>
-
-            <div class="volume-footer">
-
-              <span class="volume-status">
-                MASTER THE IMPOSSIBLE
-              </span>
-
-              <button
-                class="buy-button"
-                onclick="selectVolume('Volume III - The Arcane Master')"
-              >
-                Explore Volume
-                <span>→</span>
-              </button>
-
-            </div>
-
-          </div>
-
-        </article>
-
-
+      <div class="eyebrow">
+        The Arcane Library
       </div>
 
-    </section>
-
-
-    <!-- Bottom CTA -->
-    <section class="volumes-cta">
-
-      <div class="arcane-symbol small-symbol">
-        ✦
-      </div>
-
-      <h2>
-        Your Journey Begins Here
-      </h2>
+      <h1>Volumes</h1>
 
       <p>
-        Choose your volume. Enter the academy.
-        Master the impossible.
+        Enter the forbidden library and begin your journey
+        through the ancient arts of Draco Arcane.
       </p>
 
+    </header>
+
+
+    <!-- VOLUMES -->
+
+    <section class="volumes-grid">
+
+
+      <!-- VOLUME I -->
+
       <a
-        href="index.html"
-        class="return-button"
+        href="volume1.html"
+        class="volume-card"
       >
-        ← Return to Academy
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume I</h2>
+
+        <p>
+          Begin your journey into the foundations
+          of the Arcane Arts.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
       </a>
 
+
+      <!-- VOLUME II -->
+
+      <a
+        href="volume2.html"
+        class="volume-card"
+      >
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume II</h2>
+
+        <p>
+          Continue deeper into the mysteries
+          hidden within the Arcane Library.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
+      </a>
+
+
+      <!-- VOLUME III -->
+
+      <a
+        href="volume3.html"
+        class="volume-card"
+      >
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume III</h2>
+
+        <p>
+          Discover advanced secrets and techniques
+          reserved for true practitioners.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
+      </a>
+
+
+      <!-- VOLUME IV -->
+
+      <a
+        href="volume4.html"
+        class="volume-card"
+      >
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume IV</h2>
+
+        <p>
+          Unlock the deeper mysteries of
+          the Draco Arcane tradition.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
+      </a>
+
+
+      <!-- VOLUME V -->
+
+      <a
+        href="volume5.html"
+        class="volume-card"
+      >
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume V</h2>
+
+        <p>
+          Journey beyond the known and
+          explore the impossible.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
+      </a>
+
+
+      <!-- VOLUME VI -->
+
+      <a
+        href="volume6.html"
+        class="volume-card"
+      >
+
+        <div class="volume-symbol">
+          ✦
+        </div>
+
+        <h2>Volume VI</h2>
+
+        <p>
+          The final gateway to the highest
+          levels of the Arcane Arts.
+        </p>
+
+        <span class="volume-link">
+          Enter Volume →
+        </span>
+
+      </a>
+
+
     </section>
+
+
+    <!-- BACK TO HOME -->
+
+    <a
+      href="index.html"
+      class="back-home"
+    >
+      ← Return to Academy
+    </a>
 
   </main>
 
-
-  <!-- Volume Selection Popup -->
-  <div
-    id="volumeModal"
-    class="volume-modal"
-    aria-hidden="true"
-  >
-
-    <div class="modal-box">
-
-      <button
-        class="modal-close"
-        onclick="closeVolumeModal()"
-        aria-label="Close"
-      >
-        ×
-      </button>
-
-      <div class="arcane-symbol">
-        ✦
-      </div>
-
-      <p class="eyebrow">
-        DRACO ARCANE
-      </p>
-
-      <h2 id="selectedVolume">
-        Volume Selected
-      </h2>
-
-      <p>
-        Your selected academy volume is ready.
-        The secure enrollment and payment system
-        will be connected here.
-      </p>
-
-      <button
-        class="modal-action"
-        onclick="closeVolumeModal()"
-      >
-        Continue
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- JavaScript -->
-  <script>
-
-    function selectVolume(volumeName) {
-
-      const modal =
-        document.getElementById("volumeModal");
-
-      const selectedVolume =
-        document.getElementById("selectedVolume");
-
-      selectedVolume.textContent =
-        volumeName;
-
-      modal.classList.add("active");
-
-      modal.setAttribute(
-        "aria-hidden",
-        "false"
-      );
-
-    }
-
-
-    function closeVolumeModal()
+</body>
+</html>
