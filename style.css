@@ -945,3 +945,175 @@ body::before{
     text-shadow:0 0 12px #FFD700;
 }
 
+/* ==========================================
+   DRACO ARCANE V4.0
+   CINEMATIC HERO EFFECTS
+========================================== */
+
+/* Animated Golden Light */
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:-30%;
+    background:
+        radial-gradient(circle at 50% 20%,
+        rgba(255,215,90,.25),
+        transparent 55%);
+    animation:heroGlow 8s ease-in-out infinite alternate;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes heroGlow{
+    from{
+        transform:scale(1);
+        opacity:.45;
+    }
+    to{
+        transform:scale(1.2);
+        opacity:.8;
+    }
+}
+
+/* Premium Golden Dust */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background-image:
+    radial-gradient(circle,#FFD76A 2px,transparent 3px),
+    radial-gradient(circle,#D4AF37 1.5px,transparent 2px),
+    radial-gradient(circle,#FFF2A6 1px,transparent 2px);
+
+    background-size:
+    220px 220px,
+    340px 340px,
+    460px 460px;
+
+    animation:dustMove 28s linear infinite;
+
+    opacity:.35;
+}
+
+@keyframes dustMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-250px);
+    }
+
+}
+
+/* Hero Text Glow */
+
+.hero h2{
+
+    text-shadow:
+    0 0 12px rgba(212,175,55,.25),
+    0 0 35px rgba(212,175,55,.15);
+
+}
+
+/* Button Glow */
+
+.btn-primary{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent);
+
+    transform:skewX(-20deg);
+
+}
+
+.btn-primary:hover::before{
+
+    animation:shine 1s ease;
+
+}
+
+@keyframes shine{
+
+    100%{
+
+        left:150%;
+
+    }
+
+}
+
+/* Premium Card Glow */
+
+.volume-card:hover,
+.academy-card:hover{
+
+    box-shadow:
+    0 0 18px rgba(212,175,55,.25),
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* Footer Glow */
+
+footer{
+
+    position:relative;
+
+}
+
+footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:240px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        #FFD700,
+        transparent);
+
+}
+
+
