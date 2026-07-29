@@ -117,13 +117,9 @@ gap:16px;
 }
 
 .logo img{
-
-width:80px;
-
-height:80px;
-
-object-fit:contain;
-
+    width:90px;
+    height:90px;
+    object-fit:contain;
 }
 
 .logo h1{
@@ -694,7 +690,7 @@ text-align:center;
 
 .footer-logo{
 
-width:110px;
+width:160px;
 
 margin:0 auto 25px;
 
@@ -830,7 +826,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 /* ==========================
-   GOLD SPARKLE EFFECT
+   PREMIUM GOLD SPARKLES
 ========================== */
 
 body::before{
@@ -841,18 +837,18 @@ body::before{
     z-index:0;
 
     background-image:
-        radial-gradient(circle,#FFD700 1.5px,transparent 2px),
-        radial-gradient(circle,#D4AF37 1px,transparent 2px),
-        radial-gradient(circle,#FFD76A 1.5px,transparent 2px);
+        radial-gradient(circle,#FFD700 3px,transparent 6px),
+        radial-gradient(circle,#D4AF37 2.5px,transparent 5px),
+        radial-gradient(circle,#FFF3B0 2px,transparent 4px);
 
     background-size:
-        220px 220px,
-        320px 320px,
-        420px 420px;
+        180px 180px,
+        260px 260px,
+        340px 340px;
 
-    opacity:.18;
+    opacity:.45;
 
-    animation:sparkleMove 35s linear infinite;
+    animation:sparkleMove 18s linear infinite;
 }
 
 @keyframes sparkleMove{
@@ -860,26 +856,40 @@ body::before{
         transform:translateY(0);
     }
     to{
-        transform:translateY(-200px);
+        transform:translateY(-120px);
     }
 }
-
 .btn-primary:hover,
 .card-button:hover{
 
-box-shadow:
-0 0 15px rgba(255,215,90,.6),
-0 0 35px rgba(212,175,55,.45);
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(255,215,90,.7),
+        0 0 45px rgba(212,175,55,.55),
+        0 0 80px rgba(212,175,55,.35);
+
+    transition:all .35s ease;
+}
+
+/* ==========================
+   LOGO MAGIC GLOW
+========================== */
+
+.logo img{
+
+    transition:all .4s ease;
 
 }
 
 .logo img:hover{
 
-filter:
-drop-shadow(0 0 10px rgba(255,215,90,.8))
-drop-shadow(0 0 25px rgba(212,175,55,.5));
+    transform:scale(1.08) rotate(-3deg);
 
-transition:.4s;
+    filter:
+        drop-shadow(0 0 12px rgba(255,215,90,.9))
+        drop-shadow(0 0 30px rgba(212,175,55,.8))
+        drop-shadow(0 0 55px rgba(255,215,90,.5));
 
 }
 
