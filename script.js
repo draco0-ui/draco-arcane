@@ -1,186 +1,65 @@
-/*==================================================
-DRACO ARCANE
-SCRIPT.JS V3.0
-==================================================*/
+/* ==========================================
+   DRACO ARCANE V3.0
+   Premium Script
+========================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+// Mobile Navigation
 
-    /*=========================
-      LOADER
-    =========================*/
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
-    const loader = document.getElementById("loader");
+if (menuBtn && nav) {
 
-    window.addEventListener("load", () => {
+    menuBtn.addEventListener("click", () => {
 
-        setTimeout(() => {
-
-            loader.style.opacity = "0";
-
-            loader.style.visibility = "hidden";
-
-        }, 800);
+        nav.classList.toggle("active");
 
     });
 
-    /*=========================
-      STICKY HEADER
-    =========================*/
+}
 
-    const header = document.getElementById("header");
+// Sticky Header
 
-    window.addEventListener("scroll", () => {
+const header = document.querySelector(".header");
 
-        if (window.scrollY > 50) {
+window.addEventListener("scroll", () => {
 
-            header.classList.add("scrolled");
+    if (window.scrollY > 80) {
 
-        } else {
+        header.classList.add("scrolled");
 
-            header.classList.remove("scrolled");
+    } else {
 
-        }
-
-    });
-
-    /*=========================
-      MOBILE MENU
-    =========================*/
-
-    const menuToggle = document.getElementById("menuToggle");
-
-    const navLinks = document.getElementById("navLinks");
-
-    if (menuToggle && navLinks) {
-
-        menuToggle.addEventListener("click", () => {
-
-            navLinks.classList.toggle("active");
-
-            if (navLinks.classList.contains("active")) {
-
-                menuToggle.innerHTML = "✕";
-
-            } else {
-
-                menuToggle.innerHTML = "☰";
-
-            }
-
-        });
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("active");
-
-                menuToggle.innerHTML = "☰";
-
-            });
-
-        });
+        header.classList.remove("scrolled");
 
     }
 
-    /*=========================
-      SCROLL REVEAL
-    =========================*/
+});
 
-    const revealElements = document.querySelectorAll(
+// Smooth Reveal Animation
 
-        ".about-card, .feature-card, .volume-card, .founder-card, .promise"
+const observer = new IntersectionObserver((entries) => {
 
-    );
+    entries.forEach(entry => {
 
-    const revealOnScroll = () => {
+        if (entry.isIntersecting) {
 
-        revealElements.forEach(el => {
-
-            const top = el.getBoundingClientRect().top;
-
-            const visible = window.innerHeight - 120;
-
-            if (top < visible) {
-
-                el.classList.add("reveal", "show");
-
-            }
-
-        });
-
-    };
-
-    window.addEventListener("scroll", revealOnScroll);
-
-    revealOnScroll();
-
-    /*=========================
-      BACK TO TOP
-    =========================*/
-
-    const backTop = document.getElementById("backTop");
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 400) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
+            entry.target.classList.add("show");
 
         }
 
     });
 
-    if (backTop) {
+}, {
 
-        backTop.addEventListener("click", () => {
+    threshold: 0.15
 
-            window.scrollTo({
+});
 
-                top: 0,
+document.querySelectorAll("section").forEach(section => {
 
-                behavior: "smooth"
+    section.classList.add("reveal");
 
-            });
-
-        });
-
-    }
-
-    /*=========================
-      ACTIVE NAVIGATION
-    =========================*/
-
-    const currentPage = location.pathname.split("/").pop();
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-
-        const href = link.getAttribute("href");
-
-        if (href === currentPage) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-    /*=========================
-      PREMIUM CONSOLE MESSAGE
-    =========================*/
-
-    console.log(
-        "%c🐉 DRACO ARCANE",
-        "color:#D4AF37;font-size:22px;font-weight:bold;"
-    );
-
-    console.log(
-        "%cThe Art of Modern Magic",
-        "color:#FFD700;font-size:14px;"
-    );
+    observer.observe(section);
 
 });
