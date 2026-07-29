@@ -893,3 +893,28 @@ body::before{
 
 }
 
+.footer-contact{
+    margin:35px 0;
+    text-align:center;
+}
+
+.footer-contact h3{
+    color:#FFD76A;
+    margin-bottom:15px;
+    font-family:'Cinzel',serif;
+}
+
+.footer-contact p{
+    color:#cccccc;
+    margin:10px 0;
+}
+
+.footer-contact a{
+    color:#FFD76A;
+    text-decoration:none;
+}
+
+.footer-contact a:hover{
+    color:#ffffff;
+}
+
