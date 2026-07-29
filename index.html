@@ -1,356 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <meta name="description"
-          content="Draco Arcane — Premium Magic Tutorials for the Next Generation of Magicians.">
+  <meta
+    name="description"
+    content="Draco Arcane — Premium Magic Tutorials for the Next Generation of Magicians."
+  >
 
-    <title>Draco Arcane | Master the Impossible</title>
+  <title>Draco Arcane | Master the Impossible</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-    <!-- Magical Background -->
-    <canvas id="magicCanvas"></canvas>
+  <!-- MAGIC PARTICLES -->
+  <canvas id="magicCanvas"></canvas>
 
-    <!-- Navigation -->
-    <header class="navbar">
 
-        <div class="nav-logo">
-            <span>DRACO</span>
-            <small>ARCANE</small>
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a href="index.html" class="logo">
+      <span>DRACO</span>
+      <small>ARCANE</small>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      type="button"
+    >
+      ☰
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="volumes.html">
+        Volumes
+      </a>
+
+      <a href="#academy">
+        Academy
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-symbol">
+          ✦
         </div>
 
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#volumes">Volumes</a>
-            <a href="#about">About</a>
-        </nav>
-
-        <button class="menu-button" id="menuButton">
-            ☰
-        </button>
-
-    </header>
-
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-menu" id="mobileMenu">
-
-        <a href="#home">Home</a>
-        <a href="#volumes">Volumes</a>
-        <a href="#about">About</a>
-
-    </div>
-
-
-    <!-- HERO SECTION -->
-    <main id="home">
-
-        <section class="hero">
-
-            <div class="hero-glow"></div>
-
-            <div class="hero-content">
-
-                <div class="magic-symbol">
-                    ✦
-                </div>
-
-                <p class="eyebrow">
-                    THE ARCANE ACADEMY
-                </p>
-
-                <h1>
-                    DRACO
-                    <span>ARCANE</span>
-                </h1>
-
-                <div class="gold-line"></div>
-
-                <h2>
-                    Master the Impossible.
-                </h2>
-
-                <p class="hero-description">
-                    Premium magic tutorials for the next generation
-                    of magicians.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#volumes" class="primary-button">
-                        Explore Volumes
-                        <span>→</span>
-                    </a>
-
-                    <a href="#about" class="secondary-button">
-                        Discover the Academy
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="scroll-indicator">
-                <span>SCROLL TO ENTER</span>
-                <div class="scroll-arrow">↓</div>
-            </div>
-
-        </section>
-
-
-        <!-- VOLUMES SECTION -->
-        <section id="volumes" class="volumes-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    THE ARCANE LIBRARY
-                </p>
-
-                <h2>
-                    Choose Your Path
-                </h2>
-
-                <p>
-                    Three volumes. One journey.
-                    A lifetime of impossible magic.
-                </p>
-
-            </div>
-
-
-            <div class="volume-grid">
-
-
-                <!-- VOLUME I -->
-                <article class="volume-card">
-
-                    <div class="volume-number">
-                        I
-                    </div>
-
-                    <div class="card-content">
-
-                        <span class="volume-label">
-                            VOLUME I
-                        </span>
-
-                        <h3>
-                            The Awakening
-                        </h3>
-
-                        <p>
-                            Enter the world of magic.
-                            Learn the fundamental principles
-                            behind powerful illusions.
-                        </p>
-
-                        <button class="card-button"
-                                onclick="openVolume('Volume I')">
-
-                            Enter Volume
-
-                            <span>→</span>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- VOLUME II -->
-                <article class="volume-card featured">
-
-                    <div class="featured-badge">
-                        MOST POPULAR
-                    </div>
-
-                    <div class="volume-number">
-                        II
-                    </div>
-
-                    <div class="card-content">
-
-                        <span class="volume-label">
-                            VOLUME II
-                        </span>
-
-                        <h3>
-                            The Art
-                        </h3>
-
-                        <p>
-                            Master advanced techniques,
-                            psychology and performance
-                            that transform tricks into miracles.
-                        </p>
-
-                        <button class="card-button"
-                                onclick="openVolume('Volume II')">
-
-                            Enter Volume
-
-                            <span>→</span>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-                <!-- VOLUME III -->
-                <article class="volume-card">
-
-                    <div class="volume-number">
-                        III
-                    </div>
-
-                    <div class="card-content">
-
-                        <span class="volume-label">
-                            VOLUME III
-                        </span>
-
-                        <h3>
-                            The Master
-                        </h3>
-
-                        <p>
-                            Unlock the highest level of
-                            performance and become the
-                            architect of impossible moments.
-                        </p>
-
-                        <button class="card-button"
-                                onclick="openVolume('Volume III')">
-
-                            Enter Volume
-
-                            <span>→</span>
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT SECTION -->
-        <section id="about" class="about-section">
-
-            <div class="about-content">
-
-                <p class="eyebrow">
-                    BEYOND THE ORDINARY
-                </p>
-
-                <h2>
-                    Welcome to<br>
-                    Draco Arcane.
-                </h2>
-
-                <p>
-                    Draco Arcane is a premium learning experience
-                    created for those who refuse to accept the
-                    impossible as impossible.
-                </p>
-
-                <p>
-                    Study the secrets. Understand the psychology.
-                    Master the performance.
-                </p>
-
-                <a href="#volumes" class="primary-button">
-                    Begin Your Journey
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-logo">
-            DRACO ARCANE
-        </div>
-
-        <p>
-            Master the Impossible.
+        <p class="eyebrow">
+          THE ARCANE ACADEMY
         </p>
 
-        <div class="footer-line"></div>
+        <h1>
+          DRACO<br>
+          ARCANE
+        </h1>
 
-        <small>
-            © 2026 Draco Arcane. All Rights Reserved.
-        </small>
+        <div class="gold-line"></div>
 
-    </footer>
+        <h2>
+          MASTER THE IMPOSSIBLE.
+        </h2>
+
+        <p class="hero-description">
+          Premium magic tutorials for the next generation of magicians.
+        </p>
 
 
-    <!-- MODAL -->
-    <div class="modal" id="volumeModal">
+        <!-- MAIN BUTTON -->
+        <a
+          href="volumes.html"
+          class="primary-button"
+        >
+          Explore Volumes
+          <span>→</span>
+        </a>
 
-        <div class="modal-box">
 
-            <button class="close-modal"
-                    onclick="closeVolume()">
+        <!-- SECONDARY BUTTON -->
+        <a
+          href="#academy"
+          class="secondary-button"
+        >
+          Discover the Academy
+        </a>
 
-                ×
 
-            </button>
+        <div class="scroll-indicator">
+          <span>SCROLL TO ENTER</span>
+          <strong>↓</strong>
+        </div>
 
-            <div class="modal-symbol">
-                ✦
+      </div>
+
+    </section>
+
+
+    <!-- ACADEMY SECTION -->
+    <section
+      class="academy-section"
+      id="academy"
+    >
+
+      <div class="section-content">
+
+        <p class="eyebrow">
+          ENTER THE ARCANE
+        </p>
+
+        <h2>
+          THE ACADEMY
+        </h2>
+
+        <p>
+          Welcome to Draco Arcane, a premium learning experience
+          designed for those who want to master the art, psychology,
+          technique and secrets behind extraordinary magic.
+        </p>
+
+        <div class="academy-grid">
+
+          <div class="academy-card">
+
+            <div class="card-symbol">
+              ✦
             </div>
 
-            <h2 id="modalTitle">
-                Volume I
-            </h2>
+            <h3>
+              Master the Foundations
+            </h3>
 
             <p>
-                The Arcane Library is preparing
-                this volume for your journey.
+              Build the essential skills every serious magician needs.
             </p>
 
-            <button class="primary-button"
-                    onclick="closeVolume()">
+          </div>
 
-                Return
 
-            </button>
+          <div class="academy-card">
+
+            <div class="card-symbol">
+              ✦
+            </div>
+
+            <h3>
+              Learn the Techniques
+            </h3>
+
+            <p>
+              Explore step-by-step techniques designed for progressive learning.
+            </p>
+
+          </div>
+
+
+          <div class="academy-card">
+
+            <div class="card-symbol">
+              ✦
+            </div>
+
+            <h3>
+              Understand Psychology
+            </h3>
+
+            <p>
+              Discover how perception, attention and psychology shape deception.
+            </p>
+
+          </div>
 
         </div>
 
+
+        <!-- GO TO VOLUMES AGAIN -->
+        <a
+          href="volumes.html"
+          class="primary-button"
+        >
+          Enter the Arcane Library
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="logo">
+      <span>DRACO</span>
+      <small>ARCANE</small>
     </div>
 
+    <p>
+      © 2026 Draco Arcane. All rights reserved.
+    </p>
 
-    <script src="script.js"></script>
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
+  <!-- MOBILE MENU -->
+  <script>
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mainNav =
+      document.getElementById("mainNav");
+
+
+    if (menuToggle && mainNav) {
+
+      menuToggle.addEventListener(
+        "click",
+        function () {
+
+          mainNav.classList.toggle("active");
+
+        }
+      );
+
+
+      const navLinks =
+        mainNav.querySelectorAll("a");
+
+
+      navLinks.forEach(
+        function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              mainNav.classList.remove("active");
+
+            }
+          );
+
+        }
+      );
+
+    }
+
+  </script>
 
 </body>
 </html>
