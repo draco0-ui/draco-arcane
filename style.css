@@ -1116,4 +1116,68 @@ footer::before{
 
 }
 
+/* ==========================================
+   DRACO ARCANE V4.0
+   PACK 2 – FLOATING MAGIC CARDS
+========================================== */
+
+/* Floating Cards in Hero */
+
+.hero{
+    overflow:hidden;
+}
+
+.hero .magic-card{
+    position:absolute;
+    width:70px;
+    opacity:.12;
+    pointer-events:none;
+    animation:floatCard 14s ease-in-out infinite;
+    filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
+}
+
+.hero .card1{
+    left:8%;
+    top:18%;
+    animation-delay:0s;
+    transform:rotate(-18deg);
+}
+
+.hero .card2{
+    right:10%;
+    top:22%;
+    animation-delay:3s;
+    transform:rotate(15deg);
+}
+
+.hero .card3{
+    left:18%;
+    bottom:12%;
+    animation-delay:6s;
+    transform:rotate(-8deg);
+}
+
+.hero .card4{
+    right:18%;
+    bottom:15%;
+    animation-delay:9s;
+    transform:rotate(22deg);
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(8deg);
+    }
+
+    100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+}
+
 
