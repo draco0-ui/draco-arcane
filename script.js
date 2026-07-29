@@ -1,12 +1,11 @@
-/*====================================================
-  DRACO ARCANE
-  script.js
-  Part 1/3
-====================================================*/
+/*==================================================
+DRACO ARCANE
+script.js v2.1
+==================================================*/
 
-/*==========================
+/*=========================
 PAGE LOADER
-==========================*/
+=========================*/
 
 window.addEventListener("load", () => {
 
@@ -16,24 +15,26 @@ window.addEventListener("load", () => {
 
         setTimeout(() => {
 
+            loader.style.transition =
+                "opacity .6s ease";
+
             loader.style.opacity = "0";
-            loader.style.visibility = "hidden";
 
             setTimeout(() => {
 
-                loader.remove();
+                loader.style.display = "none";
 
-            }, 800);
+            }, 600);
 
-        }, 900);
+        }, 800);
 
     }
 
 });
 
-/*==========================
+/*=========================
 STICKY NAVBAR
-==========================*/
+=========================*/
 
 const header = document.querySelector("header");
 
@@ -41,7 +42,7 @@ function updateNavbar() {
 
     if (!header) return;
 
-    if (window.scrollY > 60) {
+    if (window.scrollY > 50) {
 
         header.classList.add("scrolled");
 
@@ -57,13 +58,13 @@ window.addEventListener("scroll", updateNavbar);
 
 updateNavbar();
 
-/*==========================
+/*=========================
 SCROLL REVEAL
-==========================*/
+=========================*/
 
 const revealItems = document.querySelectorAll(
 
-".about-card, .feature-card, .volume-card, .founder-card, .promise, .section-title, .section-description"
+".about-card, .feature-card, .volume-card, .founder-card, .lesson, .course-card, .promise, .section-title, .section-description"
 
 );
 
@@ -73,24 +74,31 @@ revealItems.forEach(item => {
 
 });
 
-const revealObserver = new IntersectionObserver(
+const observer = new IntersectionObserver((entries)=>{
 
-(entries) => {
+    entries.forEach(entry=>{
 
-    entries.forEach(entry => {
+        if(entry.isIntersecting){
 
-        if (entry.is
+            entry.target.classList.add("show");
 
+        }
 
-/*====================================================
-  DRACO ARCANE
-  script.js
-  Part 2/3
-====================================================*/
+    });
 
-/*==========================
+},{
+    threshold:.15
+});
+
+revealItems.forEach(item=>{
+
+    observer.observe(item);
+
+});
+
+/*=========================
 BACK TO TOP BUTTON
-==========================*/
+=========================*/
 
 const backTop = document.createElement("button");
 
@@ -100,358 +108,274 @@ backTop.innerHTML = "↑";
 
 backTop.setAttribute(
 
-    "aria-label",
+"aria-label",
 
-    "Back to Top"
+"Back to Top"
 
 );
 
 document.body.appendChild(backTop);
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    if (window.scrollY > 400) {
+if(window.scrollY>400){
 
-        backTop.classList.add("show");
+backTop.classList.add("show");
 
-    } else {
+}else{
 
-        backTop.classList.remove("show");
+backTop.classList.remove("show");
 
-    }
-
-});
-
-backTop.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
+}
 
 });
 
-/*==========================
+backTop.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+/*=========================
 ACTIVE NAVIGATION
-==========================*/
+=========================*/
 
-const sections = document.querySelectorAll("section");
+const sections=document.querySelectorAll("section");
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const navLinks=document.querySelectorAll(".nav-links a");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    let current = "";
+let current="";
 
-    sections.forEach(section => {
+sections.forEach(section=>{
 
-        const top = section.offsetTop - 140;
+const top=section.offsetTop-140;
 
-        const height = section.offsetHeight;
+const height=section.offsetHeight;
 
-        if (
+if(window.scrollY>=top && window.scrollY<top+height){
 
-            window.scrollY >= top &&
+current=section.getAttribute("id");
 
-            window.scrollY < top + height
-
-        ) {
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        const href = link.getAttribute("href");
-
-        if (
-
-            href === "#" + current ||
-
-            (current === "" && href === "index.html")
-
-        ) {
-
-            link.classList.add("active");
-
-        }
-
-    });
+}
 
 });
 
-/*==========================
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+const href=link.getAttribute("href");
+
+if(href==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+/*=========================
 BUTTON RIPPLE EFFECT
-==========================*/
+=========================*/
 
-const buttons = document.querySelectorAll(
+document.querySelectorAll(
 
-".gold-btn, .outline-btn"
+".gold-btn,.outline-btn"
 
-);
+).forEach(button=>{
 
-buttons.forEach(button => {
+button.addEventListener("click",function(e){
 
-    button.addEventListener("click", function(e){
+const ripple=document.createElement("span");
 
-        const ripple = document.createElement("span");
+const rect=this.getBoundingClientRect();
 
-        const rect = this.getBoundingClientRect();
+const size=Math.max(rect.width,rect.height);
 
-        const size = Math.max(
+ripple.style.width=size+"px";
 
-            rect.width,
+ripple.style.height=size+"px";
 
-            rect.height
+ripple.style.left=(e.clientX-rect.left-size/2)+"px";
 
-        );
+ripple.style.top=(e.clientY-rect.top-size/2)+"px";
 
-        ripple.style.width = size + "px";
+ripple.style.position="absolute";
 
-        ripple.style.height = size + "px";
+ripple.style.borderRadius="50%";
 
-        ripple.style.left =
+ripple.style.background="rgba(255,255,255,.35)";
 
-            (e.clientX - rect.left - size / 2) + "px";
+ripple.style.pointerEvents="none";
 
-        ripple.style.top =
+ripple.style.transform="scale(0)";
 
-            (e.clientY - rect.top - size / 2) + "px";
+ripple.style.transition="all .6s ease";
 
-        ripple.style.position = "absolute";
+this.style.position="relative";
 
-        ripple.style.borderRadius = "50%";
+this.style.overflow="hidden";
 
-        ripple.style.pointerEvents = "none";
+this.appendChild(ripple);
 
-        ripple.style.background =
+requestAnimationFrame(()=>{
 
-            "rgba(255,255,255,.35)";
+ripple.style.transform="scale(4)";
 
-        ripple.style.transform = "scale(0)";
-
-        ripple.style.transition =
-
-            "transform .6s ease, opacity .6s ease";
-
-        ripple.style.opacity = "1";
-
-        this.style.position = "relative";
-
-        this.style.overflow = "hidden";
-
-        this.appendChild(ripple);
-
-        requestAnimationFrame(() => {
-
-            ripple.style.transform = "scale(4)";
-
-            ripple.style.opacity = "0";
-
-        });
-
-        setTimeout(() => {
-
-            ripple.remove();
-
-        }, 600);
-
-    });
+ripple.style.opacity="0";
 
 });
 
-/*==========================
-HERO ENTRANCE
-==========================*/
+setTimeout(()=>{
 
-const hero = document.querySelector(".hero-content");
+ripple.remove();
+
+},600);
+
+});
+
+});
+
+/*=========================
+HERO ENTRANCE
+=========================*/
+
+const hero=document.querySelector(".hero-content");
 
 if(hero){
 
-    hero.style.opacity = "0";
+hero.style.opacity="0";
 
-    hero.style.transform =
+hero.style.transform="translateY(40px)";
 
-        "translateY(40px)";
+setTimeout(()=>{
 
-    setTimeout(() => {
+hero.style.transition="all .9s ease";
 
-        hero.style.transition =
+hero.style.opacity="1";
 
-            "all 1s ease";
+hero.style.transform="translateY(0)";
 
-        hero.style.opacity = "1";
-
-        hero.style.transform =
-
-            "translateY(0)";
-
-    },300);
+},250);
 
 }
 
-
-/*====================================================
-  DRACO ARCANE
-  script.js
-  Part 3/3
-====================================================*/
-
-/*==========================
+/*=========================
 PAGE FADE-IN
-==========================*/
+=========================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    document.body.style.opacity = "0";
+document.body.style.opacity="0";
 
-    document.body.style.transition = "opacity .6s ease";
+document.body.style.transition="opacity .4s ease";
 
-    requestAnimationFrame(() => {
+requestAnimationFrame(()=>{
 
-        document.body.style.opacity = "1";
-
-    });
+document.body.style.opacity="1";
 
 });
 
-/*==========================
-FUTURE MOBILE MENU SUPPORT
-==========================*/
+});
 
-const mobileToggle = document.querySelector(".menu-toggle");
-const mobileNav = document.querySelector(".nav-links");
+/*=========================
+MOBILE MENU
+=========================*/
 
-if (mobileToggle && mobileNav) {
+const mobileToggle=document.querySelector(".menu-toggle");
 
-    mobileToggle.addEventListener("click", () => {
+const mobileNav=document.querySelector(".nav-links");
 
-        mobileNav.classList.toggle("open");
-        mobileToggle.classList.toggle("active");
+if(mobileToggle && mobileNav){
 
-    });
+mobileToggle.addEventListener("click",()=>{
+
+mobileNav.classList.toggle("open");
+
+mobileToggle.classList.toggle("active");
+
+});
 
 }
 
-/*==========================
-ESC KEY CLOSES MOBILE MENU
-==========================*/
+document.addEventListener("keydown",(e)=>{
 
-document.addEventListener("keydown", (event) => {
+if(e.key==="Escape"){
 
-    if (event.key === "Escape") {
+mobileNav?.classList.remove("open");
 
-        if (mobileNav) {
-
-            mobileNav.classList.remove("open");
-
-        }
-
-        if (mobileToggle) {
-
-            mobileToggle.classList.remove("active");
-
-        }
-
-    }
-
-});
-
-/*==========================
-BUTTON HOVER LIFT
-==========================*/
-
-document.querySelectorAll(".gold-btn, .outline-btn").forEach(button => {
-
-    button.addEventListener("mouseenter", () => {
-
-        button.style.transition = "transform .25s ease";
-
-    });
-
-    button.addEventListener("mouseleave", () => {
-
-        button.style.transform = "";
-
-    });
-
-});
-
-/*==========================
-PRELOAD INTERNAL PAGES
-==========================*/
-
-document.querySelectorAll("a").forEach(link => {
-
-    const href = link.getAttribute("href");
-
-    if (
-
-        href &&
-        !href.startsWith("#") &&
-        !href.startsWith("http")
-
-    ) {
-
-        const preload = document.createElement("link");
-
-        preload.rel = "prefetch";
-
-        preload.href = href;
-
-        document.head.appendChild(preload);
-
-    }
-
-});
-
-/*==========================
-CURRENT YEAR (OPTIONAL)
-==========================*/
-
-const year = document.querySelector(".current-year");
-
-if (year) {
-
-    year.textContent = new Date().getFullYear();
+mobileToggle?.classList.remove("active");
 
 }
 
-/*==========================
+});
+
+/*=========================
+BUTTON HOVER
+=========================*/
+
+document.querySelectorAll(".gold-btn,.outline-btn").forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.transform="translateY(-2px)";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.transform="translateY(0)";
+
+});
+
+});
+
+/*=========================
 CONSOLE SIGNATURE
-==========================*/
+=========================*/
 
 console.log(
+
 "%cDRACO ARCANE",
+
 "color:#D4AF37;font-size:22px;font-weight:bold;"
+
 );
 
 console.log(
+
 "%cThe Art of Modern Card Magic",
+
 "color:#FFD700;font-size:14px;"
+
 );
 
 console.log(
+
 "%cFounder: Akash Suresh | Magician Draco",
+
 "color:#ffffff;font-size:12px;"
+
 );
 
-/*==========================
+/*=========================
 INITIALIZE
-==========================*/
+=========================*/
 
 updateNavbar();
 
 window.dispatchEvent(new Event("scroll"));
 
-/*====================================================
-  END OF FILE
-====================================================*/
+/*==================================================
+END OF FILE
+==================================================*/
