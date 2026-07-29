@@ -1,555 +1,457 @@
+/*====================================================
+  DRACO ARCANE
+  script.js
+  Part 1/3
+====================================================*/
 
-/* ========================================
-   DRACO ARCANE
-   MAGIC PARTICLE SYSTEM
-======================================== */
+/*==========================
+PAGE LOADER
+==========================*/
 
-const canvas = document.getElementById("magicCanvas");
+window.addEventListener("load", () => {
 
-const ctx = canvas.getContext("2d");
+    const loader = document.getElementById("loader");
 
-let particles = [];
+    if (loader) {
 
-let width;
-let height;
+        setTimeout(() => {
 
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
 
-/* CANVAS SIZE */
+            setTimeout(() => {
 
-function resizeCanvas() {
+                loader.remove();
 
-    width = canvas.width = window.innerWidth;
+            }, 800);
 
-    height = canvas.height = window.innerHeight;
+        }, 900);
+
+    }
+
+});
+
+/*==========================
+STICKY NAVBAR
+==========================*/
+
+const header = document.querySelector("header");
+
+function updateNavbar() {
+
+    if (!header) return;
+
+    if (window.scrollY > 60) {
+
+        header.classList.add("scrolled");
+
+    } else {
+
+        header.classList.remove("scrolled");
+
+    }
 
 }
 
-resizeCanvas();
+window.addEventListener("scroll", updateNavbar);
 
-window.addEventListener(
-    "resize",
-    resizeCanvas
+updateNavbar();
+
+/*==========================
+SCROLL REVEAL
+==========================*/
+
+const revealItems = document.querySelectorAll(
+
+".about-card, .feature-card, .volume-card, .founder-card, .promise, .section-title, .section-description"
+
 );
 
+revealItems.forEach(item => {
 
-/* CREATE PARTICLES */
+    item.classList.add("reveal");
 
-function createParticles() {
+});
 
-    particles = [];
+const revealObserver = new IntersectionObserver(
 
-    const particleCount =
-        window.innerWidth < 600
-        ? 45
-        : 100;
+(entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.is
 
 
-    for (
-        let i = 0;
-        i < particleCount;
-        i++
-    ) {
+/*====================================================
+  DRACO ARCANE
+  script.js
+  Part 2/3
+====================================================*/
 
-        particles.push({
+/*==========================
+BACK TO TOP BUTTON
+==========================*/
 
-            x:
-                Math.random()
-                * width,
+const backTop = document.createElement("button");
 
-            y:
-                Math.random()
-                * height,
+backTop.className = "back-top";
 
-            size:
-                Math.random()
-                * 2
-                + 0.5,
+backTop.innerHTML = "↑";
 
-            speed:
-                Math.random()
-                * 0.4
-                + 0.1,
+backTop.setAttribute(
 
-            opacity:
-                Math.random()
-                * 0.6
-                + 0.2,
+    "aria-label",
 
-            drift:
-                Math.random()
-                * 0.5
-                - 0.25
+    "Back to Top"
+
+);
+
+document.body.appendChild(backTop);
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        backTop.classList.add("show");
+
+    } else {
+
+        backTop.classList.remove("show");
+
+    }
+
+});
+
+backTop.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+});
+
+/*==========================
+ACTIVE NAVIGATION
+==========================*/
+
+const sections = document.querySelectorAll("section");
+
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top = section.offsetTop - 140;
+
+        const height = section.offsetHeight;
+
+        if (
+
+            window.scrollY >= top &&
+
+            window.scrollY < top + height
+
+        ) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        const href = link.getAttribute("href");
+
+        if (
+
+            href === "#" + current ||
+
+            (current === "" && href === "index.html")
+
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/*==========================
+BUTTON RIPPLE EFFECT
+==========================*/
+
+const buttons = document.querySelectorAll(
+
+".gold-btn, .outline-btn"
+
+);
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function(e){
+
+        const ripple = document.createElement("span");
+
+        const rect = this.getBoundingClientRect();
+
+        const size = Math.max(
+
+            rect.width,
+
+            rect.height
+
+        );
+
+        ripple.style.width = size + "px";
+
+        ripple.style.height = size + "px";
+
+        ripple.style.left =
+
+            (e.clientX - rect.left - size / 2) + "px";
+
+        ripple.style.top =
+
+            (e.clientY - rect.top - size / 2) + "px";
+
+        ripple.style.position = "absolute";
+
+        ripple.style.borderRadius = "50%";
+
+        ripple.style.pointerEvents = "none";
+
+        ripple.style.background =
+
+            "rgba(255,255,255,.35)";
+
+        ripple.style.transform = "scale(0)";
+
+        ripple.style.transition =
+
+            "transform .6s ease, opacity .6s ease";
+
+        ripple.style.opacity = "1";
+
+        this.style.position = "relative";
+
+        this.style.overflow = "hidden";
+
+        this.appendChild(ripple);
+
+        requestAnimationFrame(() => {
+
+            ripple.style.transform = "scale(4)";
+
+            ripple.style.opacity = "0";
 
         });
 
-    }
+        setTimeout(() => {
 
-}
+            ripple.remove();
 
-createParticles();
-
-
-/* ANIMATE PARTICLES */
-
-function animateParticles() {
-
-    ctx.clearRect(
-        0,
-        0,
-        width,
-        height
-    );
-
-
-    particles.forEach(
-        particle => {
-
-            particle.y -=
-                particle.speed;
-
-            particle.x +=
-                particle.drift;
-
-
-            if (
-                particle.y < -10
-            ) {
-
-                particle.y =
-                    height + 10;
-
-                particle.x =
-                    Math.random()
-                    * width;
-
-            }
-
-
-            if (
-                particle.x < -10
-            ) {
-
-                particle.x =
-                    width + 10;
-
-            }
-
-
-            if (
-                particle.x > width + 10
-            ) {
-
-                particle.x =
-                    -10;
-
-            }
-
-
-            ctx.beginPath();
-
-
-            ctx.arc(
-
-                particle.x,
-
-                particle.y,
-
-                particle.size,
-
-                0,
-
-                Math.PI * 2
-
-            );
-
-
-            ctx.fillStyle =
-                `rgba(212,175,55,${particle.opacity})`;
-
-
-            ctx.shadowBlur = 10;
-
-            ctx.shadowColor =
-                "rgba(212,175,55,0.8)";
-
-
-            ctx.fill();
-
-        }
-    );
-
-
-    requestAnimationFrame(
-        animateParticles
-    );
-
-}
-
-
-animateParticles();
-
-
-/* MOBILE MENU */
-
-const menuButton =
-    document.getElementById(
-        "menuButton"
-    );
-
-const mobileMenu =
-    document.getElementById(
-        "mobileMenu"
-    );
-
-
-menuButton.addEventListener(
-    "click",
-    () => {
-
-        mobileMenu.classList.toggle(
-            "active"
-        );
-
-    }
-);
-
-
-/* CLOSE MOBILE MENU AFTER CLICK */
-
-document
-    .querySelectorAll(
-        ".mobile-menu a"
-    )
-    .forEach(
-        link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    mobileMenu.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-        }
-    );
-
-
-/* VOLUME MODAL */
-
-const modal =
-    document.getElementById(
-        "volumeModal"
-    );
-
-const modalTitle =
-    document.getElementById(
-        "modalTitle"
-    );
-
-
-function openVolume(
-    volumeName
-) {
-
-    modalTitle.textContent =
-        volumeName;
-
-    modal.classList.add(
-        "active"
-    );
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-function closeVolume() {
-
-    modal.classList.remove(
-        "active"
-    );
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-/* CLOSE MODAL WHEN CLICKING OUTSIDE */
-
-modal.addEventListener(
-    "click",
-    event => {
-
-        if (
-            event.target === modal
-        ) {
-
-            closeVolume();
-
-        }
-
-    }
-);
-
-
-/* ESC KEY CLOSES MODAL */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            closeVolume();
-
-        }
-
-    }
-);
-
-/* =========================================
-   DRACO ARCANE - VOLUME I FUNCTIONS
-========================================= */
-
-// Scroll to lessons
-function scrollToLessons() {
-  const lessons = document.getElementById("lessons");
-
-  if (lessons) {
-    lessons.scrollIntoView({
-      behavior: "smooth"
-    });
-  }
-}
-
-
-// Open lesson modal
-function openLesson(lessonId) {
-
-  const modal = document.getElementById("lessonModal");
-  const title = document.getElementById("modalLessonTitle");
-
-  if (!modal || !title) {
-    return;
-  }
-
-  const lessonTitles = {
-
-    lesson1:
-      "Lesson 01 — The Magician's Mind",
-
-    lesson2:
-      "Lesson 02 — The Art of Misdirection",
-
-    lesson3:
-      "Lesson 03 — Control & Precision"
-
-  };
-
-  title.textContent =
-    lessonTitles[lessonId] || "Arcane Lesson";
-
-  modal.classList.add("active");
-
-  document.body.style.overflow = "hidden";
-}
-
-
-// Close lesson modal
-function closeLesson() {
-
-  const modal = document.getElementById("lessonModal");
-
-  if (!modal) {
-    return;
-  }
-
-  modal.classList.remove("active");
-
-  document.body.style.overflow = "";
-}
-
-
-// Close modal when clicking outside
-document.addEventListener("click", function(event) {
-
-  const modal =
-    document.getElementById("lessonModal");
-
-  if (
-    modal &&
-    event.target === modal
-  ) {
-    closeLesson();
-  }
-
-});
-
-
-// Close modal with Escape key
-document.addEventListener("keydown", function(event) {
-
-  if (event.key === "Escape") {
-    closeLesson();
-  }
-
-});
-
-
-// Buy button
-function buyVolume() {
-
-  alert(
-    "Enrollment system coming soon.\n\n" +
-    "The next step is to connect your payment gateway " +
-    "and student access system."
-  );
-
-}
-
-
-/* =========================================
-   MAGIC PARTICLE BACKGROUND
-========================================= */
-
-(function() {
-
-  const canvas =
-    document.getElementById("magicCanvas");
-
-  if (!canvas) {
-    return;
-  }
-
-  const ctx =
-    canvas.getContext("2d");
-
-  let particles = [];
-
-  function resizeCanvas() {
-
-    canvas.width =
-      window.innerWidth;
-
-    canvas.height =
-      window.innerHeight;
-
-  }
-
-  function createParticles() {
-
-    particles = [];
-
-    const count =
-      window.innerWidth < 600
-        ? 35
-        : 70;
-
-    for (let i = 0; i < count; i++) {
-
-      particles.push({
-
-        x:
-          Math.random() *
-          canvas.width,
-
-        y:
-          Math.random() *
-          canvas.height,
-
-        size:
-          Math.random() * 2 + 0.5,
-
-        speed:
-          Math.random() * 0.3 + 0.1,
-
-        opacity:
-          Math.random() * 0.7 + 0.2
-
-      });
-
-    }
-
-  }
-
-  function animateParticles() {
-
-    ctx.clearRect(
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-
-    particles.forEach(function(particle) {
-
-      particle.y -=
-        particle.speed;
-
-      if (particle.y < -10) {
-
-        particle.y =
-          canvas.height + 10;
-
-        particle.x =
-          Math.random() *
-          canvas.width;
-
-      }
-
-      ctx.beginPath();
-
-      ctx.arc(
-        particle.x,
-        particle.y,
-        particle.size,
-        0,
-        Math.PI * 2
-      );
-
-      ctx.fillStyle =
-        "rgba(225,185,54," +
-        particle.opacity +
-        ")";
-
-      ctx.shadowBlur = 10;
-
-      ctx.shadowColor =
-        "rgba(225,185,54,0.8)";
-
-      ctx.fill();
+        }, 600);
 
     });
 
-    requestAnimationFrame(
-      animateParticles
-    );
+});
 
-  }
+/*==========================
+HERO ENTRANCE
+==========================*/
 
-  resizeCanvas();
+const hero = document.querySelector(".hero-content");
 
-  createParticles();
+if(hero){
 
-  animateParticles();
+    hero.style.opacity = "0";
 
-  window.addEventListener(
-    "resize",
-    function() {
+    hero.style.transform =
 
-      resizeCanvas();
+        "translateY(40px)";
 
-      createParticles();
+    setTimeout(() => {
+
+        hero.style.transition =
+
+            "all 1s ease";
+
+        hero.style.opacity = "1";
+
+        hero.style.transform =
+
+            "translateY(0)";
+
+    },300);
+
+}
+
+
+/*====================================================
+  DRACO ARCANE
+  script.js
+  Part 3/3
+====================================================*/
+
+/*==========================
+PAGE FADE-IN
+==========================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.body.style.opacity = "0";
+
+    document.body.style.transition = "opacity .6s ease";
+
+    requestAnimationFrame(() => {
+
+        document.body.style.opacity = "1";
+
+    });
+
+});
+
+/*==========================
+FUTURE MOBILE MENU SUPPORT
+==========================*/
+
+const mobileToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".nav-links");
+
+if (mobileToggle && mobileNav) {
+
+    mobileToggle.addEventListener("click", () => {
+
+        mobileNav.classList.toggle("open");
+        mobileToggle.classList.toggle("active");
+
+    });
+
+}
+
+/*==========================
+ESC KEY CLOSES MOBILE MENU
+==========================*/
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        if (mobileNav) {
+
+            mobileNav.classList.remove("open");
+
+        }
+
+        if (mobileToggle) {
+
+            mobileToggle.classList.remove("active");
+
+        }
 
     }
-  );
 
-})();
+});
+
+/*==========================
+BUTTON HOVER LIFT
+==========================*/
+
+document.querySelectorAll(".gold-btn, .outline-btn").forEach(button => {
+
+    button.addEventListener("mouseenter", () => {
+
+        button.style.transition = "transform .25s ease";
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
+
+/*==========================
+PRELOAD INTERNAL PAGES
+==========================*/
+
+document.querySelectorAll("a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (
+
+        href &&
+        !href.startsWith("#") &&
+        !href.startsWith("http")
+
+    ) {
+
+        const preload = document.createElement("link");
+
+        preload.rel = "prefetch";
+
+        preload.href = href;
+
+        document.head.appendChild(preload);
+
+    }
+
+});
+
+/*==========================
+CURRENT YEAR (OPTIONAL)
+==========================*/
+
+const year = document.querySelector(".current-year");
+
+if (year) {
+
+    year.textContent = new Date().getFullYear();
+
+}
+
+/*==========================
+CONSOLE SIGNATURE
+==========================*/
+
+console.log(
+"%cDRACO ARCANE",
+"color:#D4AF37;font-size:22px;font-weight:bold;"
+);
+
+console.log(
+"%cThe Art of Modern Card Magic",
+"color:#FFD700;font-size:14px;"
+);
+
+console.log(
+"%cFounder: Akash Suresh | Magician Draco",
+"color:#ffffff;font-size:12px;"
+);
+
+/*==========================
+INITIALIZE
+==========================*/
+
+updateNavbar();
+
+window.dispatchEvent(new Event("scroll"));
+
+/*====================================================
+  END OF FILE
+====================================================*/
