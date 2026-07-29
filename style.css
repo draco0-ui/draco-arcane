@@ -1,27 +1,30 @@
-/*==================================================
-DRACO ARCANE
-STYLE.CSS V3.0
-PART 1
-==================================================*/
+/* ==========================================
+   DRACO ARCANE V3.0
+   Premium Luxury Theme
+========================================== */
 
-/* RESET */
+:root{
+
+--bg:#090909;
+--surface:#121212;
+--surface-2:#1b1b1b;
+
+--gold:#D4AF37;
+--gold-light:#FFD76A;
+
+--white:#F5F5F5;
+--muted:#B8B8B8;
+
+--border:rgba(212,175,55,.18);
+
+--shadow:0 12px 40px rgba(0,0,0,.45);
+
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-}
-
-:root{
-
---bg:#090909;
---card:#141414;
---gold:#D4AF37;
---gold-light:#FFD700;
---white:#F5F5F5;
---muted:#A5A5A5;
---border:rgba(212,175,55,.18);
-
 }
 
 html{
@@ -31,264 +34,155 @@ scroll-behavior:smooth;
 body{
 
 font-family:'Poppins',sans-serif;
+
 background:var(--bg);
+
 color:var(--white);
+
 overflow-x:hidden;
-line-height:1.8;
 
-}
-
-/* CONTAINER */
-
-.container{
-
-width:min(92%,1280px);
-margin:auto;
-
-}
-
-/* LINKS */
-
-a{
-
-text-decoration:none;
-color:inherit;
+line-height:1.7;
 
 }
 
 img{
 
 display:block;
+
 max-width:100%;
 
 }
 
-/* HEADINGS */
+a{
 
-h1,h2,h3,h4{
+text-decoration:none;
 
-font-family:'Cinzel',serif;
-font-weight:700;
-letter-spacing:1px;
+color:inherit;
 
 }
 
-/*=========================
-LOADER
-=========================*/
+.container{
 
-#loader{
+width:min(92%,1200px);
 
-position:fixed;
-inset:0;
-background:#090909;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:99999;
-transition:.5s;
-
-}
-
-.loader-content{
-
-text-align:center;
-
-}
-
-.loader-logo{
-
-width:140px;
 margin:auto;
-margin-bottom:25px;
-
-animation:floatLogo 5s ease-in-out infinite;
 
 }
 
-.loader-content h1{
-
-font-size:2rem;
-margin-bottom:8px;
-
-}
-
-.loader-content p{
-
-color:var(--gold);
-
-}
-
-/*=========================
+/* ===========================
 HEADER
-=========================*/
+=========================== */
 
-header{
+.header{
 
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
-z-index:999;
-transition:.35s;
 
-}
+z-index:1000;
 
-header.scrolled{
+background:rgba(10,10,10,.82);
 
-background:rgba(9,9,9,.92);
 backdrop-filter:blur(18px);
-box-shadow:0 8px 30px rgba(0,0,0,.45);
+
+border-bottom:1px solid var(--border);
 
 }
 
-.navbar{
-
-width:min(94%,1280px);
-margin:auto;
+.header .container{
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-padding:18px 0;
+padding:16px 0;
 
 }
 
-/* BRAND */
+/* Logo */
 
-.brand{
+.logo{
 
 display:flex;
+
 align-items:center;
-gap:15px;
+
+gap:16px;
 
 }
 
-.nav-logo{
+.logo img{
 
-width:62px;
-height:62px;
+width:58px;
+
+height:58px;
+
 object-fit:contain;
 
 }
 
-.brand-text h2{
+.logo h1{
 
-font-size:1.15rem;
-line-height:1;
+font-family:'Cinzel',serif;
+
+font-size:1.3rem;
+
+letter-spacing:2px;
 
 }
 
-.brand-text span{
+.logo span{
 
 display:block;
-margin-top:6px;
+
 font-size:.82rem;
-color:var(--muted);
+
+color:var(--gold-light);
+
+letter-spacing:1px;
 
 }
 
-/* NAVIGATION */
+/* Navigation */
 
-.nav-links{
+.nav{
 
 display:flex;
-list-style:none;
-gap:35px;
+
+gap:32px;
 
 }
 
-.nav-links a{
+.nav a{
 
-position:relative;
 font-weight:500;
+
 transition:.3s;
 
 }
 
-.nav-links a:hover{
+.nav a:hover{
 
 color:var(--gold);
 
 }
 
-.nav-links a::after{
+/* Mobile Button */
 
-content:"";
-
-position:absolute;
-
-left:0;
-bottom:-7px;
-
-width:0;
-height:2px;
-
-background:var(--gold);
-
-transition:.3s;
-
-}
-
-.nav-links a:hover::after{
-
-width:100%;
-
-}
-
-/* BUTTON */
-
-.gold-btn{
-
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-padding:14px 32px;
-
-border-radius:999px;
-
-background:
-
-linear-gradient(
-135deg,
-#FFD700,
-#D4AF37
-);
-
-color:#111;
-
-font-weight:600;
-
-transition:.35s;
-
-box-shadow:
-
-0 12px 30px rgba(212,175,55,.25);
-
-}
-
-.gold-btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-
-0 16px 40px rgba(212,175,55,.45);
-
-}
-
-/* MOBILE MENU */
-
-.menu-toggle{
+.menu-btn{
 
 display:none;
 
 background:none;
+
 border:none;
 
-font-size:32px;
+font-size:30px;
 
 color:var(--gold);
 
@@ -296,17 +190,11 @@ cursor:pointer;
 
 }
 
-/*==================================================
-DRACO ARCANE
-STYLE.CSS V3.0
-PART 2 — HERO
-==================================================*/
-
-/* HERO */
+/* ==========================================
+   HERO SECTION
+========================================== */
 
 .hero{
-
-position:relative;
 
 min-height:100vh;
 
@@ -316,100 +204,80 @@ align-items:center;
 
 justify-content:center;
 
+position:relative;
+
 text-align:center;
 
-padding:160px 20px 100px;
-
-overflow:hidden;
+padding:180px 20px 120px;
 
 background:
 radial-gradient(circle at top,
-rgba(212,175,55,.10),
+rgba(212,175,55,.15),
 transparent 45%),
-
 linear-gradient(
 180deg,
-#111111 0%,
-#090909 55%,
-#050505 100%
-);
+#111 0%,
+#090909 100%);
+
+overflow:hidden;
 
 }
-
-/* DARK OVERLAY */
 
 .hero-overlay{
 
 position:absolute;
+
 inset:0;
 
 background:
-
 linear-gradient(
-
 180deg,
-
 rgba(0,0,0,.15),
+rgba(0,0,0,.75));
 
-rgba(0,0,0,.70)
-
-);
-
-z-index:1;
+pointer-events:none;
 
 }
 
-/* HERO CONTENT */
-
-.hero-container{
+.hero-content{
 
 position:relative;
 
 z-index:2;
 
-max-width:900px;
+max-width:850px;
 
 }
 
-/* HERO LOGO */
+.hero-badge{
 
-.hero-logo{
+display:inline-block;
 
-width:220px;
+padding:10px 22px;
 
-margin:0 auto 35px;
+border:1px solid var(--border);
 
-animation:floatLogo 6s ease-in-out infinite;
+border-radius:999px;
 
-filter:
+background:rgba(212,175,55,.08);
 
-drop-shadow(0 0 20px rgba(212,175,55,.30))
+color:var(--gold-light);
 
-drop-shadow(0 0 50px rgba(212,175,55,.15));
+font-size:.85rem;
 
-}
+letter-spacing:2px;
 
-/* SMALL LABEL */
-
-.hero-tag{
-
-color:var(--gold);
-
-letter-spacing:6px;
-
-font-size:.9rem;
-
-margin-bottom:18px;
+margin-bottom:28px;
 
 text-transform:uppercase;
 
 }
 
-/* TITLE */
+.hero h2{
 
-.hero h1{
+font-family:'Cinzel',serif;
 
-font-size:clamp(3rem,7vw,5.8rem);
+font-size:clamp(3rem,8vw,5.6rem);
 
 line-height:1.1;
 
@@ -417,75 +285,29 @@ margin-bottom:28px;
 
 }
 
-/* DESCRIPTION */
+.hero h2 span{
 
-.hero-description{
+color:var(--gold);
+
+}
+
+.hero p{
+
+font-size:1.1rem;
+
+color:var(--muted);
 
 max-width:760px;
 
 margin:auto;
 
-font-size:1.12rem;
-
-color:var(--muted);
-
 line-height:1.9;
 
 }
 
-/* SPECIALITIES */
-
-.magic-list{
-
-margin-top:40px;
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:15px;
-
-}
-
-.magic-list span{
-
-padding:12px 22px;
-
-border-radius:999px;
-
-background:
-
-rgba(212,175,55,.08);
-
-border:
-
-1px solid rgba(212,175,55,.18);
-
-color:var(--gold-light);
-
-font-size:.95rem;
-
-transition:.35s;
-
-}
-
-.magic-list span:hover{
-
-background:var(--gold);
-
-color:#111;
-
-transform:translateY(-4px);
-
-}
-
-/* HERO BUTTONS */
-
 .hero-buttons{
 
-margin-top:50px;
+margin-top:45px;
 
 display:flex;
 
@@ -497,29 +319,63 @@ flex-wrap:wrap;
 
 }
 
-.outline-btn{
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary,
+.btn-secondary{
 
 display:inline-flex;
 
-justify-content:center;
-
 align-items:center;
 
-padding:14px 32px;
+justify-content:center;
+
+padding:15px 34px;
 
 border-radius:999px;
+
+font-weight:600;
+
+transition:.35s ease;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(
+135deg,
+var(--gold-light),
+var(--gold));
+
+color:#111;
+
+box-shadow:
+0 12px 35px rgba(212,175,55,.30);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 20px 45px rgba(212,175,55,.45);
+
+}
+
+.btn-secondary{
 
 border:2px solid var(--gold);
 
 color:var(--gold);
 
-font-weight:600;
-
-transition:.35s;
+background:transparent;
 
 }
 
-.outline-btn:hover{
+.btn-secondary:hover{
 
 background:var(--gold);
 
@@ -529,474 +385,318 @@ transform:translateY(-4px);
 
 }
 
-/* FLOATING ANIMATION */
-
-@keyframes floatLogo{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-}
-
-/* FADE IN */
-
-.hero h1,
-.hero-tag,
-.hero-description,
-.magic-list,
-.hero-buttons{
-
-animation:fadeUp .9s ease forwards;
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/*==================================================
-DRACO ARCANE
-STYLE.CSS V3.0
-PART 3 — SECTIONS & PREMIUM CARDS
-==================================================*/
-
-/*=========================
-SECTION SPACING
-=========================*/
+/* ==========================================
+   GENERAL SECTIONS
+========================================== */
 
 section{
-    padding:120px 0;
-}
 
-.section-tag{
-    text-align:center;
-    color:var(--gold);
-    letter-spacing:5px;
-    text-transform:uppercase;
-    font-size:.85rem;
-    margin-bottom:15px;
+padding:110px 0;
+
 }
 
 .section-title{
-    text-align:center;
-    font-size:clamp(2.2rem,5vw,3.6rem);
-    margin-bottom:25px;
-}
-
-.section-description{
-    max-width:820px;
-    margin:0 auto;
-    text-align:center;
-    color:var(--muted);
-    font-size:1.05rem;
-    line-height:1.9;
-}
-
-/*=========================
-PREMIUM GRIDS
-=========================*/
-
-.about-grid,
-.feature-grid,
-.volume-grid{
-
-    display:grid;
-    gap:30px;
-    margin-top:60px;
-
-}
-
-.about-grid{
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-}
-
-.feature-grid{
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-}
-
-.volume-grid{
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-}
-
-/*=========================
-PREMIUM CARDS
-=========================*/
-
-.about-card,
-.feature-card,
-.volume-card,
-.founder-card{
-
-    position:relative;
-    overflow:hidden;
-
-    background:rgba(20,20,20,.92);
-
-    border:1px solid rgba(212,175,55,.18);
-
-    border-radius:24px;
-
-    padding:35px;
-
-    backdrop-filter:blur(16px);
-
-    transition:.35s;
-
-    box-shadow:
-    0 12px 35px rgba(0,0,0,.35);
-
-}
-
-/* GOLD SHINE */
-
-.about-card::before,
-.feature-card::before,
-.volume-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-120%;
-    left:-120%;
-
-    width:250%;
-    height:250%;
-
-    background:
-
-    linear-gradient(
-        45deg,
-        transparent,
-        rgba(255,215,0,.06),
-        transparent
-    );
-
-    transition:1s;
-
-    transform:rotate(25deg);
-
-}
-
-.about-card:hover::before,
-.feature-card:hover::before,
-.volume-card:hover::before{
-
-    top:100%;
-    left:100%;
-
-}
-
-/* CARD HOVER */
-
-.about-card:hover,
-.feature-card:hover,
-.volume-card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:var(--gold);
-
-    box-shadow:
-
-    0 18px 45px rgba(212,175,55,.22);
-
-}
-
-/*=========================
-CARD TEXT
-=========================*/
-
-.about-card h3,
-.feature-card h3,
-.volume-card h3{
-
-    color:var(--gold);
-
-    margin-bottom:18px;
-
-}
-
-.about-card p,
-.feature-card p,
-.volume-card p{
-
-    color:var(--muted);
-
-    line-height:1.9;
-
-}
-
-/*=========================
-VOLUME NUMBER
-=========================*/
-
-.volume-number{
-
-    width:90px;
-    height:90px;
-
-    margin:0 auto 25px;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border:2px solid var(--gold);
-
-    color:var(--gold);
-
-    font-family:'Cinzel',serif;
-
-    font-size:34px;
-
-    font-weight:700;
-
-    box-shadow:
-
-    0 0 25px rgba(212,175,55,.25);
-
-}
-
-/*=========================
-PRICE
-=========================*/
-
-.price{
-
-    display:block;
-
-    margin:20px 0;
-
-    font-size:2rem;
-
-    font-weight:700;
-
-    color:var(--gold-light);
-
-}
-
-.coming{
-
-    display:block;
-
-    margin:20px 0;
-
-    color:var(--gold);
-
-    font-weight:600;
-
-}
-
-/*=========================
-FEATURED CARD
-=========================*/
-
-.featured{
-
-    border:2px solid var(--gold);
-
-    box-shadow:
-
-    0 0 40px rgba(212,175,55,.22);
-
-}
-
-/*=========================
-VOLUME LIST
-=========================*/
-
-.volume-list{
-
-    list-style:none;
-
-    margin:25px 0;
-
-    text-align:left;
-
-}
-
-.volume-list li{
-
-    padding:10px 0;
-
-    color:var(--muted);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
-
-}
-
-/*==================================================
-DRACO ARCANE
-STYLE.CSS V3.0
-PART 4 — FOUNDER • PROMISE • FOOTER • RESPONSIVE
-==================================================*/
-
-/*=========================
-FOUNDER
-=========================*/
-
-.founder{
 
 text-align:center;
 
-}
+max-width:850px;
 
-.founder-card{
-
-max-width:760px;
-margin:60px auto 0;
+margin:0 auto 60px;
 
 }
 
-.founder-logo{
+.section-title span{
 
-width:140px;
-height:140px;
+display:block;
 
-margin:0 auto 30px;
-
-object-fit:contain;
-
-filter:
-drop-shadow(0 0 20px rgba(212,175,55,.35));
-
-}
-
-.founder-card h3{
-
-font-size:2.2rem;
 color:var(--gold);
 
-margin-bottom:8px;
+font-size:.85rem;
+
+letter-spacing:4px;
+
+text-transform:uppercase;
+
+margin-bottom:16px;
 
 }
 
-.founder-card h4{
+.section-title h2{
+
+font-family:'Cinzel',serif;
+
+font-size:clamp(2.2rem,5vw,3.5rem);
+
+margin-bottom:20px;
+
+}
+
+.section-title p{
+
+color:var(--muted);
+
+font-size:1.05rem;
+
+line-height:1.9;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+.nav{
+
+display:none;
+
+}
+
+.menu-btn{
+
+display:block;
+
+}
+
+.hero{
+
+padding-top:170px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+width:260px;
+
+}
+
+}
+
+/* ==========================================
+   PREMIUM CARDS
+========================================== */
+
+.volume-grid,
+.academy-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:32px;
+
+margin-top:60px;
+
+}
+
+.volume-card,
+.academy-card,
+.future-box{
+
+background:rgba(20,20,20,.95);
+
+border:1px solid var(--border);
+
+border-radius:24px;
+
+padding:36px;
+
+transition:.35s ease;
+
+box-shadow:var(--shadow);
+
+}
+
+.volume-card:hover,
+.academy-card:hover,
+.future-box:hover{
+
+transform:translateY(-10px);
+
+border-color:var(--gold);
+
+box-shadow:
+0 20px 45px rgba(212,175,55,.22);
+
+}
+
+.featured{
+
+border:2px solid var(--gold);
+
+}
+
+.volume-label{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:999px;
+
+background:rgba(212,175,55,.12);
+
+color:var(--gold-light);
+
+font-size:.8rem;
+
+margin-bottom:20px;
+
+}
+
+.volume-card h3,
+.academy-card h3{
+
+font-family:'Cinzel',serif;
+
+font-size:1.8rem;
+
+color:var(--gold);
+
+margin-bottom:12px;
+
+}
+
+.volume-card h4{
 
 font-size:1.1rem;
-font-weight:500;
 
-margin-bottom:25px;
+margin-bottom:18px;
 
 color:#fff;
 
 }
 
-.founder-card p{
+.volume-card p,
+.academy-card p{
 
 color:var(--muted);
-line-height:1.9;
+
+line-height:1.8;
 
 }
 
-/*=========================
-PROMISE
-=========================*/
+.card-button{
 
-.promise{
+display:inline-block;
+
+margin-top:28px;
+
+padding:14px 28px;
+
+border-radius:999px;
+
+background:linear-gradient(135deg,var(--gold-light),var(--gold));
+
+color:#111;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.card-button:hover{
+
+transform:translateY(-3px);
+
+}
+
+/* ==========================================
+   FUTURE BOX
+========================================== */
+
+.future-box{
+
+max-width:760px;
+
+margin:60px auto 0;
 
 text-align:center;
 
-background:
-
-linear-gradient(
-180deg,
-rgba(212,175,55,.05),
-transparent
-);
-
 }
 
-.promise h2{
+.future-box h3{
 
-font-size:clamp(2rem,5vw,3rem);
+color:var(--gold);
 
 margin-bottom:25px;
 
+font-family:'Cinzel',serif;
+
 }
 
-.promise p{
+.future-box ul{
 
-max-width:850px;
+list-style:none;
 
-margin:auto;
+}
 
-font-size:1.05rem;
+.future-box li{
 
-line-height:2;
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
 
 color:var(--muted);
 
 }
 
-/*=========================
-FOOTER
-=========================*/
+/* ==========================================
+   CONTACT
+========================================== */
 
-footer{
-
-padding:90px 20px 50px;
-
-background:#070707;
-
-border-top:1px solid rgba(212,175,55,.15);
+.contact{
 
 text-align:center;
 
 }
 
-.footer-top{
+.contact-buttons{
 
-max-width:750px;
+display:flex;
 
-margin:auto;
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-top:40px;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+background:#080808;
+
+padding:80px 20px;
+
+border-top:1px solid var(--border);
+
+text-align:center;
 
 }
 
 .footer-logo{
 
-width:120px;
+width:110px;
 
-margin:auto auto 25px;
-
-filter:
-drop-shadow(0 0 18px rgba(212,175,55,.30));
-
-}
-
-footer h2{
-
-font-size:2rem;
-
-margin-bottom:12px;
+margin:0 auto 25px;
 
 }
 
@@ -1004,427 +704,58 @@ margin-bottom:12px;
 
 color:var(--gold);
 
-letter-spacing:3px;
+margin:12px 0;
 
-margin-bottom:20px;
-
-text-transform:uppercase;
+letter-spacing:2px;
 
 }
 
 .footer-description{
 
-color:var(--muted);
+max-width:700px;
 
-max-width:650px;
-
-margin:0 auto 40px;
-
-line-height:1.9;
-
-}
-
-.footer-links{
-
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:28px;
-
-margin-bottom:35px;
-
-}
-
-.footer-links a{
-
-transition:.3s;
+margin:20px auto;
 
 color:var(--muted);
 
-}
-
-.footer-links a:hover{
-
-color:var(--gold);
+line-height:1.8;
 
 }
 
-.footer-specialties{
+.copyright{
 
-display:flex;
-
-justify-content:center;
-
-flex-wrap:wrap;
-
-gap:14px;
-
-margin-bottom:40px;
-
-}
-
-.footer-specialties span{
-
-padding:10px 20px;
-
-border-radius:999px;
-
-background:rgba(212,175,55,.08);
-
-border:1px solid rgba(212,175,55,.15);
-
-color:var(--gold-light);
+margin-top:35px;
 
 font-size:.9rem;
 
-}
-
-.footer-founder{
-
-margin-bottom:35px;
+color:#888;
 
 }
 
-.footer-founder h3{
+/* ==========================================
+   LUXURY ANIMATIONS
+========================================== */
 
-color:var(--gold);
-
-margin-bottom:10px;
-
-}
-
-.footer-founder p{
-
-font-size:1.1rem;
-
-}
-
-.footer-founder span{
-
-color:var(--muted);
-
-}
-
-.footer-bottom{
-
-padding-top:25px;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-font-size:.9rem;
-
-color:var(--muted);
-
-}
-
-/*=========================
-BACK TO TOP
-=========================*/
-
-.back-top{
-
-position:fixed;
-
-right:25px;
-
-bottom:25px;
-
-width:55px;
-
-height:55px;
-
-border:none;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#FFD700,#D4AF37);
-
-color:#111;
-
-font-size:24px;
-
-cursor:pointer;
-
-display:none;
-
-box-shadow:0 10px 30px rgba(212,175,55,.30);
-
-z-index:999;
-
-}
-
-.back-top.show{
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-/*=========================
-RESPONSIVE
-=========================*/
-
-@media(max-width:900px){
-
-.navbar{
-
-flex-wrap:wrap;
-
-justify-content:space-between;
-
-}
-
-.menu-toggle{
-
-display:block;
-
-}
-
-.nav-links{
-
-display:none;
-
-flex-direction:column;
-
-width:100%;
-
-padding-top:20px;
-
-gap:18px;
-
-text-align:center;
-
-}
-
-.nav-links.active{
-
-display:flex;
-
-}
-
-.gold-btn{
-
-display:none;
-
-}
-
-.hero{
-
-padding-top:150px;
-
-}
-
-.hero-logo{
-
-width:170px;
-
-}
-
-.hero h1{
-
-font-size:2.8rem;
-
-}
-
-.section-title{
-
-font-size:2.2rem;
-
-}
-
-.footer-links{
-
-gap:18px;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.hero{
-
-padding:140px 20px 80px;
-
-}
-
-.hero-logo{
-
-width:140px;
-
-}
-
-.magic-list{
-
-gap:10px;
-
-}
-
-.magic-list span{
-
-font-size:.85rem;
-
-padding:10px 16px;
-
-}
-
-.about-card,
-.feature-card,
 .volume-card,
-.founder-card{
-
-padding:28px;
-
-}
-
-.footer-logo{
-
-width:95px;
-
-}
-
-}
-
-/*==================================================
-DRACO ARCANE
-STYLE.CSS V3.0
-PART 5 — FINAL EFFECTS
-==================================================*/
-
-/*=========================
-SCROLL REVEAL
-=========================*/
-
-.reveal{
-
-opacity:0;
-transform:translateY(40px);
-transition:all .8s ease;
-
-}
-
-.reveal.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-/*=========================
-PREMIUM GOLD GLOW
-=========================*/
-
-.nav-logo,
-.hero-logo,
-.footer-logo,
-.founder-logo{
-
-transition:.4s ease;
-
-}
-
-.nav-logo:hover,
-.hero-logo:hover,
-.footer-logo:hover,
-.founder-logo:hover{
-
-filter:
-drop-shadow(0 0 15px rgba(255,215,0,.5))
-drop-shadow(0 0 35px rgba(212,175,55,.4))
-drop-shadow(0 0 60px rgba(212,175,55,.25));
-
-transform:scale(1.05);
-
-}
-
-/*=========================
-BUTTON EFFECTS
-=========================*/
-
-.gold-btn,
-.outline-btn{
+.academy-card,
+.btn-primary,
+.btn-secondary{
 
 transition:all .35s ease;
 
 }
 
-.gold-btn:hover,
-.outline-btn:hover{
+.logo img{
 
-transform:translateY(-4px);
-
-}
-
-/*=========================
-SECTION DIVIDER
-=========================*/
-
-section::after{
-
-content:"";
-
-display:block;
-
-width:120px;
-height:2px;
-
-margin:80px auto 0;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-var(--gold),
-transparent
-);
-
-opacity:.5;
+transition:.4s ease;
 
 }
 
-/*=========================
-SCROLLBAR
-=========================*/
+.logo:hover img{
 
-::-webkit-scrollbar{
-
-width:10px;
+transform:rotate(-6deg) scale(1.08);
 
 }
-
-::-webkit-scrollbar-track{
-
-background:#111;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:linear-gradient(
-180deg,
-#FFD700,
-#D4AF37
-);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#FFD700;
-
-}
-
-/*=========================
-TEXT SELECTION
-=========================*/
 
 ::selection{
 
@@ -1434,73 +765,3 @@ color:#111;
 
 }
 
-/*=========================
-SMOOTH PAGE LOAD
-=========================*/
-
-body{
-
-animation:pageFade .8s ease;
-
-}
-
-@keyframes pageFade{
-
-from{
-
-opacity:0;
-
-}
-
-to{
-
-opacity:1;
-
-}
-
-}
-
-/*=========================
-UTILITY CLASSES
-=========================*/
-
-.text-center{
-
-text-align:center;
-
-}
-
-.gold{
-
-color:var(--gold);
-
-}
-
-.hidden{
-
-display:none;
-
-}
-
-/*=========================
-REDUCED MOTION
-=========================*/
-
-@media (prefers-reduced-motion:reduce){
-
-*,
-*::before,
-*::after{
-
-animation:none!important;
-transition:none!important;
-scroll-behavior:auto!important;
-
-}
-
-}
-
-/*=========================
-END OF DRACO ARCANE
-VERSION 3.0
-=========================*/
