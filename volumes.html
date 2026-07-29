@@ -6,14 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Volumes | Draco Arcane</title>
+<title>Draco Arcane Volumes</title>
 
 <meta name="description"
 content="Explore the premium learning volumes of Draco Arcane.">
 
-<meta name="theme-color" content="#0b0b0b">
-
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,169 +19,86 @@ content="Explore the premium learning volumes of Draco Arcane.">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
 rel="stylesheet">
 
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div id="loader">
+<header class="header">
 
-<div class="loader-logo">
+<div class="container">
 
-<div class="dr-logo">DR</div>
+<a href="index.html" class="logo">
+
+<img src="assets/logo.png" alt="Draco Arcane">
+
+<div>
 
 <h1>DRACO ARCANE</h1>
 
-<p>The Art of Modern Card Magic</p>
-
-<span>Loading...</span>
-
-</div>
-
-</div>
-
-<header>
-
-<nav class="navbar">
-
-<a href="index.html" class="brand">
-
-<div class="logo-circle">DR</div>
-
-<div class="brand-text">
-
-<h2>DRACO ARCANE</h2>
-
-<small>The Art of Modern Card Magic</small>
+<span>The Art of Modern Magic</span>
 
 </div>
 
 </a>
 
-<ul class="nav-links">
+<nav class="nav" id="nav">
 
-<li><a href="index.html">Home</a></li>
+<a href="index.html">Home</a>
 
-<li><a href="volumes.html">Volumes</a></li>
+<a href="#volumes">Volumes</a>
 
-<li><a href="index.html#academy">Academy</a></li>
+<a href="index.html#academy">Academy</a>
 
-<li><a href="index.html#foundation">Foundation</a></li>
+<a href="index.html#foundation">Foundation</a>
 
-<li><a href="index.html#contact">Contact</a></li>
-
-</ul>
-
-<a href="volume1.html" class="gold-btn">
-
-Unlock Volume I
-
-</a>
+<a href="index.html#contact">Contact</a>
 
 </nav>
 
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
+
+</div>
+
 </header>
+
+<main>
 
 <section class="hero">
 
-<div class="hero-content">
+<div class="hero-overlay"></div>
 
-<p class="academy-label">
+<div class="container hero-content">
 
-DRACO ARCANE VOLUMES
+<span class="hero-badge">
+DRACO ARCANE COLLECTION
+</span>
 
-</p>
+<h2>
+Choose Your
+<span>Journey</span>
+</h2>
 
-<h1>
+<p>
 
-Choose Your Journey
-
-</h1>
-
-<p class="hero-description">
-
-Every magician begins with a single card.
-Each Draco Arcane volume is carefully designed
-to help you grow from beginner to confident
-performer through structured lessons and
-professional training.
+Every Draco Arcane volume is carefully designed
+to help you progress from beginner to professional
+through structured lessons and premium training.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="#volumes" class="gold-btn">
+<a href="#volumes" class="btn-primary">
+Explore Volumes
+</a>
 
-Explore Vol
-
-<!-- VOLUME I -->
-
-<div class="volume-card featured">
-
-    <div class="volume-logo">DR</div>
-
-    <h3>Volume I</h3>
-
-    <h4>Beginner Card Magic</h4>
-
-    <span class="price">₹499</span>
-
-    <p>
-        Master essential card magic with structured lessons,
-        sleight of hand, audience management, presentation,
-        and professional performance techniques.
-    </p>
-
-    <a href="volume1.html" class="gold-btn">
-        Unlock Volume I
-    </a>
-
-</div>
-
-<!-- VOLUME II -->
-
-<div class="volume-card">
-
-    <div class="volume-logo">DR</div>
-
-    <h3>Volume II</h3>
-
-    <h4>Intermediate Card Magic</h4>
-
-    <span class="coming">Coming Soon</span>
-
-    <p>
-        Learn advanced controls, forces, false shuffles,
-        psychology, misdirection, and stronger card routines.
-    </p>
-
-    <a href="volume2.html" class="outline-btn">
-        Learn More
-    </a>
-
-</div>
-
-<!-- VOLUME III -->
-
-<div class="volume-card">
-
-    <div class="volume-logo">DR</div>
-
-    <h3>Volume III</h3>
-
-    <h4>Advanced Card Magic</h4>
-
-    <span class="coming">Coming Soon</span>
-
-    <p>
-        Professional-level sleight of hand, impossible effects,
-        signature routines, audience control, and performance systems.
-    </p>
-
-    <a href="volume3.html" class="outline-btn">
-        Coming Soon
-    </a>
-
-</div>
+<a href="volume1.html" class="btn-secondary">
+Volume I
+</a>
 
 </div>
 
@@ -191,46 +106,222 @@ Explore Vol
 
 </section>
 
-<section class="promise">
+<section id="volumes">
 
-    <div class="container">
+<div class="container">
 
-        <h2>Every Volume Builds Your Journey</h2>
+<div class="section-title">
 
-        <p>
+<span>Premium Learning Path</span>
 
-            Draco Arcane is designed as a complete learning
-            path. Begin with strong fundamentals in Volume I,
-            develop confidence in Volume II, and master
-            professional performance skills in Volume III.
+<h2>Draco Arcane Volumes</h2>
 
-        </p>
+<p>
 
-    </div>
+Build your skills step by step with premium
+courses designed for serious magicians.
+
+</p>
+
+</div>
+
+<div class="volume-grid">
+
+<article class="volume-card featured">
+
+<span class="volume-label">
+Available Now
+</span>
+
+<h3>Volume I</h3>
+
+<h4>Modern Card Magic</h4>
+
+<p>
+
+Build a strong foundation in modern card magic with
+professional instruction, practical sleight of hand,
+audience management, presentation, and performance skills.
+
+</p>
+
+<a href="volume1.html" class="card-button">
+
+Explore Volume I
+
+</a>
+
+</article>
+
+<article class="volume-card">
+
+<span class="volume-label">
+Coming Soon
+</span>
+
+<h3>Volume II</h3>
+
+<h4>Advanced Card Magic</h4>
+
+<p>
+
+Take your performances further with advanced controls,
+false shuffles, psychology, layered routines,
+and professional performance structure.
+
+</p>
+
+</article>
+
+<article class="volume-card">
+
+<span class="volume-label">
+Future Release
+</span>
+
+<h3>Volume III</h3>
+
+<h4>Elite Card Magic</h4>
+
+<p>
+
+Master expert-level sleight of hand, impossible visual
+effects, signature routines, audience control,
+and complete performance systems.
+
+</p>
+
+</article>
+
+</div>
+
+</div>
 
 </section>
 
-<footer id="contact">
+<section class="foundation">
 
-    <div class="container">
+<div class="container">
 
-        <div class="footer-logo">DR</div>
+<div class="section-title">
 
-        <h2>DRACO ARCANE</h2>
+<span>The Journey Continues</span>
 
-        <p>The Art of Modern Card Magic</p>
+<h2>Future Premium Courses</h2>
 
-        <p class="copyright">
+<p>
 
-            © 2026 Draco Arcane. All Rights Reserved.
+Draco Arcane will continue to expand with new premium
+volumes covering Close-up Magic, Mentalism,
+Hypnotism, and Professional Performance Systems.
 
-        </p>
+</p>
 
-    </div>
+</div>
+
+<div class="future-box">
+
+<h3>Coming Soon</h3>
+
+<ul>
+
+<li>Advanced Card Magic</li>
+
+<li>Elite Close-up Magic</li>
+
+<li>Mentalism Masterclass</li>
+
+<li>Hypnotism Essentials</li>
+
+<li>Professional Performance Systems</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Join the Journey</span>
+
+<h2>Become a Part of Draco Arcane</h2>
+
+<p>
+
+Start your journey into the world of modern magic.
+Learn through structured lessons, practical performance
+training, and premium future volumes.
+
+</p>
+
+</div>
+
+<div class="contact-buttons">
+
+<a href="volume1.html" class="btn-primary">
+
+Unlock Volume I
+
+</a>
+
+<a href="mailto:your@email.com" class="btn-secondary">
+
+Contact
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-content">
+
+<img src="assets/logo.png"
+alt="Draco Arcane Logo"
+class="footer-logo">
+
+<h2>DRACO ARCANE</h2>
+
+<p class="footer-tagline">
+
+The Art of Modern Magic
+
+</p>
+
+<p class="footer-description">
+
+Premium education in Card Magic,
+Close-up Magic,
+Mentalism,
+Hypnotism,
+and future premium volumes.
+
+</p>
+
+<p class="copyright">
+
+© 2026 Draco Arcane. All Rights Reserved.
+
+</p>
+
+</div>
 
 </footer>
 
 <script src="script.js"></script>
+
+</main>
 
 </body>
 
