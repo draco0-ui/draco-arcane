@@ -1006,3 +1006,197 @@ footer small {
     }
 
 }
+
+/* ========================================
+   VOLUMES PAGE
+======================================== */
+
+.volumes-page {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    padding-top: 100px;
+    background: #080808;
+}
+
+
+.volumes-hero {
+    text-align: center;
+    padding: 90px 20px 70px;
+}
+
+
+.volumes-hero h1 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(42px, 8vw, 80px);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+
+.volumes-hero > p:last-child {
+    max-width: 600px;
+    margin: auto;
+    color: #888;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+.course-library {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 20px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.course-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 420px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.01)
+        );
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 16px;
+    transition: 0.4s ease;
+}
+
+
+.course-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,0.7);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.5);
+}
+
+
+.course-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cinzel", serif;
+    font-size: 150px;
+    color: rgba(212,175,55,0.12);
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,0.08),
+            transparent 70%
+        );
+}
+
+
+.course-info {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.course-info h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(32px, 5vw, 55px);
+    margin: 12px 0 20px;
+}
+
+
+.course-info > p {
+    max-width: 650px;
+    color: #999;
+    line-height: 1.8;
+}
+
+
+.course-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+.course-info li {
+    color: #bbb;
+    font-size: 14px;
+}
+
+
+.course-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+
+.course-footer small {
+    display: block;
+    color: #777;
+    letter-spacing: 2px;
+    font-size: 9px;
+    margin-bottom: 6px;
+}
+
+
+.course-footer strong {
+    color: #d4af37;
+    font-family: "Cinzel", serif;
+}
+
+
+.featured-course {
+    border-color: rgba(212,175,55,0.55);
+}
+
+
+@media (max-width: 700px) {
+
+    .volumes-page {
+        padding-top: 70px;
+    }
+
+    .volumes-hero {
+        padding: 70px 20px 50px;
+    }
+
+    .course-card {
+        grid-template-columns: 1fr;
+    }
+
+    .course-number {
+        height: 140px;
+        font-size: 100px;
+    }
+
+    .course-info {
+        padding: 30px 25px 35px;
+    }
+
+    .course-info ul {
+        grid-template-columns: 1fr;
+    }
+
+    .course-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .course-footer .primary-button {
+        width: 100%;
+    }
+
+}
