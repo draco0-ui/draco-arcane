@@ -314,3 +314,242 @@ document.addEventListener(
 
     }
 );
+
+/* =========================================
+   DRACO ARCANE - VOLUME I FUNCTIONS
+========================================= */
+
+// Scroll to lessons
+function scrollToLessons() {
+  const lessons = document.getElementById("lessons");
+
+  if (lessons) {
+    lessons.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+}
+
+
+// Open lesson modal
+function openLesson(lessonId) {
+
+  const modal = document.getElementById("lessonModal");
+  const title = document.getElementById("modalLessonTitle");
+
+  if (!modal || !title) {
+    return;
+  }
+
+  const lessonTitles = {
+
+    lesson1:
+      "Lesson 01 — The Magician's Mind",
+
+    lesson2:
+      "Lesson 02 — The Art of Misdirection",
+
+    lesson3:
+      "Lesson 03 — Control & Precision"
+
+  };
+
+  title.textContent =
+    lessonTitles[lessonId] || "Arcane Lesson";
+
+  modal.classList.add("active");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+// Close lesson modal
+function closeLesson() {
+
+  const modal = document.getElementById("lessonModal");
+
+  if (!modal) {
+    return;
+  }
+
+  modal.classList.remove("active");
+
+  document.body.style.overflow = "";
+}
+
+
+// Close modal when clicking outside
+document.addEventListener("click", function(event) {
+
+  const modal =
+    document.getElementById("lessonModal");
+
+  if (
+    modal &&
+    event.target === modal
+  ) {
+    closeLesson();
+  }
+
+});
+
+
+// Close modal with Escape key
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    closeLesson();
+  }
+
+});
+
+
+// Buy button
+function buyVolume() {
+
+  alert(
+    "Enrollment system coming soon.\n\n" +
+    "The next step is to connect your payment gateway " +
+    "and student access system."
+  );
+
+}
+
+
+/* =========================================
+   MAGIC PARTICLE BACKGROUND
+========================================= */
+
+(function() {
+
+  const canvas =
+    document.getElementById("magicCanvas");
+
+  if (!canvas) {
+    return;
+  }
+
+  const ctx =
+    canvas.getContext("2d");
+
+  let particles = [];
+
+  function resizeCanvas() {
+
+    canvas.width =
+      window.innerWidth;
+
+    canvas.height =
+      window.innerHeight;
+
+  }
+
+  function createParticles() {
+
+    particles = [];
+
+    const count =
+      window.innerWidth < 600
+        ? 35
+        : 70;
+
+    for (let i = 0; i < count; i++) {
+
+      particles.push({
+
+        x:
+          Math.random() *
+          canvas.width,
+
+        y:
+          Math.random() *
+          canvas.height,
+
+        size:
+          Math.random() * 2 + 0.5,
+
+        speed:
+          Math.random() * 0.3 + 0.1,
+
+        opacity:
+          Math.random() * 0.7 + 0.2
+
+      });
+
+    }
+
+  }
+
+  function animateParticles() {
+
+    ctx.clearRect(
+      0,
+      0,
+      canvas.width,
+      canvas.height
+    );
+
+    particles.forEach(function(particle) {
+
+      particle.y -=
+        particle.speed;
+
+      if (particle.y < -10) {
+
+        particle.y =
+          canvas.height + 10;
+
+        particle.x =
+          Math.random() *
+          canvas.width;
+
+      }
+
+      ctx.beginPath();
+
+      ctx.arc(
+        particle.x,
+        particle.y,
+        particle.size,
+        0,
+        Math.PI * 2
+      );
+
+      ctx.fillStyle =
+        "rgba(225,185,54," +
+        particle.opacity +
+        ")";
+
+      ctx.shadowBlur = 10;
+
+      ctx.shadowColor =
+        "rgba(225,185,54,0.8)";
+
+      ctx.fill();
+
+    });
+
+    requestAnimationFrame(
+      animateParticles
+    );
+
+  }
+
+  resizeCanvas();
+
+  createParticles();
+
+  animateParticles();
+
+  window.addEventListener(
+    "resize",
+    function() {
+
+      resizeCanvas();
+
+      createParticles();
+
+    }
+  );
+
+})();
