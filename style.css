@@ -1395,3 +1395,382 @@ transform:translateY(12px) translateX(12px) rotate(22deg);
 }
 
 }
+
+/* ==========================================
+   DRACO ARCANE V4
+   PREMIUM HERO
+========================================== */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(212,175,55,.10),
+        transparent 45%),
+        linear-gradient(
+        180deg,
+        #080808 0%,
+        #050505 100%);
+}
+
+/* =======================
+   HERO CONTENT
+======================= */
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    max-width:900px;
+}
+
+.hero-logo{
+    width:170px;
+    margin:35px auto;
+    display:block;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255,215,0,.30));
+
+    animation:logoFloat 6s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+padding:10px 24px;
+
+border-radius:40px;
+
+border:1px solid rgba(212,175,55,.25);
+
+background:rgba(212,175,55,.08);
+
+color:#FFD76A;
+
+letter-spacing:2px;
+
+font-size:13px;
+
+margin-bottom:10px;
+
+}
+
+.hero h1{
+
+font-family:'Cinzel',serif;
+
+font-size:clamp(3rem,7vw,6rem);
+
+line-height:1.1;
+
+margin-bottom:28px;
+
+text-shadow:
+
+0 0 20px rgba(255,215,0,.15);
+
+}
+
+.hero h1 span{
+
+display:block;
+
+color:#FFD76A;
+
+}
+
+.hero p{
+
+max-width:720px;
+
+margin:auto;
+
+font-size:1.15rem;
+
+color:#CFCFCF;
+
+line-height:1.9;
+
+}
+
+/* =======================
+   BUTTONS
+======================= */
+
+.hero-buttons{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/* =======================
+   HERO GLOW
+======================= */
+
+.hero-glow{
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+left:50%;
+top:50%;
+
+transform:translate(-50%,-50%);
+
+background:
+
+radial-gradient(circle,
+
+rgba(212,175,55,.16),
+
+transparent 70%);
+
+filter:blur(60px);
+
+pointer-events:none;
+
+animation:glowPulse 10s ease-in-out infinite;
+
+}
+
+@keyframes glowPulse{
+
+0%,100%{
+
+opacity:.45;
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+opacity:.85;
+transform:translate(-50%,-50%) scale(1.12);
+
+}
+
+}
+
+/* =======================
+   FLOATING CARDS
+======================= */
+
+.magic-card{
+
+position:absolute;
+
+width:75px;
+
+opacity:.14;
+
+pointer-events:none;
+
+z-index:2;
+
+filter:
+drop-shadow(0 0 14px rgba(255,215,0,.30));
+
+}
+
+.card1{
+
+top:12%;
+left:2%;
+
+animation:floatOne 12s ease-in-out infinite;
+
+}
+
+.card2{
+
+top:18%;
+right:2%;
+
+animation:floatTwo 14s ease-in-out infinite;
+
+}
+
+.card3{
+
+bottom:14%;
+left:3%;
+
+animation:floatThree 13s ease-in-out infinite;
+
+}
+
+.card4{
+
+bottom:10%;
+right:3%;
+
+animation:floatFour 15s ease-in-out infinite;
+
+}
+
+@keyframes floatOne{
+
+0%,100%{
+transform:translateY(0) rotate(-18deg);
+}
+
+50%{
+transform:translateY(-24px) rotate(-8deg);
+}
+
+}
+
+@keyframes floatTwo{
+
+0%,100%{
+transform:translateY(0) rotate(18deg);
+}
+
+50%{
+transform:translateY(20px) rotate(8deg);
+}
+
+}
+
+@keyframes floatThree{
+
+0%,100%{
+transform:translateY(0) rotate(-10deg);
+}
+
+50%{
+transform:translateY(-18px) rotate(-18deg);
+}
+
+}
+
+@keyframes floatFour{
+
+0%,100%{
+transform:translateY(0) rotate(14deg);
+}
+
+50%{
+transform:translateY(24px) rotate(24deg);
+}
+
+}
+
+/* =======================
+   SCROLL INDICATOR
+======================= */
+
+.hero-scroll{
+
+position:absolute;
+
+bottom:30px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.hero-scroll span{
+
+display:block;
+
+width:2px;
+
+height:40px;
+
+background:#FFD76A;
+
+animation:scrollDown 2s infinite;
+
+}
+
+@keyframes scrollDown{
+
+0%{
+
+opacity:0;
+transform:translateY(0);
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+transform:translateY(18px);
+
+}
+
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media(max-width:768px){
+
+.hero{
+
+padding:150px 20px 90px;
+
+}
+
+.hero-logo{
+
+width:130px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.magic-card{
+
+width:55px;
+opacity:.10;
+
+}
+
+}
