@@ -1110,7 +1110,7 @@ footer::before{
 
 .hero .magic-card{
     position:absolute;
-    width:95px;          /* Bigger cards */
+    width:72px;          /* Bigger cards */
     opacity:.45;         /* Brighter cards */
     pointer-events:none;
     z-index:2;
@@ -1120,40 +1120,36 @@ footer::before{
 }
 
 .hero .card1{
-    left:2%;
-    top:26%;
-    animation-delay:0s;
-    transform:rotate(-18deg);
+    left:3%;
+    top:24%;
 }
 
 .hero .card2{
-    right:2%;
-    top:26%;
-    animation-delay:3s;
-    transform:rotate(15deg);
+    right:3%;
+    top:24%;
 }
 
 .hero .card3{
-    left:12%;
-    bottom:10%;   /* was 8% */
+    left:8%;
+    bottom:16%;
 }
 
 .hero .card4{
-    right:12%;
-    bottom:10%;   /* was 8% */
+    right:8%;
+    bottom:16%;
 }
 @keyframes floatCard{
 
     0%{
-        transform:translateY(0) rotate(0deg);
+        transform:translateY(0);
     }
 
     50%{
-        transform:translateY(-25px) rotate(8deg);
+        transform:translateY(-8px);
     }
 
     100%{
-        transform:translateY(0) rotate(0deg);
+        transform:translateY(0);
     }
 
 }
