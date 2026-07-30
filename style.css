@@ -1120,29 +1120,29 @@ footer::before{
 }
 
 .hero .card1{
-    left:8%;
-    top:18%;
+    left:3%;
+    top:6%;
     animation-delay:0s;
     transform:rotate(-18deg);
 }
 
 .hero .card2{
-    right:10%;
-    top:22%;
+    right:3%;
+    top:8%;
     animation-delay:3s;
     transform:rotate(15deg);
 }
 
 .hero .card3{
-    left:18%;
-    bottom:12%;
+    left:2%;
+    bottom:5%;
     animation-delay:6s;
     transform:rotate(-8deg);
 }
 
 .hero .card4{
-    right:18%;
-    bottom:15%;
+    right:2%;
+    bottom:5%;
     animation-delay:9s;
     transform:rotate(22deg);
 }
