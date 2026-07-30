@@ -2231,40 +2231,28 @@ font-size:1rem;
     will-change:transform;
 }
 
-/* TOP LEFT */
-
 .card1{
-    top:8%;
-    left:-25px;
-    transform:rotate(-18deg);
-    animation:floatCard1 12s ease-in-out infinite;
+    top:7%;
+    left:-18px;
+    animation:floatOne 9s ease-in-out infinite;
 }
-
-/* TOP RIGHT */
 
 .card2{
-    top:10%;
-    right:-25px;
-    transform:rotate(18deg);
-    animation:floatCard2 14s ease-in-out infinite;
+    top:11%;
+    right:-18px;
+    animation:floatTwo 10s ease-in-out infinite;
 }
-
-/* BOTTOM LEFT */
 
 .card3{
-    bottom:8%;
-    left:-35px;
-    transform:rotate(-12deg);
-    animation:floatCard3 13s ease-in-out infinite;
+    bottom:18%;
+    left:-22px;
+    animation:floatThree 9s ease-in-out infinite;
 }
 
-/* BOTTOM RIGHT */
-
 .card4{
-    bottom:8%;
-    right:-35px;
-    transform:rotate(15deg);
-    animation:floatCard4 15s ease-in-out infinite;
+    bottom:15%;
+    right:-20px;
+    animation:floatFour 11s ease-in-out infinite;
 }
 
 /* ========================= */
