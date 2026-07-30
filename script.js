@@ -167,3 +167,15 @@ requestAnimationFrame(animate);
 }
 
 animate();
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+    }, 3000);
+
+});
