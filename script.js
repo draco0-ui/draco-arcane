@@ -122,53 +122,89 @@ for(let i=0;i<90;i++){
 
 function draw(){
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    /* ==========================================
+   MAGIC WAND TRAIL
+========================================== */
 
-    particles.forEach(p=>{
+const canvas = document.getElementById("magicParticles");
 
-        let dx = mouse.x-p.x;
-        let dy = mouse.y-p.y;
+if (canvas) {
 
-        let dist = Math.sqrt(dx*dx+dy*dy);
+const ctx = canvas.getContext("2d");
 
-        if(dist<150){
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-            p.x -= dx*0.006;
-            p.y -= dy*0.006;
+let sparkles = [];
 
-        }
+function createSparkle(x, y){
 
-        p.x += p.vx;
-        p.y += p.vy;
+    for(let i=0;i<6;i++){
 
-        if(p.x<0 || p.x>canvas.width){
+        sparkles.push({
 
-            p.vx *= -1;
+            x:x,
+            y:y,
 
-        }
+            vx:(Math.random()-0.5)*2,
+            vy:(Math.random()-0.5)*2,
 
-        if(p.y<0 || p.y>canvas.height){
+            size:Math.random()*3+1,
 
-            p.vy *= -1;
+            life:40
 
-        }
+        });
 
-        ctx.beginPath();
-
-        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = "#FFD700";
-
-        ctx.fillStyle = "rgba(255,215,0,0.75)";
-        ctx.fill();
-
-    });
-
-    requestAnimationFrame(draw);
+    }
 
 }
 
-draw();
+window.addEventListener("mousemove",e=>{
+    createSparkle(e.clientX,e.clientY);
+});
+
+window.addEventListener("touchmove",e=>{
+    createSparkle(
+        e.touches[0].clientX,
+        e.touches[0].clientY
+    );
+},{passive:true});
+
+function animate(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    sparkles.forEach((s,index)=>{
+
+        s.x+=s.vx;
+        s.y+=s.vy;
+
+        s.life--;
+
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
+
+        ctx.fillStyle=`rgba(255,215,0,${s.life/40})`;
+
+        ctx.shadowBlur=18;
+        ctx.shadowColor="#FFD700";
+
+        ctx.fill();
+
+        if(s.life<=0){
+            sparkles.splice(index,1);
+        }
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
 
 }
