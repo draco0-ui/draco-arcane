@@ -1,11 +1,19 @@
 /* ==========================================
-   DRACO ARCANE V4.0
-   Premium Website Script
+   DRACO ARCANE V5
+   Premium Script
 ========================================== */
 
-/* -------------------------
-   Mobile Navigation
--------------------------- */
+/* ------------------------------
+   PAGE LOADER
+------------------------------ */
+
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
+});
+
+/* ------------------------------
+   MOBILE MENU
+------------------------------ */
 
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
@@ -16,195 +24,146 @@ if (menuBtn && nav) {
     });
 }
 
-/* -------------------------
-   Sticky Header
--------------------------- */
+/* ------------------------------
+   HEADER SCROLL
+------------------------------ */
 
 const header = document.querySelector(".header");
 
 window.addEventListener("scroll", () => {
-    if (!header) return;
 
     if (window.scrollY > 80) {
+
         header.classList.add("scrolled");
+
     } else {
+
         header.classList.remove("scrolled");
+
     }
-});
-
-/* -------------------------
-   Reveal Animation
--------------------------- */
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-
-    });
-
-}, {
-    threshold: 0.15
-});
-
-document.querySelectorAll("section").forEach(section => {
-
-    section.classList.add("reveal");
-    observer.observe(section);
 
 });
 
+/* ------------------------------
+   REVEAL ANIMATION
+------------------------------ */
 
-/* ==========================================
-   MAGIC PARTICLE BACKGROUND
-========================================== */
+const observer = new IntersectionObserver((entries)=>{
 
-const canvas = document.getElementById("magicParticles");
+entries.forEach(entry=>{
 
-if (canvas) {
+if(entry.isIntersecting){
 
-const ctx = canvas.getContext("2d");
-
-function resizeCanvas(){
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+entry.target.classList.add("show");
 
 }
 
-resizeCanvas();
+});
 
-window.addEventListener("resize", resizeCanvas);
+},{
+threshold:.15
+});
 
-const particles = [];
+document.querySelectorAll("section").forEach(section=>{
 
-const mouse = {
+section.classList.add("reveal");
 
-    x: canvas.width / 2,
-    y: canvas.height / 2
+observer.observe(section);
 
-};
+});
+
+/* ------------------------------
+   MAGIC TRAIL
+------------------------------ */
+
+const canvas=document.getElementById("magicTrail");
+
+const ctx=canvas.getContext("2d");
+
+function resize(){
+
+canvas.width=window.innerWidth;
+
+canvas.height=window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener("resize",resize);
+
+let sparkles=[];
+
+function createSparkle(x,y){
+
+for(let i=0;i<2;i++){
+
+sparkles.push({
+
+x:x,
+
+y:y,
+
+vx:(Math.random()-0.5)*2,
+
+vy:(Math.random()-0.5)*2,
+
+size:Math.random()*2+1,
+
+life:30
+
+});
+
+}
+
+}
 
 window.addEventListener("mousemove",(e)=>{
 
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
+createSparkle(e.clientX,e.clientY);
 
 });
 
 window.addEventListener("touchmove",(e)=>{
 
-    mouse.x = e.touches[0].clientX;
-    mouse.y = e.touches[0].clientY;
+const touch=e.touches[0];
 
-},{passive:true});
+createSparkle(touch.clientX,touch.clientY);
 
-
-for(let i=0;i<90;i++){
-
-    particles.push({
-
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-
-        vx:(Math.random()-0.5)*0.35,
-        vy:(Math.random()-0.5)*0.35,
-
-        size:Math.random()*2+1
-
-    });
-
-}
-
-
-function draw(){
-
-    /* ==========================================
-   MAGIC WAND TRAIL
-========================================== */
-
-const canvas = document.getElementById("magicParticles");
-
-if (canvas) {
-
-const ctx = canvas.getContext("2d");
-
-function resizeCanvas(){
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-let sparkles = [];
-
-function createSparkle(x, y){
-
-    for(let i=0;i<6;i++){
-
-        sparkles.push({
-
-            x:x,
-            y:y,
-
-            vx:(Math.random()-0.5)*2,
-            vy:(Math.random()-0.5)*2,
-
-            size:Math.random()*3+1,
-
-            life:40
-
-        });
-
-    }
-
-}
-
-window.addEventListener("mousemove",e=>{
-    createSparkle(e.clientX,e.clientY);
-});
-
-window.addEventListener("touchmove",e=>{
-    createSparkle(
-        e.touches[0].clientX,
-        e.touches[0].clientY
-    );
 },{passive:true});
 
 function animate(){
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    sparkles.forEach((s,index)=>{
+for(let i=sparkles.length-1;i>=0;i--){
 
-        s.x+=s.vx;
-        s.y+=s.vy;
+let s=sparkles[i];
 
-        s.life--;
+s.x+=s.vx;
 
-        ctx.beginPath();
-        ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
+s.y+=s.vy;
 
-        ctx.fillStyle=`rgba(255,215,0,${s.life/40})`;
+s.life--;
 
-        ctx.shadowBlur=18;
-        ctx.shadowColor="#FFD700";
+ctx.beginPath();
 
-        ctx.fill();
+ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
 
-        if(s.life<=0){
-            sparkles.splice(index,1);
-        }
+ctx.fillStyle=`rgba(255,215,120,${s.life/30})`;
 
-    });
+ctx.fill();
 
-    requestAnimationFrame(animate);
+if(s.life<=0){
+
+sparkles.splice(i,1);
+
+}
+
+}
+
+requestAnimationFrame(animate);
 
 }
 
 animate();
-
-}
