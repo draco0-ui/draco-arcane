@@ -1,9 +1,11 @@
 /* ==========================================
-   DRACO ARCANE V3.0
-   Premium Script
+   DRACO ARCANE V4.0
+   Premium Website Script
 ========================================== */
 
-// Mobile Navigation
+/* -------------------------
+   Mobile Navigation
+-------------------------- */
 
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
@@ -14,243 +16,159 @@ if (menuBtn && nav) {
     });
 }
 
-// Sticky Header
+/* -------------------------
+   Sticky Header
+-------------------------- */
 
 const header = document.querySelector(".header");
 
-if (header) {
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 80) {
-            header.classList.add("scrolled");
-        } else {
-            header.classList.remove("scrolled");
-        }
-    });
-}
+window.addEventListener("scroll", () => {
+    if (!header) return;
 
-// Reveal Animation
+    if (window.scrollY > 80) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+/* -------------------------
+   Reveal Animation
+-------------------------- */
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+
+    entries.forEach(entry => {
+
         if (entry.isIntersecting) {
             entry.target.classList.add("show");
         }
+
     });
+
 }, {
     threshold: 0.15
 });
 
-document.querySelectorAll("section").forEach((section) => {
+document.querySelectorAll("section").forEach(section => {
+
     section.classList.add("reveal");
     observer.observe(section);
+
 });
 
+
+/* ==========================================
+   MAGIC PARTICLE BACKGROUND
+========================================== */
+
 const canvas = document.getElementById("magicParticles");
+
+if (canvas) {
+
 const ctx = canvas.getContext("2d");
 
 function resizeCanvas(){
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
 }
+
 resizeCanvas();
+
 window.addEventListener("resize", resizeCanvas);
 
 const particles = [];
+
 const mouse = {
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2
+
+    x: canvas.width / 2,
+    y: canvas.height / 2
+
 };
 
-window.addEventListener("mousemove", e => {
+window.addEventListener("mousemove",(e)=>{
+
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+
 });
 
-window.addEventListener("touchmove", e => {
+window.addEventListener("touchmove",(e)=>{
+
     mouse.x = e.touches[0].clientX;
     mouse.y = e.touches[0].clientY;
-});
 
-for(let i=0;i<70;i++){
+},{passive:true});
+
+
+for(let i=0;i<90;i++){
+
     particles.push({
+
         x:Math.random()*canvas.width,
         y:Math.random()*canvas.height,
-        r:Math.random()*2+1,
-        vx:(Math.random()-0.5)*0.4,
-        vy:(Math.random()-0.5)*0.4
+
+        vx:(Math.random()-0.5)*0.35,
+        vy:(Math.random()-0.5)*0.35,
+
+        size:Math.random()*2+1
+
     });
-}
-
-const canvas = document.getElementById("magicParticles");
-const ctx = canvas.getContext("2d");
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-let particles = [];
-let pointer = {
-    x: canvas.width / 2,
-    y: canvas.height / 2
-};
-
-window.addEventListener("mousemove", e => {
-    pointer.x = e.clientX;
-    pointer.y = e.clientY;
-    createParticles();
-});
-
-window.addEventListener("touchmove", e => {
-    pointer.x = e.touches[0].clientX;
-    pointer.y = e.touches[0].clientY;
-    createParticles();
-}, { passive: true });
-
-function createParticles() {
-
-    for (let i = 0; i < 4; i++) {
-
-        particles.push({
-            x: pointer.x,
-            y: pointer.y,
-
-            vx: (Math.random() - 0.5) * 3,
-            vy: (Math.random() - 0.5) * 3,
-
-            size: Math.random() * 4 + 2,
-
-            life: 70
-        });
-
-    }
 
 }
 
-const canvas = document.getElementById("magicParticles");
-const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+function draw(){
 
-let particles = [];
-let pointer = {
-    x: canvas.width / 2,
-    y: canvas.height / 2
-};
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 
-window.addEventListener("mousemove", e => {
-    pointer.x = e.clientX;
-    pointer.y = e.clientY;
-    createParticles();
-});
+    particles.forEach(p=>{
 
-window.addEventListener("touchmove", e => {
-    pointer.x = e.touches[0].clientX;
-    pointer.y = e.touches[0].clientY;
-    createParticles();
-}, { passive: true });
+        let dx = mouse.x-p.x;
+        let dy = mouse.y-p.y;
 
-function createParticles() {
+        let dist = Math.sqrt(dx*dx+dy*dy);
 
-    for (let i = 0; i < 4; i++) {
+        if(dist<150){
 
-        particles.push({
-            x: pointer.x,
-            y: pointer.y,
+            p.x -= dx*0.006;
+            p.y -= dy*0.006;
 
-            vx: (Math.random() - 0.5) * 3,
-            vy: (Math.random() - 0.5) * 3,
-
-            size: Math.random() * 4 + 2,
-
-            life: 70
-        });
-
-    }
-
-}
-
-const canvas = document.getElementById("magicParticles");
-const ctx = canvas.getContext("2d");
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-let particles = [];
-let pointer = {
-    x: canvas.width / 2,
-    y: canvas.height / 2
-};
-
-window.addEventListener("mousemove", e => {
-    pointer.x = e.clientX;
-    pointer.y = e.clientY;
-    createParticles();
-});
-
-window.addEventListener("touchmove", e => {
-    pointer.x = e.touches[0].clientX;
-    pointer.y = e.touches[0].clientY;
-    createParticles();
-}, { passive: true });
-
-function createParticles() {
-
-    for (let i = 0; i < 4; i++) {
-
-        particles.push({
-            x: pointer.x,
-            y: pointer.y,
-
-            vx: (Math.random() - 0.5) * 3,
-            vy: (Math.random() - 0.5) * 3,
-
-            size: Math.random() * 4 + 2,
-
-            life: 70
-        });
-
-    }
-
-}
-
-function animate() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((p, index) => {
+        }
 
         p.x += p.vx;
         p.y += p.vy;
 
-        p.life--;
+        if(p.x<0 || p.x>canvas.width){
+
+            p.vx *= -1;
+
+        }
+
+        if(p.y<0 || p.y>canvas.height){
+
+            p.vy *= -1;
+
+        }
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
 
-        ctx.fillStyle = `rgba(255,215,0,${p.life / 70})`;
+        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = "#FFD700";
+
+        ctx.fillStyle = "rgba(255,215,0,0.75)";
         ctx.fill();
-
-        if (p.life <= 0) {
-            particles.splice(index, 1);
-        }
 
     });
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(draw);
 
 }
 
-animate();
+draw();
+
+}
