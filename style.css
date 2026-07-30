@@ -1001,55 +1001,54 @@ body::before{
 
 }
 
-/* Button Glow */
+/* =========================================
+   Premium Button Animation
+========================================= */
 
 .btn-primary{
-
     position:relative;
     overflow:hidden;
-
+    animation:buttonGlow 3s ease-in-out infinite;
 }
 
 .btn-primary::before{
-
     content:"";
-
     position:absolute;
-
     top:0;
-
     left:-120%;
-
     width:60%;
-
     height:100%;
 
-    background:
-
-    linear-gradient(
-        120deg,
+    background:linear-gradient(
+        90deg,
         transparent,
         rgba(255,255,255,.45),
-        transparent);
+        transparent
+    );
 
-    transform:skewX(-20deg);
+    transform:skewX(-25deg);
 
+    animation:buttonShine 5s linear infinite;
 }
 
-.btn-primary:hover::before{
-
-    animation:shine 1s ease;
-
-}
-
-@keyframes shine{
-
-    100%{
-
-        left:150%;
-
+@keyframes buttonShine{
+    0%{
+        left:-120%;
     }
 
+    100%{
+        left:170%;
+    }
+}
+
+@keyframes buttonGlow{
+    0%,100%{
+        box-shadow:0 0 18px rgba(255,215,0,.18);
+    }
+
+    50%{
+        box-shadow:0 0 35px rgba(255,215,0,.38);
+    }
 }
 
 /* Premium Card Glow */
