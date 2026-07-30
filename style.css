@@ -251,21 +251,21 @@ text-transform:uppercase;
 }
 
 .hero h2{
-
-font-family:'Cinzel',serif;
-
-font-size:clamp(3rem,8vw,5.6rem);
-
-line-height:1.1;
-
-margin-bottom:28px;
-
+    font-family:'Cinzel', serif;
+    font-size:clamp(3rem,8vw,5.6rem);
+    line-height:1.1;
+    margin-bottom:28px;
+    color:#ffffff;
+    text-shadow:
+        0 0 12px rgba(255,255,255,.45),
+        0 0 25px rgba(212,175,55,.35);
 }
 
 .hero h2 span{
-
-color:var(--gold);
-
+    color:#FFD95A;
+    text-shadow:
+        0 0 12px rgba(255,217,90,.6),
+        0 0 24px rgba(212,175,55,.45);
 }
 
 .hero p{
