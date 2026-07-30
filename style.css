@@ -2212,3 +2212,170 @@ font-size:1rem;
 }
 
 }
+
+/* ==========================================
+        DRACO ARCANE V5
+        FLOATING MAGIC CARDS
+========================================== */
+
+.magic-card{
+    position:absolute;
+    width:100px;
+    opacity:.38;
+    pointer-events:none;
+    z-index:2;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255,215,0,.35));
+
+    will-change:transform;
+}
+
+/* TOP LEFT */
+
+.card1{
+    top:8%;
+    left:-25px;
+    transform:rotate(-18deg);
+    animation:floatCard1 12s ease-in-out infinite;
+}
+
+/* TOP RIGHT */
+
+.card2{
+    top:10%;
+    right:-25px;
+    transform:rotate(18deg);
+    animation:floatCard2 14s ease-in-out infinite;
+}
+
+/* BOTTOM LEFT */
+
+.card3{
+    bottom:8%;
+    left:-35px;
+    transform:rotate(-12deg);
+    animation:floatCard3 13s ease-in-out infinite;
+}
+
+/* BOTTOM RIGHT */
+
+.card4{
+    bottom:8%;
+    right:-35px;
+    transform:rotate(15deg);
+    animation:floatCard4 15s ease-in-out infinite;
+}
+
+/* ========================= */
+
+@keyframes floatCard1{
+
+0%,100%{
+transform:
+translateY(0)
+translateX(0)
+rotate(-18deg);
+}
+
+50%{
+transform:
+translateY(-24px)
+translateX(12px)
+rotate(-10deg);
+}
+
+}
+
+@keyframes floatCard2{
+
+0%,100%{
+transform:
+translateY(0)
+translateX(0)
+rotate(18deg);
+}
+
+50%{
+transform:
+translateY(22px)
+translateX(-12px)
+rotate(8deg);
+}
+
+}
+
+@keyframes floatCard3{
+
+0%,100%{
+transform:
+translateY(0)
+translateX(0)
+rotate(-12deg);
+}
+
+50%{
+transform:
+translateY(-18px)
+translateX(18px)
+rotate(-22deg);
+}
+
+}
+
+@keyframes floatCard4{
+
+0%,100%{
+transform:
+translateY(0)
+translateX(0)
+rotate(15deg);
+}
+
+50%{
+transform:
+translateY(24px)
+translateX(-18px)
+rotate(24deg);
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.magic-card{
+
+width:70px;
+opacity:.28;
+
+}
+
+.card1{
+
+left:-18px;
+
+}
+
+.card2{
+
+right:-18px;
+
+}
+
+.card3{
+
+left:-20px;
+
+}
+
+.card4{
+
+right:-20px;
+
+}
+
+}
