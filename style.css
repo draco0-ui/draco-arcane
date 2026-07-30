@@ -2220,39 +2220,32 @@ font-size:1rem;
 
 .magic-card{
     position:absolute;
-    width:100px;
-    opacity:.38;
+    width:220px !important;
+    height:auto;
+    opacity:.65 !important;
+    z-index:3;
     pointer-events:none;
-    z-index:2;
-
-    filter:
-        drop-shadow(0 0 18px rgba(255,215,0,.35));
-
-    will-change:transform;
+    filter:drop-shadow(0 0 25px rgba(255,215,0,.7));
 }
 
 .card1{
-    top:7%;
-    left:-18px;
-    animation:floatOne 9s ease-in-out infinite;
+    top:8%;
+    left:-40px;
 }
 
 .card2{
-    top:11%;
-    right:-18px;
-    animation:floatTwo 10s ease-in-out infinite;
+    top:10%;
+    right:-40px;
 }
 
 .card3{
-    bottom:18%;
-    left:-22px;
-    animation:floatThree 9s ease-in-out infinite;
+    bottom:8%;
+    left:-50px;
 }
 
 .card4{
-    bottom:15%;
-    right:-20px;
-    animation:floatFour 11s ease-in-out infinite;
+    bottom:10%;
+    right:-50px;
 }
 
 /* ========================= */
