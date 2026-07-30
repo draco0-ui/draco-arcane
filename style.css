@@ -1135,16 +1135,12 @@ footer::before{
 
 .hero .card3{
     left:12%;
-    bottom:8%;
-    animation-delay:6s;
-    transform:rotate(-8deg);
+    bottom:11%;   /* was 8% */
 }
 
 .hero .card4{
     right:12%;
-    bottom:8%;
-    animation-delay:9s;
-    transform:rotate(22deg);
+    bottom:11%;   /* was 8% */
 }
 @keyframes floatCard{
 
