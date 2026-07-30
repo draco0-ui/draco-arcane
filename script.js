@@ -81,34 +81,176 @@ for(let i=0;i<70;i++){
     });
 }
 
-function animate(){
+const canvas = document.getElementById("magicParticles");
+const ctx = canvas.getContext("2d");
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
-    particles.forEach(p=>{
+let particles = [];
+let pointer = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+};
 
-        let dx=mouse.x-p.x;
-        let dy=mouse.y-p.y;
-        let dist=Math.sqrt(dx*dx+dy*dy);
+window.addEventListener("mousemove", e => {
+    pointer.x = e.clientX;
+    pointer.y = e.clientY;
+    createParticles();
+});
 
-        if(dist<140){
-            p.x-=dx*0.003;
-            p.y-=dy*0.003;
-        }
+window.addEventListener("touchmove", e => {
+    pointer.x = e.touches[0].clientX;
+    pointer.y = e.touches[0].clientY;
+    createParticles();
+}, { passive: true });
 
-        p.x+=p.vx;
-        p.y+=p.vy;
+function createParticles() {
 
-        if(p.x<0||p.x>canvas.width)p.vx*=-1;
-        if(p.y<0||p.y>canvas.height)p.vy*=-1;
+    for (let i = 0; i < 4; i++) {
+
+        particles.push({
+            x: pointer.x,
+            y: pointer.y,
+
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+
+            size: Math.random() * 4 + 2,
+
+            life: 70
+        });
+
+    }
+
+}
+
+const canvas = document.getElementById("magicParticles");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let particles = [];
+let pointer = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+};
+
+window.addEventListener("mousemove", e => {
+    pointer.x = e.clientX;
+    pointer.y = e.clientY;
+    createParticles();
+});
+
+window.addEventListener("touchmove", e => {
+    pointer.x = e.touches[0].clientX;
+    pointer.y = e.touches[0].clientY;
+    createParticles();
+}, { passive: true });
+
+function createParticles() {
+
+    for (let i = 0; i < 4; i++) {
+
+        particles.push({
+            x: pointer.x,
+            y: pointer.y,
+
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+
+            size: Math.random() * 4 + 2,
+
+            life: 70
+        });
+
+    }
+
+}
+
+const canvas = document.getElementById("magicParticles");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let particles = [];
+let pointer = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+};
+
+window.addEventListener("mousemove", e => {
+    pointer.x = e.clientX;
+    pointer.y = e.clientY;
+    createParticles();
+});
+
+window.addEventListener("touchmove", e => {
+    pointer.x = e.touches[0].clientX;
+    pointer.y = e.touches[0].clientY;
+    createParticles();
+}, { passive: true });
+
+function createParticles() {
+
+    for (let i = 0; i < 4; i++) {
+
+        particles.push({
+            x: pointer.x,
+            y: pointer.y,
+
+            vx: (Math.random() - 0.5) * 3,
+            vy: (Math.random() - 0.5) * 3,
+
+            size: Math.random() * 4 + 2,
+
+            life: 70
+        });
+
+    }
+
+}
+
+function animate() {
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, index) => {
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        p.life--;
 
         ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle="rgba(255,215,0,.75)";
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+
+        ctx.fillStyle = `rgba(255,215,0,${p.life / 70})`;
+
         ctx.fill();
+
+        if (p.life <= 0) {
+            particles.splice(index, 1);
+        }
+
     });
 
     requestAnimationFrame(animate);
+
 }
 
 animate();
