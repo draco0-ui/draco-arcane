@@ -1122,21 +1122,25 @@ footer::before{
 .hero .card1{
     left:3%;
     top:24%;
+    transform:rotate(-18deg);
 }
 
 .hero .card2{
     right:3%;
     top:24%;
+    transform:rotate(18deg);
 }
 
 .hero .card3{
     left:8%;
     bottom:16%;
+    transform:rotate(-10deg);
 }
 
 .hero .card4{
     right:8%;
     bottom:16%;
+    transform:rotate(10deg);
 }
 @keyframes floatCard{
 
