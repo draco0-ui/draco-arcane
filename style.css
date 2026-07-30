@@ -1118,26 +1118,26 @@ footer::before{
 
 /* Top Left */
 .hero .card1{
-    top:90px;
-    left:20px;
+    top:160px;
+    left:18px;
 }
 
 /* Top Right */
 .hero .card2{
-    top:90px;
-    right:20px;
+    top:160px;
+    right:18px;
 }
 
 /* Bottom Left */
 .hero .card3{
-    bottom:40px;
-    left:20px;
+    bottom:30px;
+    left:18px;
 }
 
 /* Bottom Right */
 .hero .card4{
-    bottom:40px;
-    right:20px;
+    bottom:30px;
+    right:18px;
 }
 
 @keyframes floatCard{
