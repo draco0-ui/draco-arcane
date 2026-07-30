@@ -2019,3 +2019,196 @@ transform:scale(1.8);
 }
 
 }
+
+/* ==========================================
+        DRACO ARCANE V5 HERO
+========================================== */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    padding:140px 20px 100px;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(212,175,55,.12),
+    transparent 45%),
+    linear-gradient(
+    180deg,
+    #080808,
+    #040404);
+}
+
+/* Hero Content */
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    max-width:850px;
+}
+
+/* Badge */
+
+.hero-badge{
+
+display:inline-block;
+
+padding:12px 28px;
+
+border-radius:40px;
+
+border:1px solid rgba(255,215,0,.25);
+
+background:rgba(255,215,0,.08);
+
+color:#FFD76A;
+
+letter-spacing:3px;
+
+font-size:13px;
+
+margin-bottom:30px;
+
+}
+
+/* Title */
+
+.hero h1{
+
+font-family:'Cinzel',serif;
+
+font-size:clamp(3rem,7vw,6rem);
+
+line-height:1.05;
+
+letter-spacing:2px;
+
+margin-bottom:25px;
+
+color:#fff;
+
+text-shadow:
+0 0 18px rgba(255,215,0,.15);
+
+}
+
+.hero h1 span{
+
+display:block;
+
+color:#FFD700;
+
+}
+
+/* Subtitle */
+
+.hero p{
+
+max-width:720px;
+
+margin:auto;
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:#d3d3d3;
+
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+/* Center Glow */
+
+.hero-glow{
+
+position:absolute;
+
+left:50%;
+top:45%;
+
+width:700px;
+height:700px;
+
+transform:translate(-50%,-50%);
+
+background:
+
+radial-gradient(circle,
+
+rgba(255,215,0,.18),
+
+transparent 70%);
+
+filter:blur(70px);
+
+animation:heroGlow 8s ease-in-out infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes heroGlow{
+
+0%,100%{
+
+opacity:.45;
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+50%{
+
+opacity:.85;
+
+transform:translate(-50%,-50%) scale(1.12);
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero{
+
+padding:150px 20px 90px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+}
