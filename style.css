@@ -1192,4 +1192,25 @@ footer::before{
     }
 }
 
+.magic-wand{
+    position:absolute;
+    width:260px;
+    right:-40px;
+    top:18%;
+    transform:rotate(-28deg);
+    opacity:.95;
+    pointer-events:none;
+    z-index:2;
+    animation:floatWand 10s ease-in-out infinite;
+    filter:drop-shadow(0 0 12px rgba(255,215,0,.45));
+}
+
+@keyframes floatWand{
+    0%,100%{
+        transform:translateY(0) rotate(-28deg);
+    }
+    50%{
+        transform:translateY(-18px) rotate(-24deg);
+    }
+}
 
