@@ -1110,11 +1110,12 @@ footer::before{
 
 .hero .magic-card{
     position:absolute;
-    width:85px;
-    opacity:.22;
+    width:95px;          /* Bigger cards */
+    opacity:.45;         /* Brighter cards */
     pointer-events:none;
     z-index:2;
-    filter:drop-shadow(0 0 8px rgba(255,215,0,.25));
+    filter:brightness(1.3)
+           drop-shadow(0 0 18px rgba(255,215,0,.65));
     animation:floatCard 18s ease-in-out infinite;
 }
 
