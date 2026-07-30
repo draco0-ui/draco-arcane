@@ -296,70 +296,84 @@ flex-wrap:wrap;
 
 }
 
-/* ==========================================
-   BUTTONS
-========================================== */
-
-.btn-primary,
-.btn-secondary{
-
-display:inline-flex;
-
-align-items:center;
-
-justify-content:center;
-
-padding:15px 34px;
-
-border-radius:999px;
-
-font-weight:600;
-
-transition:.35s ease;
-
-}
+/* /* ==========================
+   PREMIUM PRIMARY BUTTON
+========================== */
 
 .btn-primary{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 
-background:linear-gradient(
-135deg,
-var(--gold-light),
-var(--gold));
+    padding:15px 34px;
+    border:none;
+    border-radius:50px;
 
-color:#111;
+    background:linear-gradient(135deg,#FFD54A,#E0B22E);
+    color:#111;
 
-box-shadow:
-0 12px 35px rgba(212,175,55,.30);
+    font-weight:600;
+    cursor:pointer;
 
+    box-shadow:
+        0 0 18px rgba(255,215,0,.18);
+
+    transition:all .35s ease;
+
+    animation:buttonGlow 3s ease-in-out infinite;
+}
+
+.btn-primary::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-25deg);
+
+    animation:buttonShine 5s linear infinite;
 }
 
 .btn-primary:hover{
+    transform:translateY(-4px) scale(1.03);
 
-transform:translateY(-4px);
-
-box-shadow:
-0 20px 45px rgba(212,175,55,.45);
-
+    box-shadow:
+        0 0 20px rgba(255,215,0,.7),
+        0 0 45px rgba(212,175,55,.55),
+        0 0 80px rgba(212,175,55,.35);
 }
 
-.btn-secondary{
+@keyframes buttonGlow{
+    0%,100%{
+        box-shadow:0 0 18px rgba(255,215,0,.18);
+    }
 
-border:2px solid var(--gold);
-
-color:var(--gold);
-
-background:transparent;
-
+    50%{
+        box-shadow:
+            0 0 28px rgba(255,215,0,.45),
+            0 0 50px rgba(255,215,0,.25);
+    }
 }
 
-.btn-secondary:hover{
+@keyframes buttonShine{
+    from{
+        left:-120%;
+    }
 
-background:var(--gold);
-
-color:#111;
-
-transform:translateY(-4px);
-
+    to{
+        left:150%;
+    }
 }
 
 /* ==========================================
