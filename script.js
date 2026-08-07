@@ -337,3 +337,165 @@ document.querySelectorAll('img[loading="lazy"]').forEach(img => {
 });
 
 console.log('🂡 DRACO ARCANE - Premium Experience Loaded 🂡');
+
+// ============================================
+// GOLDEN SPARKLE CURSOR TRAIL
+// ============================================
+(function() {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.id = 'sparkleCanvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '9999';
+    document.body.appendChild(canvas);
+    
+    let width, height;
+    let mouseX = -100;
+    let mouseY = -100;
+    let prevMouseX = -100;
+    let prevMouseY = -100;
+    let particles = [];
+    
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    
+    // Track mouse/touch
+    document.addEventListener('mousemove', (e) => {
+        prevMouseX = mouseX;
+        prevMouseY = mouseY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+        prevMouseX = mouseX;
+        prevMouseY = mouseY;
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+        spawnParticles(mouseX, mouseY, 3);
+    }, { passive: true });
+    
+    document.addEventListener('touchstart', (e) => {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+        prevMouseX = mouseX;
+        prevMouseY = mouseY;
+    }, { passive: true });
+    
+    class Sparkle {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = (Math.random() - 0.5) * 1.5;
+            this.speedY = (Math.random() - 0.5) * 1.5;
+            this.life = 1;
+            this.decay = Math.random() * 0.02 + 0.015;
+            this.color = Math.random() > 0.5 ? '#FFD76A' : '#D4AF37';
+            this.glow = Math.random() > 0.3;
+        }
+        
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            this.speedY -= 0.01; // Float upward
+            this.life -= this.decay;
+            this.size *= 0.995;
+        }
+        
+        draw(ctx) {
+            ctx.save();
+            ctx.globalAlpha = this.life;
+            
+            // Glow
+            if (this.glow) {
+                ctx.shadowColor = this.color;
+                ctx.shadowBlur = 6;
+            }
+            
+            // Draw sparkle (star shape)
+            const cx = this.x;
+            const cy = this.y;
+            const r = this.size;
+            const spikes = 4;
+            
+            ctx.beginPath();
+            for (let i = 0; i < spikes * 2; i++) {
+                const radius = i % 2 === 0 ? r : r * 0.4;
+                const angle = (i * Math.PI) / spikes - Math.PI / 2;
+                const x = cx + Math.cos(angle) * radius;
+                const y = cy + Math.sin(angle) * radius;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            
+            ctx.restore();
+        }
+    }
+    
+    function spawnParticles(x, y, count) {
+        for (let i = 0; i < count; i++) {
+            particles.push(new Sparkle(x, y));
+        }
+    }
+    
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        // Spawn particles when moving
+        const dx = mouseX - prevMouseX;
+        const dy = mouseY - prevMouseY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance > 3 && mouseX > 0 && mouseY > 0) {
+            const spawnCount = Math.min(Math.floor(distance / 4), 3);
+            for (let i = 0; i < spawnCount; i++) {
+                const x = mouseX + (Math.random() - 0.5) * 8;
+                const y = mouseY + (Math.random() - 0.5) * 8;
+                particles.push(new Sparkle(x, y));
+            }
+        }
+        
+        // Update and draw particles
+        particles.forEach((p, index) => {
+            p.update();
+            p.draw(ctx);
+        });
+        
+        // Remove dead particles
+        particles = particles.filter(p => p.life > 0);
+        
+        // Update previous position
+        prevMouseX = mouseX;
+        prevMouseY = mouseY;
+        
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    // Extra sparkles on click/tap
+    document.addEventListener('click', (e) => {
+        spawnParticles(e.clientX, e.clientY, 15);
+    });
+    
+    document.addEventListener('touchstart', (e) => {
+        spawnParticles(e.touches[0].clientX, e.touches[0].clientY, 15);
+    }, { passive: true });
+    
+})();
