@@ -1,1 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DRACO ARCANE Store — Magic apps, products, and exclusive merchandise for modern magicians.">
+    <title>Store | DRACO ARCANE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Store-specific styles */
+        .store-hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .store-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(212,175,55,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .store-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .store-tabs {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .store-tab {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            padding: 10px 22px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #888;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .store-tab:hover,
+        .store-tab.active {
+            border-color: #D4AF37;
+            color: #D4AF37;
+            background: rgba(212,175,55,0.05);
+        }
+        .product-card {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.35);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.08);
+        }
+        .product-image {
+            aspect-ratio: 1;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+        }
+        .badge-new {
+            background: #D4AF37;
+            color: #090909;
+        }
+        .badge-bestseller {
+            background: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+        }
+        .badge-free {
+            background: #1a3a1a;
+            border: 1px solid #2ecc71;
+            color: #2ecc71;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-category {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            font-family: 'Cinzel', serif;
+        }
+        .product-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: #F7F7F7;
+            margin-bottom: 8px;
+        }
+        .product-desc {
+            font-size: 0.8rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .product-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #D4AF37;
+            font-weight: 700;
+        }
+        .product-price .original {
+            font-size: 0.8rem;
+            color: #555;
+            text-decoration: line-through;
+            margin-left: 8px;
+            font-weight: 400;
+        }
+        .btn-store {
+            font-family: 'Cinzel', serif;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            padding: 8px 18px;
+            background: transparent;
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .btn-store:hover {
+            background: #D4AF37;
+            color: #090909;
+        }
+        .coming-soon-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(9,9,9,0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            color: #FFD76A;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(2px);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========== NAVIGATION ========== -->
+    <header class="header scrolled">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="DRACO ARCANE" class="logo-img" onerror="this.src='assets/logo.png'">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="volumes.html" class="nav-link">Volumes</a></li>
+                <li><a href="shop.html" class="nav-link active">Store</a></li>
+                <li><a href="certification.html" class="nav-link">Certification</a></li>
+            </ul>
+            <a href="shop.html" class="btn btn-gold nav-cta">VISIT STORE</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html">Home</a>
+            <a href="volumes.html">Volumes</a>
+            <a href="volume1.html">Volume I</a>
+            <a href="volume2.html">Volume II</a>
+            <a href="volume3.html">Volume III</a>
+            <a href="shop.html">Store</a>
+            <a href="certification.html">Certification</a>
+        </div>
+    </div>
+
+    <!-- ========== STORE CONTENT ========== -->
+    <main style="padding-top: 100px;">
+        
+        <!-- Store Hero -->
+        <section class="store-hero">
+            <span class="volume-card-badge" style="display: inline-block; margin-bottom: 15px;">✦ DRACO ARCANE ✦</span>
+            <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #F7F7F7; margin-bottom: 15px; position: relative;">
+                THE <span style="color: #D4AF37;">STORE</span>
+            </h1>
+            <p style="color: #888; max-width: 500px; margin: 0 auto; line-height: 1.8; position: relative;">
+                Premium magic apps, products, and exclusive tools for the modern magician.
+            </p>
+        </section>
+
+        <!-- Store Tabs -->
+        <div class="store-tabs">
+            <button class="store-tab active" data-filter="all">All Products</button>
+            <button class="store-tab" data-filter="app">Apps</button>
+            <button class="store-tab" data-filter="course">Courses</button>
+            <button class="store-tab" data-filter="tool">Magic Tools</button>
+            <button class="store-tab" data-filter="merch">Merchandise</button>
+        </div>
+
+        <!-- Product Grid -->
+        <section class="store-grid" id="storeGrid">
+            
+            <!-- Product 1: Magic App -->
+            <div class="product-card" data-category="app">
+                <div class="product-image">
+                    📱
+                    <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">App</p>
+                    <h3 class="product-name">DRACO Magic Practice App</h3>
+                    <p class="product-desc">AI-powered practice companion. Track your sleights, get feedback, and perfect your performance.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹299</span>
+                        <a href="#" class="btn-store">GET APP</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2: Course Bundle -->
+            <div class="product-card" data-category="course">
+                <div class="product-image">
+                    🎓
+                    <span class="product-badge badge-bestseller">BESTSELLER</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Course</p>
+                    <h3 class="product-name">All Volumes Bundle</h3>
+                    <p class="product-desc">Volume I + II + III. Complete magic mastery from beginner to professional.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹1999 <span class="original">₹3197</span></span>
+                        <a href="#" class="btn-store">ENROLL</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Magic Tool -->
+            <div class="product-card" data-category="tool">
+                <div class="product-image">
+                    🧵
+                    <span class="product-badge badge-bestseller">POPULAR</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Magic Tool</p>
+                    <h3 class="product-name">Invisible Thread Pro Kit</h3>
+                    <p class="product-desc">Professional grade invisible thread for aeroin, ectroin, and rotin effects. Includes wax and accessories.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹499</span>
+                        <a href="#" class="btn-store">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4: App -->
+            <div class="product-card" data-category="app">
+                <div class="product-image">
+                    🎴
+                </div>
+                <div class="product-info">
+                    <p class="product-category">App</p>
+                    <h3 class="product-name">Cardistry Trainer</h3>
+                    <p class="product-desc">Learn flourishes, cuts, and displays. Slow-motion tutorials with angle control.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹199</span>
+                        <a href="#" class="btn-store">GET APP</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5: Merch -->
+            <div class="product-card" data-category="merch">
+                <div class="product-image">
+                    👕
+                    <span class="product-badge badge-new">NEW</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Merchandise</p>
+                    <h3 class="product-name">DRACO ARCANE T-Shirt</h3>
+                    <p class="product-desc">Premium black tee with gold foil DRACO ARCANE logo. Minimal, elegant, powerful.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹899</span>
+                        <a href="#" class="btn-store">SHOP</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6: Magic Tool -->
+            <div class="product-card" data-category="tool">
+                <div class="product-image">
+                    🪙
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Magic Tool</p>
+                    <h3 class="product-name">Premium Coin Set</h3>
+                    <p class="product-desc">Professional grade gimmicked coins for mind-blowing coin magic routines.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹799</span>
+                        <a href="#" class="btn-store">BUY NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7: Course -->
+            <div class="product-card" data-category="course">
+                <div class="product-image">
+                    ⚡
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Course</p>
+                    <h3 class="product-name">Volume I — Foundations</h3>
+                    <p class="product-desc">10 mind-blowing effects. Card, coin, ring, and visual magic. Perfect for beginners.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹699</span>
+                        <a href="volume1.html" class="btn-store">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8: App (Coming Soon) -->
+            <div class="product-card" data-category="app" style="position: relative;">
+                <div class="product-image">
+                    🔮
+                </div>
+                <div class="product-info">
+                    <p class="product-category">App</p>
+                    <h3 class="product-name">AR Magic Visualizer</h3>
+                    <p class="product-desc">Augmented reality magic effects. Point your phone and create impossible visuals.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹599</span>
+                        <a href="#" class="btn-store">PRE-ORDER</a>
+                    </div>
+                </div>
+                <div class="coming-soon-overlay">COMING SOON</div>
+            </div>
+
+            <!-- Product 9: Merch -->
+            <div class="product-card" data-category="merch">
+                <div class="product-image">
+                    🎒
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Merchandise</p>
+                    <h3 class="product-name">Magician's Carry Bag</h3>
+                    <p class="product-desc">Custom compartments for cards, coins, thread, and props. Travel like a pro.</p>
+                    <div class="product-footer">
+                        <span class="product-price">₹1499</span>
+                        <a href="#" class="btn-store">SHOP</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 10: Free App -->
+            <div class="product-card" data-category="app">
+                <div class="product-image">
+                    🆓
+                    <span class="product-badge badge-free">FREE</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">App</p>
+                    <h3 class="product-name">DRACO Lite</h3>
+                    <p class="product-desc">Free magic learning app. 3 free effects to get started. No ads, no catch.</p>
+                    <div class="product-footer">
+                        <span class="product-price" style="color: #2ecc71;">FREE</span>
+                        <a href="#" class="btn-store" style="border-color: #2ecc71; color: #2ecc71;">DOWNLOAD</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Store Footer Note -->
+        <section style="text-align: center; padding: 60px 20px 80px;">
+            <div class="glass-card" style="max-width: 600px; margin: 0 auto; padding: 35px;">
+                <p style="font-family: 'Cinzel', serif; color: #D4AF37; font-size: 1.1rem; margin-bottom: 8px;">✦ MORE COMING SOON ✦</p>
+                <p style="color: #888; font-size: 0.85rem;">New apps, tools, and merchandise added regularly. Stay tuned.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" style="background: #111; border-top: 1px solid rgba(212,175,55,0.1); padding: 40px 20px; text-align: center;">
+        <p style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">&copy; 2026 DRACO ARCANE. All rights reserved.</p>
+        <p style="color: #555; font-size: 0.7rem;">The Art of Modern Magic</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Store tab filtering
+        document.querySelectorAll('.store-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Update active tab
+                document.querySelectorAll('.store-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const filter = tab.getAttribute('data-filter');
+                const products = document.querySelectorAll('.product-card');
+                
+                products.forEach(product => {
+                    if (filter === 'all' || product.getAttribute('data-category') === filter) {
+                        product.style.display = 'block';
+                        product.style.opacity = '1';
+                        product.style.transform = 'scale(1)';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
