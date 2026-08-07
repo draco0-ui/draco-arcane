@@ -1,228 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Volume III | Elite Card Magic | Draco Arcane</title>
-
-<meta name="description"
-content="Draco Arcane Volume III - Elite Card Magic. Coming Soon.">
-
-<meta name="theme-color" content="#0b0b0b">
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DRACO ARCANE Volume III - Mastery. Real-world performance, audience control, professional secrets, and business training.">
+    <title>Volume III — Mastery | DRACO ARCANE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<header class="header">
-
-<div class="container">
-
-<a href="index.html" class="logo">
-
-<img src="assets/logo.png" alt="Draco Arcane">
-
-<div>
-
-<h1>DRACO ARCANE</h1>
-
-<span>The Art of Modern Card Magic</span>
-
-</div>
-
-</a>
-
-<nav class="nav">
-
-<a href="index.html">Home</a>
-<a href="volumes.html">Volumes</a>
-<a href="index.html#academy">Academy</a>
-<a href="index.html#foundation">Foundation</a>
-<a href="index.html#contact">Contact</a>
-
-</nav>
-
-</div>
-
-</header>
-
-<section class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="container hero-content">
-
-<span class="hero-badge">
-COMING SOON
-</span>
-
-<h2>
-Volume III
-<br>
-<span>Elite Card Magic</span>
-</h2>
-
-<p>
-
-The ultimate Draco Arcane experience.
-
-Master professional sleight of hand,
-advanced psychology, impossible routines,
-performance systems, audience management,
-and signature miracles built for real-world
-performances.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="volumes.html" class="btn-primary">
-Back to Volumes
-</a>
-
-<a href="index.html" class="btn-secondary">
-Home
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-
-<span>WHAT'S INSIDE</span>
-
-<h2>Future Curriculum</h2>
-
-<p>
-
-Volume III is designed for serious magicians who want to perform at a professional level.
-
-</p>
-
-</div>
-
-<div class="academy-grid">
-
-<div class="academy-card">
-
-<h3>Professional Sleight of Hand</h3>
-
-<p>
-Advanced controls, palms, passes, false deals and invisible handling.
-</p>
-
-</div>
-
-<div class="academy-card">
-
-<h3>Signature Routines</h3>
-
-<p>
-Complete professional routines with scripting, pacing and audience interaction.
-</p>
-
-</div>
-
-<div class="academy-card">
-
-<h3>Performance Psychology</h3>
-
-<p>
-Misdirection, timing, confidence and creating unforgettable magical moments.
-</p>
-
-</div>
-
-<div class="academy-card">
-
-<h3>Elite Performance Systems</h3>
-
-<p>
-Everything needed to perform polished, impossible card magic for real audiences.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="future-box">
-
-<h3>Coming Soon</h3>
-
-<p>
-
-Every master magician begins with strong fundamentals.
-
-Continue mastering Volume I while Volume III is being carefully developed.
-
-</p>
-
-<br>
-
-<a href="volumes.html" class="card-button">
-Explore Other Volumes
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container footer-content">
-
-<img src="assets/logo.png" class="footer-logo" alt="Draco Arcane">
-
-<h2>DRACO ARCANE</h2>
-
-<p class="footer-tagline">
-The Art of Modern Card Magic
-</p>
-
-<p class="footer-description">
-
-Elite education in modern card magic, performance psychology and professional routines.
-
-</p>
-
-<p class="copyright">
-
-© 2026 Draco Arcane. All Rights Reserved.
-
-</p>
-
-</div>
-
-</footer>
-
-<script src="script.js"></script>
-
+    <!-- NAVIGATION (same structure) -->
+    <header class="header scrolled">
+        <nav class="nav">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="DRACO ARCANE" class="logo-img" onerror="this.src='assets/logo.png'">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="volumes.html" class="nav-link active">Volumes</a></li>
+                <li><a href="certification.html" class="nav-link">Certification</a></li>
+            </ul>
+            <a href="volumes.html" class="btn btn-gold nav-cta">ALL VOLUMES</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="index.html">Home</a>
+            <a href="volumes.html">Volumes</a>
+            <a href="volume1.html">Volume I</a>
+            <a href="volume2.html">Volume II</a>
+            <a href="volume3.html">Volume III</a>
+            <a href="certification.html">Certification</a>
+        </div>
+    </div>
+
+    <!-- VOLUME III CONTENT -->
+    <main style="padding-top: 120px;">
+        
+        <!-- Hero -->
+        <section style="text-align: center; padding: 80px 20px;">
+            <span class="volume-card-badge" style="border-color: #FFD76A; color: #FFD76A; background: rgba(212,175,55,0.1);">PROFESSIONAL</span>
+            <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2.5rem, 6vw, 4rem); color: #F7F7F7; margin: 20px 0 10px;">
+                VOLUME <span style="color: #D4AF37;">III</span>
+            </h1>
+            <h2 style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #D0D0D0; letter-spacing: 3px; margin-bottom: 20px;">MASTERY</h2>
+            <p style="color: #888; max-width: 550px; margin: 0 auto 40px; line-height: 1.8; font-size: 1.05rem;">
+                The ultimate professional training. Real-world performance secrets, audience domination techniques, and the business skills to turn magic into income.
+            </p>
+            <div style="margin-bottom: 30px;">
+                <span style="font-family: 'Cinzel'; font-size: 1.2rem; color: #D4AF37;">₹</span>
+                <span style="font-family: 'Cinzel'; font-size: 3.5rem; font-weight: 700; color: #D4AF37;">9999</span>
+            </div>
+            <p style="color: #888; font-size: 0.85rem; margin-bottom: 25px;">
+                <span style="color: #FFD76A;">✦</span> Includes 1-on-1 mentorship session
+            </p>
+            <a href="#" class="btn btn-gold btn-glow" style="margin-right: 15px;">ENROLL NOW</a>
+            <a href="volumes.html" class="btn btn-outline">VIEW ALL VOLUMES</a>
+        </section>
+
+        <!-- What You'll Learn -->
+        <section style="max-width: 900px; margin: 0 auto; padding: 60px 20px;">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: #F7F7F7; text-align: center; margin-bottom: 40px;">
+                PROFESSIONAL <span style="color: #D4AF37;">MASTERY</span>
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">🎪</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">Live Performance</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">Real footage from paid performances with breakdown analysis of every moment.</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">👑</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">Audience Control</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">Command any room. Learn to read, engage, and dominate any audience type.</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">🔐</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">Professional Secrets</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">Techniques never shared publicly. The material working pros guard closely.</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">💰</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">Business Training</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">How to price your shows, find clients, negotiate fees, and build a brand.</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">🎤</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">Stage Presence</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">Develop charisma that fills stadiums. Body language, voice, and timing.</p>
+                </div>
+                <div class="glass-card" style="padding: 25px;">
+                    <span style="font-size: 1.8rem;">🤝</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; margin: 10px 0;">1-on-1 Mentorship</h4>
+                    <p style="color: #888; font-size: 0.85rem; line-height: 1.6;">Personal video call session with the instructor to refine your performance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus -->
+        <section style="max-width: 700px; margin: 0 auto; padding: 40px 20px 60px;">
+            <div class="glass-card" style="padding: 35px; text-align: center; border-color: rgba(212,175,55,0.4); background: rgba(212,175,55,0.03);">
+                <h4 style="font-family: 'Cinzel'; color: #FFD76A; font-size: 1.2rem; margin-bottom: 15px;">🎁 EXCLUSIVE BONUSES</h4>
+                <ul style="list-style: none; color: #D0D0D0; line-height: 2.2;">
+                    <li>✦ Professional Contract Templates</li>
+                    <li>✦ Marketing Playbook PDF</li>
+                    <li>✦ Private WhatsApp Community Access</li>
+                    <li>✦ Lifetime Performance Feedback</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="text-align: center; padding: 80px 20px; background: rgba(17,17,17,0.5);">
+            <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: #F7F7F7; margin-bottom: 15px;">
+                GO <span style="color: #D4AF37;">PROFESSIONAL</span>
+            </h3>
+            <p style="color: #888; margin-bottom: 10px;">Turn your passion into a profession.</p>
+            <p style="color: #D0D0D0; font-size: 0.9rem; margin-bottom: 30px;">Includes 1-on-1 mentorship session</p>
+            <a href="#" class="btn btn-gold btn-glow">ENROLL IN VOLUME III — ₹9999</a>
+        </section>
+
+    </main>
+
+    <footer class="footer" style="background: #111; border-top: 1px solid rgba(212,175,55,0.1); padding: 40px 20px; text-align: center;">
+        <p style="color: #888; font-size: 0.8rem;">&copy; 2026 DRACO ARCANE. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
