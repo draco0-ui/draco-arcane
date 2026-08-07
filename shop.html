@@ -3,175 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DRACO ARCANE Store — Premium magic apps, courses, tools, and exclusive merchandise for modern magicians.">
+    <meta name="description" content="DRACO ARCANE Store — Magic apps, courses, tools, and merchandise.">
     <title>Store | DRACO ARCANE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .store-hero {
-            text-align: center;
-            padding: 100px 20px 60px;
-            position: relative;
-            overflow: hidden;
-        }
-        .store-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, rgba(212,175,55,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .store-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .store-tabs {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            padding: 0 20px;
-        }
-        .store-tab {
-            font-family: 'Cinzel', serif;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            padding: 10px 22px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #888;
-            cursor: pointer;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .store-tab:hover,
-        .store-tab.active {
-            border-color: #D4AF37;
-            color: #D4AF37;
-            background: rgba(212,175,55,0.05);
-        }
-        .product-card {
-            background: rgba(17, 17, 17, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.35);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.08);
-        }
-        .product-image {
-            aspect-ratio: 1;
-            background: #0a0a0a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 0.6rem;
-            letter-spacing: 2px;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-        }
-        .badge-new {
-            background: #D4AF37;
-            color: #090909;
-        }
-        .badge-bestseller {
-            background: transparent;
-            border: 1px solid #D4AF37;
-            color: #D4AF37;
-        }
-        .badge-free {
-            background: #1a3a1a;
-            border: 1px solid #2ecc71;
-            color: #2ecc71;
-        }
-        .product-info {
-            padding: 20px;
-        }
-        .product-category {
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            color: #D4AF37;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            font-family: 'Cinzel', serif;
-        }
-        .product-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            color: #F7F7F7;
-            margin-bottom: 8px;
-        }
-        .product-desc {
-            font-size: 0.8rem;
-            color: #888;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .product-price {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
-            color: #D4AF37;
-            font-weight: 700;
-        }
-        .product-price .original {
-            font-size: 0.8rem;
-            color: #555;
-            text-decoration: line-through;
-            margin-left: 8px;
-            font-weight: 400;
-        }
-        .btn-store {
-            font-family: 'Cinzel', serif;
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            padding: 8px 18px;
-            background: transparent;
-            border: 1px solid #D4AF37;
-            color: #D4AF37;
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-        .btn-store:hover {
-            background: #D4AF37;
-            color: #090909;
-        }
-    </style>
 </head>
 <body>
     
-    <!-- ========== NAVIGATION ========== -->
+    <!-- NAVIGATION -->
     <header class="header scrolled">
         <nav class="nav">
             <a href="index.html" class="logo">
@@ -183,7 +23,7 @@
                 <li><a href="shop.html" class="nav-link active">Store</a></li>
                 <li><a href="certification.html" class="nav-link">Certification</a></li>
             </ul>
-            <a href="shop.html" class="btn btn-gold nav-cta">VISIT STORE</a>
+            <a href="volume1.html" class="btn btn-gold nav-cta">BEGIN VOLUME I</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -202,327 +42,157 @@
         </div>
     </div>
 
-    <!-- ========== STORE CONTENT ========== -->
-    <main style="padding-top: 100px;">
+    <!-- STORE CONTENT -->
+    <main style="padding-top: 120px; padding-bottom: 80px;">
         
-        <!-- Store Hero -->
-        <section class="store-hero">
-            <span class="volume-card-badge" style="display: inline-block; margin-bottom: 15px;">✦ DRACO ARCANE ✦</span>
-            <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.5rem); color: #F7F7F7; margin-bottom: 15px; position: relative;">
-                THE <span style="color: #D4AF37;">STORE</span>
-            </h1>
-            <p style="color: #888; max-width: 500px; margin: 0 auto; line-height: 1.8; position: relative;">
-                Premium magic apps, courses, tools, and exclusive merchandise for the modern magician.
-            </p>
+        <!-- Header -->
+        <section style="text-align: center; padding: 40px 20px;">
+            <span style="font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 5px; color: #D4AF37;">✦ DRACO ARCANE ✦</span>
+            <h1 style="font-family: 'Cinzel', serif; font-size: 2.5rem; color: #F7F7F7; margin: 15px 0;">THE <span style="color: #D4AF37;">STORE</span></h1>
+            <p style="color: #888; font-size: 0.9rem;">Premium magic apps, courses, tools & merchandise</p>
         </section>
 
-        <!-- Store Tabs -->
-        <div class="store-tabs">
-            <button class="store-tab active" data-filter="all">All Products</button>
-            <button class="store-tab" data-filter="app">Apps</button>
-            <button class="store-tab" data-filter="course">Courses</button>
-            <button class="store-tab" data-filter="tool">Magic Tools</button>
-            <button class="store-tab" data-filter="merch">Merchandise</button>
-        </div>
-
-        <!-- Product Grid -->
-        <section class="store-grid" id="storeGrid">
-            
-            <!-- ========== YOUR CUSTOM APPS ========== -->
-            
-            <!-- Product 1: AR Can Predict -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    🔮
-                    <span class="product-badge badge-new">NEW</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">AR Can Predict</h3>
-                    <p class="product-desc">Augmented reality prediction app. Point your phone at any object and reveal a prediction that matches perfectly. Blows minds instantly.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹499</span>
-                        <a href="#" class="btn-store">COMING SOON</a>
+        <!-- PRODUCTS -->
+        <section style="max-width: 1100px; margin: 0 auto; padding: 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+                
+                <!-- Product 1: AR Can Predict -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🔮
+                        <span style="position: absolute; top: 10px; right: 10px; background: #D4AF37; color: #000; font-family: 'Cinzel', serif; font-size: 0.6rem; padding: 4px 12px; border-radius: 20px; letter-spacing: 2px;">NEW</span>
+                    </div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">APP</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">AR Can Predict</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">AR prediction app. Point your phone and reveal impossible predictions.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹499</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">COMING SOON</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 2: AR Whisper -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    👂
-                    <span class="product-badge badge-new">NEW</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">AR Whisper</h3>
-                    <p class="product-desc">The app that whispers secrets. Your phone secretly reveals a spectator's thoughts, chosen word, or card — silently, invisibly.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹599</span>
-                        <a href="#" class="btn-store">COMING SOON</a>
+                <!-- Product 2: AR Whisper -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        👂
+                        <span style="position: absolute; top: 10px; right: 10px; background: #D4AF37; color: #000; font-family: 'Cinzel', serif; font-size: 0.6rem; padding: 4px 12px; border-radius: 20px; letter-spacing: 2px;">NEW</span>
+                    </div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">APP</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">AR Whisper</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">Secretly reveals their thoughts, chosen word, or card — silently.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹599</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">COMING SOON</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 3: Arcane Peek -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    👁️
-                    <span class="product-badge badge-new">NEW</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">Arcane Peek</h3>
-                    <p class="product-desc">The ultimate magic peek device. Secretly know their card, word, or drawing — hidden in plain sight. Your phone becomes the perfect secret weapon.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹399</span>
-                        <a href="#" class="btn-store">COMING SOON</a>
+                <!-- Product 3: Arcane Peek -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        👁️
+                        <span style="position: absolute; top: 10px; right: 10px; background: #D4AF37; color: #000; font-family: 'Cinzel', serif; font-size: 0.6rem; padding: 4px 12px; border-radius: 20px; letter-spacing: 2px;">NEW</span>
+                    </div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">APP</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">Arcane Peek</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">Ultimate peek device. Secretly know their card — hidden in plain sight.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹399</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">COMING SOON</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 4: DRACO Magic Practice -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    📱
-                    <span class="product-badge badge-bestseller">POPULAR</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">DRACO Magic Practice</h3>
-                    <p class="product-desc">AI-powered practice companion. Record your sleights, get instant feedback, and track your progress over time.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹299</span>
-                        <a href="#" class="btn-store">COMING SOON</a>
+                <!-- Product 4: All Volumes Bundle -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.3); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🎓
+                        <span style="position: absolute; top: 10px; right: 10px; border: 1px solid #D4AF37; color: #D4AF37; font-family: 'Cinzel', serif; font-size: 0.6rem; padding: 4px 12px; border-radius: 20px; letter-spacing: 2px;">BESTSELLER</span>
+                    </div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">COURSE</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">All Volumes Bundle</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">Volume I + II + III. Complete mastery from beginner to pro.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹1999 <span style="font-size:0.7rem; color:#555; text-decoration:line-through;">₹3197</span></span>
+                            <a href="volumes.html" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">LEARN MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 5: Cardistry Trainer -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    🎴
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">Cardistry Trainer</h3>
-                    <p class="product-desc">Learn flourishes, cuts, and displays. Slow-motion tutorials with angle control. From beginner to expert.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹199</span>
-                        <a href="#" class="btn-store">COMING SOON</a>
+                <!-- Product 5: Volume I -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">⚡</div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">COURSE</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">Volume I — Foundations</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">10 mind-blowing effects. Card, coin, ring & visual magic.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹699</span>
+                            <a href="volume1.html" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">LEARN MORE</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 6: DRACO Lite (Free) -->
-            <div class="product-card" data-category="app">
-                <div class="product-image">
-                    🆓
-                    <span class="product-badge badge-free">FREE</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">App</p>
-                    <h3 class="product-name">DRACO Lite</h3>
-                    <p class="product-desc">Free magic learning app. 3 free effects to get started. No ads, no catch. Just pure magic.</p>
-                    <div class="product-footer">
-                        <span class="product-price" style="color: #2ecc71;">FREE</span>
-                        <a href="#" class="btn-store" style="border-color: #2ecc71; color: #2ecc71;">DOWNLOAD</a>
+                <!-- Product 6: Thread Kit -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🧵</div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">MAGIC TOOL</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">Invisible Thread Pro Kit</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">For aeroin, ectroin & rotin effects. Wax & accessories included.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹499</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">BUY NOW</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ========== COURSES ========== -->
-            
-            <!-- Product 7: All Volumes Bundle -->
-            <div class="product-card" data-category="course">
-                <div class="product-image">
-                    🎓
-                    <span class="product-badge badge-bestseller">BESTSELLER</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Course</p>
-                    <h3 class="product-name">All Volumes Bundle</h3>
-                    <p class="product-desc">Volume I + II + III. Complete magic mastery from complete beginner to paid professional.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹1999 <span class="original">₹3197</span></span>
-                        <a href="volumes.html" class="btn-store">LEARN MORE</a>
+                <!-- Product 7: Coin Set -->
+                <div style="background: #111; border: 1px solid rgba(212,175,55,0.15); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem;">🪙</div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #D4AF37; letter-spacing: 3px; margin-bottom: 5px;">MAGIC TOOL</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">Premium Coin Set</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">Professional gimmicked coins for mind-blowing routines.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #D4AF37; font-weight: 700;">₹799</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #D4AF37; color: #D4AF37; text-decoration: none; border-radius: 2px; text-transform: uppercase;">BUY NOW</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Product 8: Volume I -->
-            <div class="product-card" data-category="course">
-                <div class="product-image">
-                    ⚡
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Course</p>
-                    <h3 class="product-name">Volume I — Foundations</h3>
-                    <p class="product-desc">10 mind-blowing effects. Card, coin, ring, and visual magic. Perfect starting point for beginners.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹699</span>
-                        <a href="volume1.html" class="btn-store">LEARN MORE</a>
+                <!-- Product 8: DRACO Lite -->
+                <div style="background: #111; border: 1px solid rgba(46,204,113,0.3); border-radius: 8px; overflow: hidden; padding-bottom: 20px;">
+                    <div style="background: #0a0a0a; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative;">
+                        🆓
+                        <span style="position: absolute; top: 10px; right: 10px; background: #1a3a1a; border: 1px solid #2ecc71; color: #2ecc71; font-family: 'Cinzel', serif; font-size: 0.6rem; padding: 4px 12px; border-radius: 20px; letter-spacing: 2px;">FREE</span>
+                    </div>
+                    <div style="padding: 15px 20px;">
+                        <p style="font-family: 'Cinzel', serif; font-size: 0.65rem; color: #2ecc71; letter-spacing: 3px; margin-bottom: 5px;">APP</p>
+                        <h3 style="font-family: 'Cinzel', serif; font-size: 1rem; color: #F7F7F7; margin-bottom: 8px;">DRACO Lite</h3>
+                        <p style="color: #888; font-size: 0.78rem; line-height: 1.5; margin-bottom: 15px;">Free magic app. 3 effects to start. No ads, no catch.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: #2ecc71; font-weight: 700;">FREE</span>
+                            <a href="#" style="font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 2px; padding: 6px 16px; border: 1px solid #2ecc71; color: #2ecc71; text-decoration: none; border-radius: 2px; text-transform: uppercase;">DOWNLOAD</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- ========== MAGIC TOOLS ========== -->
-            
-            <!-- Product 9: Invisible Thread Pro Kit -->
-            <div class="product-card" data-category="tool">
-                <div class="product-image">
-                    🧵
-                    <span class="product-badge badge-bestseller">POPULAR</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Magic Tool</p>
-                    <h3 class="product-name">Invisible Thread Pro Kit</h3>
-                    <p class="product-desc">Professional grade invisible thread for aeroin, ectroin, and rotin effects. Includes wax, accessories & carrying case.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹499</span>
-                        <a href="#" class="btn-store">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 10: Premium Coin Set -->
-            <div class="product-card" data-category="tool">
-                <div class="product-image">
-                    🪙
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Magic Tool</p>
-                    <h3 class="product-name">Premium Coin Set</h3>
-                    <p class="product-desc">Professional grade gimmicked coins for mind-blowing coin magic routines. Ready to perform.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹799</span>
-                        <a href="#" class="btn-store">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 11: Close-Up Mat -->
-            <div class="product-card" data-category="tool">
-                <div class="product-image">
-                    🟫
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Magic Tool</p>
-                    <h3 class="product-name">Premium Close-Up Mat</h3>
-                    <p class="product-desc">Professional black velvet close-up pad. Non-slip surface, perfect for cards, coins, and all close-up magic.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹899</span>
-                        <a href="#" class="btn-store">BUY NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 12: DRACO Playing Cards -->
-            <div class="product-card" data-category="tool">
-                <div class="product-image">
-                    🃏
-                    <span class="product-badge badge-new">NEW</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Magic Tool</p>
-                    <h3 class="product-name">DRACO ARCANE Playing Cards</h3>
-                    <p class="product-desc">Custom designed luxury playing cards. Gold foil edges, premium stock, marked deck system included.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹999</span>
-                        <a href="#" class="btn-store">PRE-ORDER</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ========== MERCHANDISE ========== -->
-            
-            <!-- Product 13: T-Shirt -->
-            <div class="product-card" data-category="merch">
-                <div class="product-image">
-                    👕
-                    <span class="product-badge badge-new">NEW</span>
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Merchandise</p>
-                    <h3 class="product-name">DRACO ARCANE T-Shirt</h3>
-                    <p class="product-desc">Premium black tee with gold foil DRACO ARCANE logo. Minimal, elegant, powerful. 100% cotton.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹899</span>
-                        <a href="#" class="btn-store">SHOP</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 14: Hoodie -->
-            <div class="product-card" data-category="merch">
-                <div class="product-image">
-                    🧥
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Merchandise</p>
-                    <h3 class="product-name">DRACO ARCANE Hoodie</h3>
-                    <p class="product-desc">Black premium hoodie with embroidered gold logo. Warm, stylish, perfect for magicians.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹1499</span>
-                        <a href="#" class="btn-store">SHOP</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 15: Magician's Bag -->
-            <div class="product-card" data-category="merch">
-                <div class="product-image">
-                    🎒
-                </div>
-                <div class="product-info">
-                    <p class="product-category">Merchandise</p>
-                    <h3 class="product-name">Magician's Carry Bag</h3>
-                    <p class="product-desc">Custom compartments for cards, coins, thread, and props. Travel like a professional magician.</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹1499</span>
-                        <a href="#" class="btn-store">SHOP</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- Store Footer -->
-        <section style="text-align: center; padding: 60px 20px 80px;">
-            <div class="glass-card" style="max-width: 600px; margin: 0 auto; padding: 35px;">
-                <p style="font-family: 'Cinzel', serif; color: #D4AF37; font-size: 1.1rem; margin-bottom: 8px;">✦ MORE COMING SOON ✦</p>
-                <p style="color: #888; font-size: 0.85rem;">New apps, tools, and merchandise added regularly. Stay tuned.</p>
             </div>
         </section>
 
     </main>
 
-    <!-- ========== FOOTER ========== -->
+    <!-- FOOTER -->
     <footer class="footer" style="background: #111; border-top: 1px solid rgba(212,175,55,0.1); padding: 40px 20px; text-align: center;">
-        <p style="color: #888; font-size: 0.8rem; margin-bottom: 5px;">&copy; 2026 DRACO ARCANE. All rights reserved.</p>
-        <p style="color: #555; font-size: 0.7rem;">The Art of Modern Magic</p>
+        <p style="color: #888; font-size: 0.8rem;">&copy; 2026 DRACO ARCANE. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Store tab filtering
-        document.querySelectorAll('.store-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.store-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                const filter = tab.getAttribute('data-filter');
-                const products = document.querySelectorAll('.product-card');
-                
-                products.forEach(product => {
-                    if (filter === 'all' || product.getAttribute('data-category') === filter) {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
