@@ -1111,3 +1111,54 @@ section {
     visibility: visible !important;
     opacity: 1 !important;
 }
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+* {
+    cursor: none !important;
+}
+
+/* Custom cursor dot */
+.custom-cursor {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: #D4AF37;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+/* Cursor ring */
+.cursor-ring {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+/* On clickable elements */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+.btn:hover ~ .custom-cursor {
+    width: 15px;
+    height: 15px;
+    background: #FFD76A;
+}
+
+a:hover ~ .cursor-ring,
+button:hover ~ .cursor-ring,
+.btn:hover ~ .cursor-ring {
+    width: 45px;
+    height: 45px;
+    border-color: #FFD76A;
+}
