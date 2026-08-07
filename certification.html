@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DRACO ARCANE Certification — Submit your performance video and earn your official magic certificate with unique ID and QR verification.">
     <title>Certification | DRACO ARCANE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
+    <!-- ========== NAVIGATION ========== -->
     <header class="header scrolled">
         <nav class="nav">
             <a href="index.html" class="logo">
@@ -17,9 +20,11 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="volumes.html" class="nav-link">Volumes</a></li>
+                <li><a href="shop.html" class="nav-link">Store</a></li>
                 <li><a href="certification.html" class="nav-link active">Certification</a></li>
             </ul>
-            <button class="menu-toggle" id="menuToggle">
+            <a href="volume1.html" class="btn btn-gold nav-cta">BEGIN VOLUME I</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </nav>
@@ -32,49 +37,103 @@
             <a href="volume1.html">Volume I</a>
             <a href="volume2.html">Volume II</a>
             <a href="volume3.html">Volume III</a>
+            <a href="shop.html">Store</a>
             <a href="certification.html">Certification</a>
         </div>
     </div>
 
+    <!-- ========== CERTIFICATION CONTENT ========== -->
     <main style="padding-top: 120px; min-height: 80vh;">
-        <section class="certification-section" style="max-width: 700px; margin: 0 auto; padding: 60px 20px; text-align: center;">
-            <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 2.8rem); color: #F7F7F7; margin-bottom: 20px;">
+        
+        <section style="max-width: 700px; margin: 0 auto; padding: 40px 20px 60px; text-align: center;">
+            
+            <!-- Header -->
+            <span class="volume-card-badge" style="display: inline-block; margin-bottom: 15px;">✦ OFFICIAL ✦</span>
+            <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 2.8rem); color: #F7F7F7; margin-bottom: 15px;">
                 EARN YOUR <span style="color: #D4AF37;">CERTIFICATE</span>
             </h1>
-            <p style="color: #888; margin-bottom: 50px; line-height: 1.8; max-width: 500px; margin-left: auto; margin-right: auto;">
-                Complete your volume, submit your performance video, and receive an official DRACO ARCANE certificate with unique ID and QR verification.
+            <p style="color: #888; margin-bottom: 40px; line-height: 1.8; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Complete any volume, submit your performance video, and receive an official DRACO ARCANE certificate with <strong style="color: #D0D0D0;">unique Certificate ID</strong> and <span style="color: #D4AF37;">QR verification</span>.
             </p>
 
-            <div class="glass-card" style="padding: 40px; margin-bottom: 30px;">
-                <h3 style="font-family: 'Cinzel', serif; color: #D4AF37; margin-bottom: 25px;">VERIFY A CERTIFICATE</h3>
+            <!-- How It Works -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 50px;">
+                <div class="glass-card" style="padding: 25px 15px;">
+                    <span style="font-size: 2.5rem; display: block;">📚</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; font-size: 0.85rem; margin: 10px 0;">Step 1</h4>
+                    <p style="color: #888; font-size: 0.78rem;">Complete a Volume</p>
+                </div>
+                <div class="glass-card" style="padding: 25px 15px;">
+                    <span style="font-size: 2.5rem; display: block;">🎬</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; font-size: 0.85rem; margin: 10px 0;">Step 2</h4>
+                    <p style="color: #888; font-size: 0.78rem;">Submit Performance</p>
+                </div>
+                <div class="glass-card" style="padding: 25px 15px;">
+                    <span style="font-size: 2.5rem; display: block;">📜</span>
+                    <h4 style="font-family: 'Cinzel'; color: #D4AF37; font-size: 0.85rem; margin: 10px 0;">Step 3</h4>
+                    <p style="color: #888; font-size: 0.78rem;">Get Certified</p>
+                </div>
+            </div>
+
+            <!-- Verify Certificate -->
+            <div class="glass-card" style="padding: 35px; margin-bottom: 25px;">
+                <h3 style="font-family: 'Cinzel', serif; color: #D4AF37; margin-bottom: 8px;">🔍 VERIFY A CERTIFICATE</h3>
+                <p style="color: #888; font-size: 0.8rem; margin-bottom: 20px;">Enter a Certificate ID to verify its authenticity</p>
                 <form style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-                    <input type="text" placeholder="Certificate ID" style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; min-width: 250px;">
+                    <input type="text" placeholder="Enter Certificate ID (e.g. DA-V1-2026-0001)" style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; min-width: 280px; font-size: 0.85rem;">
                     <button type="submit" class="btn btn-gold btn-sm">VERIFY</button>
                 </form>
             </div>
 
-            <div class="glass-card" style="padding: 40px;">
-                <h3 style="font-family: 'Cinzel', serif; color: #D4AF37; margin-bottom: 25px;">SUBMIT YOUR PERFORMANCE</h3>
-                <form style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" placeholder="Full Name" style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px;">
-                    <input type="email" placeholder="Email Address" style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px;">
-                    <select style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #D0D0D0; font-family: 'Poppins', sans-serif; border-radius: 2px;">
-                        <option>Select Volume</option>
-                        <option>Volume I</option>
-                        <option>Volume II</option>
-                        <option>Volume III</option>
-                    </select>
-                    <input type="url" placeholder="Video URL (YouTube/Drive)" style="padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px;">
-                    <button type="submit" class="btn btn-gold btn-block">SUBMIT FOR REVIEW</button>
+            <!-- Submit Performance -->
+            <div class="glass-card" style="padding: 35px;">
+                <h3 style="font-family: 'Cinzel', serif; color: #D4AF37; margin-bottom: 8px;">🎬 SUBMIT YOUR PERFORMANCE</h3>
+                <p style="color: #888; font-size: 0.8rem; margin-bottom: 25px;">Upload your video for review and earn your certificate</p>
+                
+                <form style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
+                    <div>
+                        <label style="color: #D0D0D0; font-size: 0.8rem; display: block; margin-bottom: 5px;">Full Name</label>
+                        <input type="text" placeholder="Your full name" style="width: 100%; padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; font-size: 0.85rem;">
+                    </div>
+                    
+                    <div>
+                        <label style="color: #D0D0D0; font-size: 0.8rem; display: block; margin-bottom: 5px;">Email Address</label>
+                        <input type="email" placeholder="your@email.com" style="width: 100%; padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; font-size: 0.85rem;">
+                    </div>
+                    
+                    <div>
+                        <label style="color: #D0D0D0; font-size: 0.8rem; display: block; margin-bottom: 5px;">Select Volume</label>
+                        <select style="width: 100%; padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #D0D0D0; font-family: 'Poppins', sans-serif; border-radius: 2px; font-size: 0.85rem;">
+                            <option value="">— Select Volume —</option>
+                            <option value="1">Volume I — Foundations</option>
+                            <option value="2">Volume II — Advanced Sleights</option>
+                            <option value="3">Volume III — Mastery</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label style="color: #D0D0D0; font-size: 0.8rem; display: block; margin-bottom: 5px;">Video URL (YouTube / Google Drive)</label>
+                        <input type="url" placeholder="https://youtube.com/your-video or https://drive.google.com/..." style="width: 100%; padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; font-size: 0.85rem;">
+                    </div>
+                    
+                    <div>
+                        <label style="color: #D0D0D0; font-size: 0.8rem; display: block; margin-bottom: 5px;">Additional Notes (optional)</label>
+                        <textarea placeholder="Any notes about your submission..." rows="3" style="width: 100%; padding: 12px 20px; background: #181818; border: 1px solid rgba(255,255,255,0.1); color: #F7F7F7; font-family: 'Poppins', sans-serif; border-radius: 2px; font-size: 0.85rem; resize: vertical;"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 10px;">SUBMIT FOR REVIEW</button>
                 </form>
+                
+                <p style="color: #555; font-size: 0.7rem; margin-top: 15px;">Review typically takes 3-5 business days. You'll receive your certificate via email.</p>
             </div>
+            
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-bottom" style="text-align: center;">
-            <p>&copy; 2026 DRACO ARCANE. All rights reserved.</p>
-        </div>
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" style="background: #111; border-top: 1px solid rgba(212,175,55,0.1); padding: 40px 20px; text-align: center;">
+        <p style="color: #888; font-size: 0.8rem;">&copy; 2026 DRACO ARCANE. All rights reserved.</p>
+        <p style="color: #555; font-size: 0.7rem;">The Art of Modern Magic</p>
     </footer>
 
     <script src="script.js"></script>
