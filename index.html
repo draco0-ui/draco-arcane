@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DRACO ARCANE - The Art of Modern Card Magic. Master impossible miracles. Become unforgettable.">
+    <meta name="description" content="DRACO ARCANE - The Art of Modern Magic. Master impossible miracles. Become unforgettable.">
     <meta name="theme-color" content="#090909">
-    <title>DRACO ARCANE | The Art of Modern Card Magic</title>
+    <title>DRACO ARCANE | The Art of Modern Magic</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
@@ -32,7 +29,6 @@
         </div>
     </div>
 
-    <!-- Particles Canvas -->
     <canvas id="particleCanvas"></canvas>
 
     <!-- Navigation -->
@@ -44,6 +40,7 @@
             <ul class="nav-links">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="volumes.html" class="nav-link">Volumes</a></li>
+                <li><a href="shop.html" class="nav-link">Store</a></li>
                 <li><a href="certification.html" class="nav-link">Certification</a></li>
             </ul>
             <a href="volume1.html" class="btn btn-gold nav-cta">BEGIN VOLUME I</a>
@@ -53,7 +50,6 @@
         </nav>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
             <a href="index.html">Home</a>
@@ -61,19 +57,19 @@
             <a href="volume1.html">Volume I</a>
             <a href="volume2.html">Volume II</a>
             <a href="volume3.html">Volume III</a>
+            <a href="shop.html">Store</a>
             <a href="certification.html">Certification</a>
         </div>
     </div>
 
     <main>
-        <!-- ===== HERO SECTION ===== -->
+        <!-- Hero Section -->
         <section class="hero" id="hero">
-            <div class="hero-particles"></div>
             <div class="hero-fog"></div>
             <div class="hero-light-rays"></div>
             
             <div class="hero-content">
-                <div class="hero-badge">✦ THE ART OF MODERN CARD MAGIC ✦</div>
+                <div class="hero-badge">✦ THE ART OF MODERN MAGIC ✦</div>
                 <h1 class="hero-title">
                     <span class="hero-title-line">DRACO</span>
                     <span class="hero-title-line gold">ARCANE</span>
@@ -86,12 +82,12 @@
             </div>
 
             <div class="hero-floating-cards" id="floatingCards">
-                <div class="float-card" style="top:15%;left:10%">🂡</div>
-                <div class="float-card" style="top:25%;right:15%">🂮</div>
-                <div class="float-card" style="bottom:20%;left:20%">🃁</div>
-                <div class="float-card" style="bottom:30%;right:10%">🂻</div>
-                <div class="float-card" style="top:50%;left:5%">🃎</div>
-                <div class="float-card" style="top:40%;right:8%">🂾</div>
+                <div class="float-card" style="top:15%;left:10%">🃏</div>
+                <div class="float-card" style="top:25%;right:15%">🪙</div>
+                <div class="float-card" style="bottom:20%;left:20%">💍</div>
+                <div class="float-card" style="bottom:30%;right:10%">🌀</div>
+                <div class="float-card" style="top:50%;left:5%">✨</div>
+                <div class="float-card" style="top:40%;right:8%">🎩</div>
             </div>
 
             <div class="scroll-indicator">
@@ -100,308 +96,143 @@
             </div>
         </section>
 
-        <!-- ===== TRAILER SECTION ===== -->
-        <section class="trailer-section" id="trailer">
-            <div class="section-header reveal">
-                <h2 class="section-title">THE <span class="gold">EXPERIENCE</span></h2>
-                <p class="section-subtitle">Witness what awaits you</p>
-            </div>
-            <div class="trailer-container reveal">
-                <div class="trailer-frame">
-                    <div class="trailer-placeholder">
-                        <div class="trailer-play-icon">▶</div>
-                        <p>Cinematic Trailer</p>
-                        <span>Coming Soon</span>
-                    </div>
-                </div>
-                <div class="trailer-glow"></div>
-            </div>
-        </section>
-
-        <!-- ===== STATS SECTION ===== -->
+        <!-- Stats Section -->
         <section class="stats-section">
             <div class="stats-grid reveal">
                 <div class="stat-card glass-card">
-                    <span class="stat-number" data-target="10000">0</span>
-                    <span class="stat-plus">+</span>
+                    <span class="stat-number" data-target="10000">0</span><span class="stat-plus">+</span>
                     <p class="stat-label">Students Worldwide</p>
                 </div>
                 <div class="stat-card glass-card">
-                    <span class="stat-number" data-target="30">0</span>
-                    <span class="stat-plus">+</span>
-                    <p class="stat-label">Professional Effects</p>
+                    <span class="stat-number" data-target="30">0</span><span class="stat-plus">+</span>
+                    <p class="stat-label">Magic Effects</p>
                 </div>
                 <div class="stat-card glass-card">
                     <span class="stat-number" data-target="4.9">0</span>
                     <p class="stat-label">Student Rating</p>
                 </div>
                 <div class="stat-card glass-card">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-plus">%</span>
+                    <span class="stat-number" data-target="100">0</span><span class="stat-plus">%</span>
                     <p class="stat-label">Satisfaction</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== VOLUMES SHOWCASE ===== -->
+        <!-- Volumes Showcase -->
         <section class="volumes-showcase" id="volumes">
             <div class="section-header reveal">
                 <h2 class="section-title">THE <span class="gold">VOLUMES</span></h2>
                 <p class="section-subtitle">Choose your path to mastery</p>
             </div>
             <div class="volumes-grid">
-                <!-- Volume I -->
-                <div class="volume-card glass-card reveal" data-volume="1">
+                <div class="volume-card glass-card reveal">
                     <div class="volume-card-glow"></div>
                     <div class="volume-card-number">I</div>
                     <div class="volume-card-badge">Beginner</div>
                     <h3>FOUNDATIONS</h3>
-                    <p>10 Professional Card Effects with step-by-step HD lessons. Master the fundamentals that create miracles.</p>
-                    <ul class="volume-features">
-                        <li>✦ 10 Pro Effects</li>
-                        <li>✦ HD Video Lessons</li>
-                        <li>✦ Lifetime Access</li>
-                        <li>✦ Certificate Included</li>
-                    </ul>
+                    <p>10 mind-blowing effects. Card, coin, ring & visual magic. Perform anywhere, get freak-out reactions.</p>
                     <a href="volume1.html" class="btn btn-gold btn-sm">EXPLORE VOLUME I</a>
                 </div>
-
-                <!-- Volume II -->
-                <div class="volume-card glass-card reveal" data-volume="2">
+                <div class="volume-card glass-card reveal">
                     <div class="volume-card-glow"></div>
                     <div class="volume-card-number">II</div>
                     <div class="volume-card-badge">Intermediate</div>
                     <h3>ADVANCED SLEIGHTS</h3>
                     <p>Dive deeper into advanced techniques, psychology, and performance mastery.</p>
-                    <ul class="volume-features">
-                        <li>✦ Advanced Sleights</li>
-                        <li>✦ Psychology Secrets</li>
-                        <li>✦ Performance Theory</li>
-                        <li>✦ Exclusive Content</li>
-                    </ul>
                     <a href="volume2.html" class="btn btn-gold btn-sm">EXPLORE VOLUME II</a>
                 </div>
-
-                <!-- Volume III -->
-                <div class="volume-card glass-card reveal" data-volume="3">
+                <div class="volume-card glass-card reveal">
                     <div class="volume-card-glow"></div>
                     <div class="volume-card-number">III</div>
                     <div class="volume-card-badge">Professional</div>
                     <h3>MASTERY</h3>
                     <p>Real-world performance, audience control, professional secrets, and business mastery.</p>
-                    <ul class="volume-features">
-                        <li>✦ Live Performance</li>
-                        <li>✦ Audience Control</li>
-                        <li>✦ Pro Secrets</li>
-                        <li>✦ Business Tips</li>
-                    </ul>
                     <a href="volume3.html" class="btn btn-gold btn-sm">EXPLORE VOLUME III</a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== WHY LEARN ===== -->
+        <!-- Why Learn -->
         <section class="why-learn-section">
             <div class="section-header reveal">
                 <h2 class="section-title">WHY <span class="gold">DRACO ARCANE</span></h2>
-                <p class="section-subtitle">More than just tricks — it's an art form</p>
             </div>
             <div class="why-grid">
                 <div class="why-card glass-card reveal">
                     <div class="why-icon">🎬</div>
                     <h3>Cinematic Quality</h3>
-                    <p>Every lesson filmed with professional cinema equipment. Learn with crystal-clear detail.</p>
+                    <p>Every lesson filmed with professional equipment. Crystal-clear detail.</p>
                 </div>
                 <div class="why-card glass-card reveal">
                     <div class="why-icon">🔒</div>
                     <h3>Lifetime Access</h3>
-                    <p>Purchase once, learn forever. All future updates included at no extra cost.</p>
+                    <p>Purchase once, learn forever. All future updates included.</p>
                 </div>
                 <div class="why-card glass-card reveal">
                     <div class="why-icon">📜</div>
                     <h3>Certification</h3>
-                    <p>Earn your official DRACO ARCANE certificate with unique ID and QR verification.</p>
+                    <p>Earn your official DRACO ARCANE certificate with QR verification.</p>
                 </div>
                 <div class="why-card glass-card reveal">
                     <div class="why-icon">🌍</div>
                     <h3>Global Community</h3>
-                    <p>Join thousands of magicians worldwide. Share, learn, and grow together.</p>
+                    <p>Join thousands of magicians worldwide.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== TESTIMONIALS ===== -->
-        <section class="testimonials-section">
-            <div class="section-header reveal">
-                <h2 class="section-title">WHAT <span class="gold">STUDENTS</span> SAY</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-card reveal">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"This isn't just a course — it's an experience. The production quality is unmatched."</p>
-                    <div class="testimonial-author">
-                        <strong>Rahul S.</strong>
-                        <span>Volume I Graduate</span>
-                    </div>
-                </div>
-                <div class="testimonial-card glass-card reveal">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"I perform professionally now. DRACO ARCANE gave me the confidence to charge for my art."</p>
-                    <div class="testimonial-author">
-                        <strong>Priya M.</strong>
-                        <span>Volume III Graduate</span>
-                    </div>
-                </div>
-                <div class="testimonial-card glass-card reveal">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p>"The psychology module in Volume II alone is worth more than the price. Game-changing."</p>
-                    <div class="testimonial-author">
-                        <strong>Arjun K.</strong>
-                        <span>Volume II Graduate</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== INSTRUCTOR ===== -->
-        <section class="instructor-section">
-            <div class="instructor-container glass-card reveal">
-                <div class="instructor-image">
-                    <div class="instructor-image-placeholder">
-                        <img src="assets/card.png" alt="DRACO ARCANE Instructor">
-                    </div>
-                </div>
-                <div class="instructor-info">
-                    <h3>MEET YOUR <span class="gold">INSTRUCTOR</span></h3>
-                    <p>A master magician with over a decade of professional performance experience. Trained by the best, performed for thousands, now sharing the secrets with you.</p>
-                    <p>The techniques taught in DRACO ARCANE have been refined through countless live performances and private mentorship sessions.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== PRICING ===== -->
+        <!-- Pricing -->
         <section class="pricing-section" id="pricing">
             <div class="section-header reveal">
                 <h2 class="section-title">INVEST IN <span class="gold">MASTERY</span></h2>
-                <p class="section-subtitle">Premium education at honest prices</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card glass-card reveal">
                     <div class="pricing-badge">MOST POPULAR</div>
                     <h3>VOLUME I</h3>
-                    <div class="pricing-price">
-                        <span class="pricing-currency">₹</span>
-                        <span class="pricing-amount">699</span>
-                    </div>
-                    <ul>
-                        <li>10 Professional Effects</li>
-                        <li>HD Video Lessons</li>
-                        <li>Lifetime Access</li>
-                        <li>Certificate</li>
-                    </ul>
+                    <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount">699</span></div>
+                    <ul><li>10 Magic Effects</li><li>HD Video Lessons</li><li>Lifetime Access</li><li>Certificate</li></ul>
                     <a href="volume1.html" class="btn btn-gold">GET STARTED</a>
                 </div>
                 <div class="pricing-card glass-card featured reveal">
                     <div class="pricing-badge">BEST VALUE</div>
                     <h3>ALL VOLUMES</h3>
-                    <div class="pricing-price">
-                        <span class="pricing-currency">₹</span>
-                        <span class="pricing-amount">1999</span>
-                    </div>
-                    <ul>
-                        <li>All 30+ Effects</li>
-                        <li>Complete HD Library</li>
-                        <li>Lifetime Access</li>
-                        <li>All Certificates</li>
-                        <li>Bonus Content</li>
-                    </ul>
+                    <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount">1999</span></div>
+                    <ul><li>All 30+ Effects</li><li>Complete HD Library</li><li>Lifetime Access</li><li>All Certificates</li></ul>
                     <a href="volumes.html" class="btn btn-gold">GET EVERYTHING</a>
                 </div>
                 <div class="pricing-card glass-card reveal">
                     <div class="pricing-badge">PROFESSIONAL</div>
                     <h3>VOLUME III</h3>
-                    <div class="pricing-price">
-                        <span class="pricing-currency">₹</span>
-                        <span class="pricing-amount">9999</span>
-                    </div>
-                    <ul>
-                        <li>Professional Secrets</li>
-                        <li>Business Training</li>
-                        <li>1-on-1 Session</li>
-                        <li>Certificate</li>
-                    </ul>
+                    <div class="pricing-price"><span class="pricing-currency">₹</span><span class="pricing-amount">9999</span></div>
+                    <ul><li>Pro Secrets</li><li>Business Training</li><li>1-on-1 Session</li><li>Certificate</li></ul>
                     <a href="volume3.html" class="btn btn-gold">GO PRO</a>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FAQ ===== -->
-        <section class="faq-section">
-            <div class="section-header reveal">
-                <h2 class="section-title">FREQUENTLY <span class="gold">ASKED</span></h2>
-            </div>
-            <div class="faq-container">
-                <div class="faq-item glass-card reveal">
-                    <div class="faq-question">
-                        <span>Do I need prior experience?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Not at all! Volume I is designed for complete beginners. Everything is taught step-by-step.</p>
-                    </div>
-                </div>
-                <div class="faq-item glass-card reveal">
-                    <div class="faq-question">
-                        <span>How long do I have access?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Lifetime access. Once purchased, the course is yours forever including all future updates.</p>
-                    </div>
-                </div>
-                <div class="faq-item glass-card reveal">
-                    <div class="faq-question">
-                        <span>Is there a certificate?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! After completing and submitting your performance video, you receive an official DRACO ARCANE certificate.</p>
-                    </div>
-                </div>
-                <div class="faq-item glass-card reveal">
-                    <div class="faq-question">
-                        <span>Can I get a refund?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We offer a 7-day satisfaction guarantee. If you're not amazed, you get your money back.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CTA BANNER ===== -->
+        <!-- CTA Banner -->
         <section class="cta-banner">
             <div class="cta-banner-content reveal">
                 <h2>READY TO BECOME <span class="gold">UNFORGETTABLE</span>?</h2>
-                <p>Your journey into the art of modern card magic starts here.</p>
+                <p>Your journey into the art of modern magic starts here.</p>
                 <a href="volume1.html" class="btn btn-gold btn-glow">BEGIN VOLUME I</a>
             </div>
-            <div class="cta-banner-particles"></div>
         </section>
     </main>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="assets/logo.svg" alt="DRACO ARCANE" class="footer-logo" onerror="this.src='assets/logo.png'">
-                <p>The Art of Modern Card Magic</p>
+                <p>The Art of Modern Magic</p>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="volumes.html">Volumes</a>
+                <a href="shop.html">Store</a>
                 <a href="certification.html">Certification</a>
             </div>
             <div class="footer-links">
@@ -412,7 +243,7 @@
             </div>
             <div class="footer-newsletter">
                 <h4>Stay Updated</h4>
-                <p>Join our newsletter for exclusive magic content.</p>
+                <p>Join for exclusive magic content.</p>
                 <form class="newsletter-form">
                     <input type="email" placeholder="Your email" required>
                     <button type="submit" class="btn btn-gold btn-sm">SUBSCRIBE</button>
@@ -425,7 +256,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
